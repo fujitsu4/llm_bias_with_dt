@@ -28,7 +28,7 @@ import re
 
 TARGET = 2500
 MIN_WORDS = 8
-OUTPUT = "../../data/cleaned/snli_filtered.csv"
+OUTPUT = args.output
 
 print("[INFO] Loading SNLI dataset...")
 ds = load_dataset("snli", split="train")
@@ -111,15 +111,15 @@ for s in selected:
     else:
         rejected_sentences.append("[ROOT] " + s)
 
-rejected_path = "../../logs/rejected_snli.txt"
+rejected_path = get_project_path("logs", "rejected_snli.txt")
+
 with open(rejected_path, "w", encoding="utf-8") as f:
     for r in rejected_sentences:
         f.write(f"{r}\n")
 
 print(f"[INFO] Valid sentences after filtering : {len(final_sentences)}")
 print(f"[INFO] Rejected sentences              : {len(rejected_sentences)}")
-print(f"[INFO] Saving cleaned dataset to {OUTPUT}")
-print(f"[INFO] Saving rejected sentences to: {rejected_path}")
+print(f"[INFO] Saving rejected sentences to    : {rejected_path}")
 
 # ----------------------------------------------------------
 # 7) Build dataframe
@@ -134,8 +134,7 @@ df = pd.DataFrame([
 ])
 
 df.to_csv(OUTPUT, sep=";", index=False)
-print("Saved:", OUTPUT)
-print("Final count:", len(df))
+print(f"[INFO] Saving cleaned dataset to : {len(final_sentences)}")
 
 # ----------------------------------------------------------
 # 8) CLI execution
@@ -156,20 +155,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Override constants
-    OUTPUT = args.output
-    TARGET = args.target
-    MIN_WORDS = args.min_words
-
-    print(f"=== SNLI PREPARATION ===")
-    print(f"- Target sentences : {TARGET}")
-    print(f"- Minimum words    : {MIN_WORDS}")
-    print(f"- Output file      : {OUTPUT}")
-
-    # --- run script normally ---
-    # (rien à changer dans ton code au-dessus)
-
-    # À la fin : affichage des rejected
+    # Display rejected sentences for verbose mode
     if args.verbose and rejected_sentences:
         print("\n=== FULL LIST OF REJECTED SENTENCES ===")
         for r in rejected_sentences:
