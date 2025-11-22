@@ -16,4 +16,4 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/USER/llm_bias_with_dt"
+Homepage = "https://github.com/fujitsu4/llm_bias_with_dt.git"
