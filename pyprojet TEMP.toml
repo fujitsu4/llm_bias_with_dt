@@ -1,0 +1,19 @@
+[project]
+name = "llm_bias_with_dt"
+version = "0.1.0"
+description = "Exploring biases in BERT through attention scores: a Decision Tree approach"
+authors = [
+    { name="Zakaria JOUILIL", email="zakaria.jouilil@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "datasets",
+    "spacy",
+    "pandas",
+    "tqdm"
+]
+
+[project.urls]
+Homepage = "https://github.com/USER/llm_bias_with_dt"
