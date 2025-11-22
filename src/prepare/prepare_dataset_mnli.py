@@ -26,8 +26,8 @@ from datasets import load_dataset
 import pandas as pd
 import spacy
 import re
-from src.utils.paths import get_project_path
 import argparse
+from src.utils.paths import get_project_path
 
 # ----------------------------------------------------------
 # CLI Parser
@@ -41,7 +41,7 @@ parser.add_argument("--target", type=int, default=2500,
 args = parser.parse_args()
 
 TARGET = args.target
-OUTPUT = args.output
+OUTPUT = get_project_path(*args.output.split("/"))
 
 MIN_WORDS = 8
 print("[INFO] Loading MNLI dataset...")
@@ -151,9 +151,9 @@ for s in selected:
 
 rejected_path = get_project_path("logs", "rejected_mnli.txt")
 
-print(f"Total sentences after ROOT filter: {len(final_sentences)}")
-print(f"[INFO] Rejected sentences              : {len(rejected_sentences)}")
-print(f"[INFO] Saving rejected sentences to    : {rejected_path}")
+print(f"[INFO] Total sentences after ROOT filter : {len(final_sentences)}")
+print(f"[INFO] Rejected sentences               : {len(rejected_sentences)}")
+print(f"[INFO] Saving rejected sentences to     : {rejected_path}")
 
 # ----------------------------------------------------------
 # 7) Build dataframe
@@ -168,7 +168,4 @@ df = pd.DataFrame([
 ])
 
 df.to_csv(OUTPUT, sep=";", index=False)
-print("Saved:", OUTPUT)
-print("Final count:", len(df))
-
-print(f"[INFO] Saving cleaned dataset to       : {OUTPUT}")
+print(f"[INFO] Saving cleaned dataset to        : {OUTPUT}")

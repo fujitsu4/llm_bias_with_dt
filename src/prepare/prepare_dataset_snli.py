@@ -40,7 +40,7 @@ parser.add_argument("--target", type=int, default=2500,
 args = parser.parse_args()
 
 TARGET = args.target
-OUTPUT = args.output
+OUTPUT = get_project_path(*args.output.split("/"))
 
 MIN_WORDS = 8
 print("[INFO] Loading SNLI dataset...")
