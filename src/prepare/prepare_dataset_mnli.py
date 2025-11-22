@@ -138,7 +138,7 @@ for s in selected:
         rejected_sentences.append("[POS_X] " + s)
         continue
     
-     if contains_invalid_punct_token(s):
+    if contains_invalid_punct_token(s):
         rejected_sentences.append("[INVALID_PUNCT] " + s)
         continue
 
