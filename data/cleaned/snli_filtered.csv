@@ -1,0 +1,2501 @@
+sentence_id;sentence;dataset
+0;A person on a horse jumps over a broken down airplane.;snli
+1;A person is training his horse for a competition.;snli
+2;A person is at a diner, ordering an omelette.;snli
+3;A boy is jumping on skateboard in the middle of a red bridge.;snli
+4;An older man sits with his orange juice at a small table in a coffee shop while employees in bright colored shirts smile in the background.;snli
+5;An older man drinks his juice as he waits for his daughter to get off work.;snli
+6;An elderly man sits in a small shop.;snli
+7;A few people in a restaurant setting, one of them is drinking orange juice.;snli
+8;The people are sitting at desks in school.;snli
+9;An older man is drinking orange juice at a restaurant.;snli
+10;Two women are at a restaurant drinking wine.;snli
+11;A man in a restaurant is waiting for his meal to arrive.;snli
+12;A man with blond-hair, and a brown shirt drinking out of a public water fountain.;snli
+13;A blond man getting a drink of water from a fountain in the park.;snli
+14;A blond man wearing a brown shirt is reading a book on a bench in the park;snli
+15;A blond man drinking water from a fountain.;snli
+16;Two women who just had lunch hugging and saying goodbye.;snli
+17;The friends scowl at each other over a full dinner table.;snli
+18;The friends have just met for the first time in 20 years, and have had a great time catching up.;snli
+19;The two sisters saw each other across the crowded diner and shared a hug, both clutching their doggie bags.;snli
+20;Two groups of rival gang members flipped each other off.;snli
+21;A Little League team tries to catch a runner sliding into a base in an afternoon game.;snli
+22;A team is trying to score the games winning out.;snli
+23;A team is trying to tag a runner out.;snli
+24;The school is having a special event in order to show the american culture on how other cultures are dealt with in parties.;snli
+25;High fashion ladies wait outside a tram beside a crowd of people in the city.;snli
+26;The women do not care what clothes they wear.;snli
+27;The women enjoy having a good fashion sense.;snli
+28;A man, woman, and child enjoying themselves on a beach.;snli
+29;A child with mom and dad, on summer vacation at the beach.;snli
+30;A family of three is at the beach.;snli
+31;A family of three is at the mall shopping.;snli
+32;People waiting to get on a train or just getting off.;snli
+33;The people waiting on the train are sitting.;snli
+34;There are people just getting on a train;snli
+35;A couple playing with a little boy on the beach.;snli
+36;A couple are playing with a young child outside.;snli
+37;A couple are playing frisbee with a young child at the beach.;snli
+38;A couple watch a little girl play by herself on the beach.;snli
+39;A couple play in the tide with their young son.;snli
+40;A man and a woman cross the street in front of a pizza and gyro restaurant.;snli
+41;The people are standing still on the curb.;snli
+42;Near a couple of restaurants, two people walk across the street.;snli
+43;The couple are walking across the street together.;snli
+44;A woman in a green jacket and hood over her head looking towards a valley.;snli
+45;Woman in white in foreground and a man slightly behind walking with a sign for John's Pizza and Gyro in the background.;snli
+46;A man and a woman walk down a crowded city street.;snli
+47;A man and a soman are eating together at John's Pizza and Gyro.;snli
+48;The man is sitting down while he has a sign for John's Pizza and Gyro in his arms.;snli
+49;Two adults, one female in white, with shades and one male, gray clothes, walking across a street, away from a eatery with a blurred image of a dark colored red shirted person in the foreground.;snli
+50;Two adults run across the street to get away from a red shirted person chasing them.;snli
+51;Two people walk home after a tasty steak dinner.;snli
+52;Two people walk away from a restaurant across a street.;snli
+53;Two adults walking across a road near the convicted prisoner dressed in red;snli
+54;Two adults walk across the street to get away from a red shirted person who is chasing them.;snli
+55;A woman wearing all white and eating, walks next to a man holding a briefcase.;snli
+56;A married couple is walking next to each other.;snli
+57;A woman is walking across the street eating a banana, while a man is following with his briefcase.;snli
+58;A woman eats a banana and walks across a street, and there is a man trailing behind her.;snli
+59;The woman and man are playing baseball together.;snli
+60;A woman eats ice cream walking down the sidewalk, and there is another woman in front of her with a purse.;snli
+61;An actress and her favorite assistant talk a walk in the city.;snli
+62;a woman eating a banana crosses a street;snli
+63;the woman is having coffee at the cafe;snli
+64;A skier is near the rail looking down.;snli
+65;A person on skis on a rail at night.;snli
+66;A skier in electric green on the edge of a ramp made of metal bars.;snli
+67;The skier was on the edge of the ramp.;snli
+68;The brightly dressed skier slid down the race course.;snli
+69;A yellow uniformed skier is performing a trick across a railed object.;snli
+70;A blond man is drinking from a public fountain.;snli
+71;A dog is playing fetch in a pond.;snli
+72;An underwater camera takes a photo of a puppy.;snli
+73;A dog swims in a body of water.;snli
+74;The furry brown dog is swimming in the ocean.;snli
+75;A big brown dog swims towards the camera.;snli
+76;A photographer is taking pictures of a dog.;snli
+77;A man wearing black with a gray hat, holding a pitchfork, directs a horse-drawn cart.;snli
+78;The farmer wearing a gray hat is driving a horse-drawn cart.;snli
+79;The man with the gray hat and pitchfork is directing the cart.;snli
+80;The woman in a blue dress is hitching a horse to a cart.;snli
+81;A man is leading a Clydesdale up a hay road, within a Old Country.;snli
+82;A man is walking with his horse up a country road.;snli
+83;A woman in a gray business suit is drinking tea.;snli
+84;A man in a straw hat and overalls is walking with his horse up a country road.;snli
+85;A farmer fertilizing his garden with manure with a horse and wagon.;snli
+86;The man is on the city street with his horse and wagon.;snli
+87;The man is in an open field with a horse and wagon.;snli
+88;A white horse is pulling a cart while a man stands and watches.;snli
+89;A small group of church-goers watch a choir practice.;snli
+90;A choir performs in front of packed crowd.;snli
+91;The pastor and elders watch the choir to make sure they are good.;snli
+92;A dog drops a red disc on a beach.;snli
+93;a dog catch the ball on a beach;snli
+94;a dog drops a disc with a boy;snli
+95;A man and a woman are walking on a street at the top of a hill.;snli
+96;A man and woman walk on a street.;snli
+97;An elderly man is drinking orange juice at a cafe.;snli
+98;An elderly man is drinking apple juice at a bar.;snli
+99;An older gentleman is enjoying his orange juice at a new cafe.;snli
+100;An old man is enjoying a beverage at a cafe.;snli
+101;A couple holding hands walks down a street.;snli
+102;Two men hold hands while walking down the street.;snli
+103;There are people sitting on the side of the road.;snli
+104;A couple walk through a white brick town.;snli
+105;A man and woman walk in a brown brick city.;snli
+106;A man and woman walk through a big city.;snli
+107;People listening to a choir in a Catholic church.;snli
+108;People are in mass for a first communion;snli
+109;A bicyclist is sitting down having lunch at the mall.;snli
+110;A person on a bike is waiting while the light is green.;snli
+111;A person on a bike is near a street.;snli
+112;Bikers stop and wait for traffic at the intersection.;snli
+113;The bicyclists ride through the mall on their bikes.;snli
+114;The bicyclists are riding to the book store.;snli
+115;A group of bicyclists remain on the sidewalk at the intersection.;snli
+116;A bunch of friends are on a boat;snli
+117;There are people on bikes at a light;snli
+118;The people are riding their bikes to the gym.;snli
+119;Men and women outside on a street corner.;snli
+120;A ladybug has landed on a beautiful pink rose.;snli
+121;Men and women on their motorcycles, wearing helmets and protective jackets.;snli
+122;There is a bike race happening right now.;snli
+123;People on bicycles enjoy a conversation waiting for traffic.;snli
+124;The people are trying to get to the convenience store across the street.;snli
+125;Some people on bikes are stopped at a junction.;snli
+126;The people are waiting for the movie to begin.;snli
+127;More than one person on a bicycle is obeying traffic laws.;snli
+128;A man with a red shirt is watching another man who is standing on top of a attached cart filled to the top.;snli
+129;A man is giving another man a piggyback ride.;snli
+130;A produce vendor is watched by a health department worker.;snli
+131;Someone is on top of a cart full of items, while someone else observes.;snli
+132;A merchant and his assistant are trying to determine how many products are in their cart.;snli
+133;A man is standing on top of a cart.;snli
+134;A man is standing on a cart full of groceries.;snli
+135;A boy is drinking out of a water fountain shaped like a woman.;snli
+136;A male is getting a drink of water.;snli
+137;A sculptor takes a drink from a fountain that he made that looks like his girlfriend.;snli
+138;A man is drinking lemonade from a glass.;snli
+139;A town has witnessed the arrival of three bikers.;snli
+140;Three bikers are taking a rest in the town.;snli
+141;A group of bikers are in the street.;snli
+142;Two people loading brush on a trailer attached to a truck.;snli
+143;A man is carrying a canoe to the water.;snli
+144;A couple of people are loading brush onto a trailer that is attached to a truck.;snli
+145;Two people loading brush on a trailer attached to a truck so they can go camping and burn it.;snli
+146;A man with a beard, wearing a red shirt with gray sleeves and work gloves, pulling on a rope.;snli
+147;A bearded man is pulling a rope at work.;snli
+148;The man was on the job trying to move some equipment.;snli
+149;a bearded man is pulling a car with his teeth.;snli
+150;a man competes in a rope pulling contest;snli
+151;A man is trying to pull his car out of a lake;snli
+152;A bearded man is pulling on a rope.;snli
+153;A man is dragging a sled behind him.;snli
+154;A man in a swimsuit, swings on a rope.;snli
+155;The man is able to grow a beard.;snli
+156;A man with facial hair and a red and gray shirt tugging on a piece of rope.;snli
+157;A man is wearing a red and gray shirt.;snli
+158;A middle-aged oriental woman in a green headscarf and blue shirt is flashing a giant smile.;snli
+159;The middle aged oriental woman is watchingt v;snli
+160;A middle aged oriental woman in a green headscarf and blue shirt is flashing a giant smile;snli
+161;The middle aged oriental woman is very happy;snli
+162;An Asian woman in a blue top and green headscarf smiling widely as another woman rows a boat in the background.;snli
+163;An Asian woman is happy because she found money on the ground.;snli
+164;An Asian woman is smiling at while another lady is rowing.;snli
+165;An Asian woman is running from a dog.;snli
+166;A worker is doing something to a boat.;snli
+167;The boat worker is swimming in the ocean.;snli
+168;The boat worker works hard to establish the line.;snli
+169;A small girl with a necklace is swimming.;snli
+170;A small girl with a necklace is swimming in a pool;snli
+171;A fat girl is diving off the edge;snli
+172;A small girl with a necklace is in the water;snli
+173;A skater grinds on the lip of the pool.;snli
+174;"A couple, who appear to be Indian or Pakistani, walk on a path beside a body of water, the mother carrying a child in a diaper, the father wrapped in a blanket with the logo of the humanitarian organization ""Save the Children.""";snli
+175;A man is wrapped in a UNICEF blanket.;snli
+176;A couple carrying a child are walking along water.;snli
+177;An Indian couple is seeking refuge with a humanitarian organization.;snli
+178;There is a woman holding a baby, along with a man with a save the children bag.;snli
+179;A group of people are possing for an add.;snli
+180;A man and a woman are hoding their son.;snli
+181;A family with a baby, the father is wearing a save the children sign.;snli
+182;A man is wearing something with writing on it.;snli
+183;A foreign family is walking along a dirt path next to the water.;snli
+184;A foreigner group of cousins hike along a trail next to a stream.;snli
+185;A foreign family walks by a dirt trail along a body of water.;snli
+186;The people are driving a car on the freeway.;snli
+187;A family of foreigners swims in the water.;snli
+188;they are trying not to fall in the water;snli
+189;A group of locals run on a dirt trail next to a frozen stream.;snli
+190;A family of foreigners walks by the water.;snli
+191;A family plays board games at their dinner table.;snli
+192;There is a family taking a walk outside.;snli
+193;A family walks along a dirt path in a forest by a pond.;snli
+194;A family of foreigners walks by the lake.;snli
+195;A man and a woman are standing next to sculptures, talking while another man looks at other sculptures.;snli
+196;People are looking at sculptures at a museum.;snli
+197;A man and a woman are happily standing.;snli
+198;Three people are looking at painting at a school fair.;snli
+199;The man and woman are standing by a swimming pool.;snli
+200;People are looking at scultures that were made by a famous artist.;snli
+201;Group of young women in dresses strolling on the sidewalk.;snli
+202;all the young girls won the first prize;snli
+203;there are some groups one of them of young females are in dresses strolling for a ramp walk;snli
+204;A man wearing a striped top and jeans does a skateboard trick on some steps while a man who is hunched over photographs him.;snli
+205;tony hawks manager is photographing tony hawk skateboarding;snli
+206;A man squatting in the foreground of a photograph while taking a photograph of his own of a man doing a skateboarding kick flip in midair above a short flight of stairs outdoors.;snli
+207;A man is taking the picture of a skateboarder who is being taken by aliens.;snli
+208;Photographers capture a male skateboarder performing tricks inside an abandoned building.;snli
+209;A man is taking the picture of a skateboarder who is performing a trick.;snli
+210;A man is taking photos of his son doing tricks on the skateboard.;snli
+211;A man is taking photos of skateboarding tricks.;snli
+212;People take photos outdoors while a man performs exciting skateboarding tricks.;snli
+213;A pro photographer is taking pictures of a pro skater.;snli
+214;Two men are going down a water slide.;snli
+215;A man tries to get the perfect picture of a skateboarder for a magazine.;snli
+216;A male skateboarder performs tricks outdoors for professional photographers.;snli
+217;One biker is running with their bike while another is riding around them.;snli
+218;Two people with bicycles, one in front running with a bike and one in back riding.;snli
+219;Two people eating ice cream cones at the mall.;snli
+220;Two people taking their bikes to the trail.;snli
+221;One person running next to their bike with the person riding their bike behind them.;snli
+222;A young man doing a trick on a skateboard down the stairs while being photographed.;snli
+223;A young man roller blades across a ramp while being photographed.;snli
+224;A helmet-less young man does a trick on a skateboard while being photographed.;snli
+225;A man being photographed while he does a trick on his skateboard down the stairs.;snli
+226;A lady in a black and white striped shirt and holding a bouquet of flowers, looks seriously at two gentlemen talking on the steps.;snli
+227;A lady is about to propose to her boyfriend.;snli
+228;A lady with a serious face is standing with two guys in front of steps outside.;snli
+229;Three guys are standing indoors with flowers in their hands.;snli
+230;The man is in the theatre watching Avatar.;snli
+231;The man is part of the gay pride parade.;snli
+232;Four teenage boys are doing cannonballs into a swimming pool.;snli
+233;Four friends are having a competition to see who throws the most water out of a pool.;snli
+234;A group of young men are splashing a lot of water.;snli
+235;Some boys are eating pizza in a restaurant.;snli
+236;Three men standing on grass by the water looking at something on a table.;snli
+237;A woman stands behind an outdoor grill with a blue basket of food in her hands.;snli
+238;A woman holding a blue basket full of food at a family cookout.;snli
+239;A woman standing behind a grill outside with a blue basket of food in her hands.;snli
+240;A woman holding a blue basket full of easter eggs outside of a church.;snli
+241;A Land Rover makes its way through a deep pond.;snli
+242;A family enjoys the sunny day in their backyard.;snli
+243;A car has crashed into a large lake.;snli
+244;A truck drives down a country road in the sunshine.;snli
+245;A man wearing black is playing an electric guitar at a concert.;snli
+246;A man is singing as he plays guitar.;snli
+247;A man with wild hair rocks a show playing a guitar center stage.;snli
+248;A guy stands on stage with his guitar.;snli
+249;One crazy looking man plays in a show.;snli
+250;woman and child on trolley car labeled Powell and market and bay and taylor;snli
+251;The woman and child are on a subway train.;snli
+252;Two female medical professionals, one african american& one white, looking over paperwork in a hospital.;snli
+253;Coworkers left work and are driving to lunch.;snli
+254;Two ladies are studying for their final exam.;snli
+255;A man in the distance is walking past a brick wall painted with words and graffiti.;snli
+256;A man walks away from a wall he has defaced.;snli
+257;A man sits and reads the graffiti on a wall.;snli
+258;A woman and a child holding on to the railing while on trolley.;snli
+259;The people are on a trolley in san Francisco.;snli
+260;A man in a striped polo shirt is pointing and smiling.;snli
+261;A guy performing a bicycle jump trick for an audience.;snli
+262;a bmx pro is doing a triple backflip;snli
+263;A gray-haired woman in a blue dress coat with snowflakes on it balances something on her head.;snli
+264;The woman is guarding herself from the snow.;snli
+265;A brother and sister chase each other in a field.;snli
+266;One man sits inside and plays the banjo, there are trees behind him outside.;snli
+267;A male plays a banjo while sitting on a sofa.;snli
+268;Two children, in colorful outfits, playing in a field with a big rock in the middle.;snli
+269;Two kids are playing with a big rock in the field;snli
+270;Two kids are playing with a big rock in the field with family;snli
+271;Two young girls are playing outside in a non-urban environment.;snli
+272;Some girls are running through an open field.;snli
+273;Some girls are running on the sidewalk, next to some parked cars.;snli
+274;Two children in hats play in an open, rocky field.;snli
+275;The children are playing in a rocky field.;snli
+276;A woman wearing a green and pink dress is dancing with someone wearing a blue top with white pants.;snli
+277;The woman in green and pink is dancing.;snli
+278;The dancing woman is alone in her bedroom.;snli
+279;Man in gold pants looking at the camera.;snli
+280;A man in a gold skirt sits in front of the computer.;snli
+281;A man in a gold skirt sitting at his computer watching the computer screen.;snli
+282;A man in a golf skirt sitting at his computer typing to his friends online.;snli
+283;A man in blue pants sitting and watching the television.;snli
+284;Man wearing black t-shirt sitting at a computer desk.;snli
+285;the man called off work and was at the zoo all day;snli
+286;the man is doing a project for work;snli
+287;A bearded man in a black t-shirt sits in front of a desk holding a computer.;snli
+288;A man in a gold foils skirt, sitting at a computer desk, looks at the camera with his hands raised to his face.;snli
+289;A young girl sitting at a table with a bowl on her head;snli
+290;A young girl has a bowl on her head;snli
+291;A toddler dumped her bowl of spaghetti on her head;snli
+292;A man is eating cereal in his car;snli
+293;A man dances with a fire baton at night.;snli
+294;A doctor checks the stomach of a toddler.;snli
+295;The doctor is looking inside the toddler's mouth.;snli
+296;Young blond woman putting her foot into a water fountain;snli
+297;A young woman wearing an evening gown, and holding her shoes in her hands, is dipping one foot into Buckingham Fountain in Chicago.;snli
+298;A young blond woman is sitting down on a beach chair.;snli
+299;A person is dipping her foot into water.;snli
+300;A young woman tries to stick her foot in a fountain.;snli
+301;The woman has one foot in the air.;snli
+302;A woman in capri jeans crouches on the edge of a fountain with her left foot kicked out to touch the falling water.;snli
+303;A woman is very eager to touch the water;snli
+304;A woman is like to touch the water in fountain;snli
+305;Woman balancing on edge of fountain while sticking her toe in the water.;snli
+306;A woman stand on a fountain and dips her toes in.;snli
+307;An old woman stands on a fountain and sticks her toes in.;snli
+308;A couple strolls arm and arm and hand in hand down a city sidewalk.;snli
+309;The couple is having dinner at a restaurant.;snli
+310;A man stare at a passing couple while walking down the block.;snli
+311;The woman stares at a couple as they argue down the block.;snli
+312;a couple are holding hands behind their backs while walking down a street, and the man has his arm around her shoulder.;snli
+313;A man and a woman are holding hands as they walk along a city sidewalk.;snli
+314;A married couple are fighting on the sidewalk.;snli
+315;A married couple are holding hands as they walk along the city sidewalk.;snli
+316;A man and a woman are holding hands.;snli
+317;a man in red stands with his child at the beach.;snli
+318;A man wearing blue sleeping with his child in his lap inside his home.;snli
+319;A man wearing red standing with his child at a beach overlooking the ocean.;snli
+320;A man wearing red standing with his child as they watch others build sand castles at the beach.;snli
+321;New sport is being played to show appreciation to the kids who can not walk.;snli
+322;People are playing a sport in honor of crippled people.;snli
+323;People a playing a sport to help fund a crippled people fund.;snli
+324;Two men in wheelchairs are reaching in the air for a basketball.;snli
+325;Two sad men in wheelchairs are reaching in the air for a basketball.;snli
+326;Two people in wheelchairs are reaching in the air for a basketball.;snli
+327;Two women in wheelchairs are reaching in the air for a basketball.;snli
+328;Three wheelchair basketball players wearing team uniforms are attempting to reach the descending basketball with other players in the background.;snli
+329;Some wheelchair basketball players playing the basketball match.;snli
+330;Three wheelchair basketball players playing basketball in field.;snli
+331;A peoples are taking coffee together at coffeshop.;snli
+332;Four guys in wheelchairs on a basketball court two are trying to grab a basketball in midair.;snli
+333;Three dogs in different shades of brown and white biting and licking each other.;snli
+334;Two dogs playfully bite a third dog, which has its tongue sticking out.;snli
+335;Two puppies bite their mother, while she pants.;snli
+336;Two dogs are sleeping while a third eats its food.;snli
+337;A pair of dogs tease a third with nibbles.;snli
+338;Three small puppies bite and play together in the grass.;snli
+339;Two dogs biting another dog in a field.;snli
+340;A group of tourist waiting for a train outside.;snli
+341;A group of tourist waiting for a train at a train station.;snli
+342;A doctor in blue scrubs is performing an operation assisted by two men and a woman.;snli
+343;A woman with a black jacket walks past an outdoor movie poster.;snli
+344;A man in an elf hat holding a white umbrella is standing on the sidewalk with two other men.;snli
+345;Indian lady and a guy in a blue suit dancing in the sunlight.;snli
+346;A mountain biker jumping a slope outdoors in a forest area.;snli
+347;A person is trying to learn new tricks on their bike.;snli
+348;The biker can be a man or a woman;snli
+349;A biker is doing jumps in a wooded area.;snli
+350;The biker is using a small bike to jump a hole.;snli
+351;The mountain biker is going on a desert trail.;snli
+352;The biker is trying to jump over a volcano.;snli
+353;Two older men in winter coats talking outside of a shop with a grassy lawn covered in a light coat of snow in front of it.;snli
+354;Two old men in winter coats talk outside.;snli
+355;Two elderly men having a conversation, snow covered grass in the background.;snli
+356;The men are drinking coffee and having some cookies;snli
+357;There are two men outside in this picture;snli
+358;Two men are standing outside and snow is on the ground.;snli
+359;Two older men in coats are standing outside.;snli
+360;It is cold, but they went outside anyway.;snli
+361;A gentleman in a purple scarf and hat is looking at money while holding an accordion.;snli
+362;A woman is brushing her hair in her bedroom.;snli
+363;A man is looking at a hundreds of dollars.;snli
+364;there is a bmx biker who is perfect in ravine jumping;snli
+365;A white bike is tied to a street sign.;snli
+366;the bike is tied to a stop sign;snli
+367;A white bike is leaning against a post.;snli
+368;A bike is on the ground about to be reparied;snli
+369;A bike with a flat tire is not being ridden;snli
+370;The boy locked the cycle and went away.;snli
+371;A bicycle chained up with a boy walking away.;snli
+372;A city filled with people in the middle of the daytime.;snli
+373;A abandoned city at the edge of the world.;snli
+374;A crowded city filled with many cars on a warm summer day.;snli
+375;A busy city that looks like New York City.;snli
+376;The city has a lot of people in it.;snli
+377;A view of buildings and people walking across the streets in Times Square, New York City.;snli
+378;Times Square in New York City is full of people and bustling with noise and activity.;snli
+379;A barber is inside his shop standing in the front.;snli
+380;The barber is closing the shop at the end of the day.;snli
+381;A man is waiting to get his haircut.;snli
+382;A woman wearing an apron inspects a large pot on a table filled with cups, bowls, pots and baskets of assorted size.;snli
+383;A woman wearing a red apron inspects a large black pot on a table filled with cups, bowls, pots and baskets of assorted size.;snli
+384;A model posing to look as if she's a real female soccer player.;snli
+385;A man is modeling for a cooking show.;snli
+386;A woman is trying to model for a sports magazine.;snli
+387;Exhausted looking firemen are walking back to the fire station to rest.;snli
+388;Determined looking firemen are running into a burning building.;snli
+389;Three firefighters, the nearest firefighter is holding a helmet in his left hand.;snli
+390;Three man are holding axes in their left hands.;snli
+391;The firemen are gathered one is holding his helmet.;snli
+392;A man walking along side a clean up crew.;snli
+393;The man directed the clean up crew where to go.;snli
+394;A driver is racing his Ford vehicle on a gravel track.;snli
+395;A Ford is being driven on a track.;snli
+396;Three guys and a girl are all jumping in a pool together.;snli
+397;The people are all climbing out of the water.;snli
+398;The people are all jumping into a body of water.;snli
+399;A little boy underwater in a pool, holding a plastic dinosaur.;snli
+400;A little boy swimming underwater with a toy in his hand.;snli
+401;A little boy is holding a pool ring.;snli
+402;A man wearing a white shire shirt and hate is riding a bucking horse in a rodeo.;snli
+403;A man is riding in his first rodeo.;snli
+404;A man is being bucked on a horse.;snli
+405;A saddle bronc rider gets lifted out of the saddle, but keeps his grip during his ride.;snli
+406;a woman with a straw hat working on a strange machine with coconuts at her side.;snli
+407;A woman is using a machine to make coconut milk.;snli
+408;A man wearing a rice hat is shucking corn using a corn shucker and is surrounded by trees.;snli
+409;The man is boiling a pot of corn.;snli
+410;A man is shucking a large pile of corn.;snli
+411;a woman wearing a Chinese straw hat operating some sort of stainless steel machine in what appears to be a park.;snli
+412;The woman is making jewelry at the park.;snli
+413;The woman has a small child trapped in the machine who sews clothes.;snli
+414;A woman on the side of a street is making food on her cart.;snli
+415;A man in blue shorts and without a shirt is jogging down the road while listening to his iPod.;snli
+416;Women exercising one woman has a green mat and black outfit on.;snli
+417;The students are taking a beginners' yoga class.;snli
+418;The young man is waiting with others on the sidewalk.;snli
+419;There is a young person talking with others near the bustop;snli
+420;there is a group of people waiting outside;snli
+421;The man is checking into a 4 star hotel;snli
+422;The man is sleeping on the grass because he is homeless;snli
+423;A white and brown dog is leaping through the air.;snli
+424;The white and brown dog is in the air.;snli
+425;A row of legs and black boots with a boy sitting at the end of the row.;snli
+426;A young boy sits on the ground in a family picture.;snli
+427;A man in blue lies on a mostly-barren patch of grass while small groups of people congregate in the distance.;snli
+428;The man is drinking a beer in a pub.;snli
+429;Various people hanging around outside of a building.;snli
+430;There are a group of people are standing outside.;snli
+431;A little girl follows two guys with umbrellas down a path.;snli
+432;The people are walking home in the rain.;snli
+433;A lady is on the floor packing a suitcase.;snli
+434;Little girl in a blue and yellow plaid outfit and blue hat is running along the trail.;snli
+435;A girl is running downhill on the trail.;snli
+436;Little girl walking along a dirt, rock, and grass path wearing a blue hat many steps behind two people wearing backpacks and holding umbrellas.;snli
+437;three people are walking along a path trying to get home before the storm hits.;snli
+438;The blond woman is searching for medical supplies in a suitcase.;snli
+439;A blonde woman looks for things in a suitcase.;snli
+440;A blonde woman looks for medical supplies for work in a suitcase.;snli
+441;A brunette woman checks her suitcase before boarding a plane.;snli
+442;Stacks of neatly folded clothing cover most of this floor while a woman with a beige shirt and jeans busily fills a suitcase.;snli
+443;A young woman packs belongings into a black suitcase.;snli
+444;A young man packs belongings into a black trash bag.;snli
+445;A young woman distributes belongings into a black box.;snli
+446;A young woman packs belongings into a black luggage carrier.;snli
+447;People going for a long walk to the mountains.;snli
+448;The people are walking in a big group.;snli
+449;A woman in costume is marching with a large drum.;snli
+450;A man carrying a load of fresh direct boxes on car with wheels in the city streets, as a woman walks towards him.;snli
+451;Someone is toting packages in an urban setting.;snli
+452;A young lad delivers groceries by bicycle in the city.;snli
+453;A man delivers groceries to shut-in seniors in the city.;snli
+454;A man sitting on a scooter on the curb.;snli
+455;A man is waiting for someone to fix his scooter.;snli
+456;A man stopping on the sidewalk with his bike to have a smoke.;snli
+457;A man is sitting on a motorcycle on the sidewalk.;snli
+458;A man is sitting on a motorcycle and drives away.;snli
+459;A man in black is playing with his cat on Sunday.;snli
+460;Man smokes while sitting on a parked scooter.;snli
+461;A man smokes a cigarette while sitting on his scooter.;snli
+462;The man drinks a beer while sitting in his car.;snli
+463;The man is smoking something while sitting on the scooter.;snli
+464;Man on the sidewalk sitting on a motorcycle.;snli
+465;Man sitting on a motorcycle on the sidewalk;snli
+466;A couple, wearing black, burgundy, and white, dance.;snli
+467;People in orange vests and blue pants with a yellow stripe at the bottom await the beginning of a race.;snli
+468;the runners waited to start the olympic race;snli
+469;People wearing pink and purple get ready for a race;snli
+470;People wearing their bright team uniforms await the pistol that signifies the start of their race;snli
+471;People in orange vests await the beginning of a race to win first prize.;snli
+472;The people waiting are part of the race.;snli
+473;People in orange vests are racing in a race that has started.;snli
+474;People in orange vests await the beginning of a race.;snli
+475;A young man and young lady dancing on a carpeted floor with a picture from the movie Toy Story on a big screen in the background.;snli
+476;They movie is very loud in the background.;snli
+477;The skier is wearing a yellow jumpsuit and sliding across a yellow rail.;snli
+478;A track event held by J.P. Morgan Chase with security.;snli
+479;Security guards are searching for weapons at a track event.;snli
+480;An english farmer with a horse pulled wagon.;snli
+481;There is a farmer with a horse wagon;snli
+482;There is a farmer riding a wagon outdoors;snli
+483;Children's soccer game being played while the sun sets in the background.;snli
+484;Old men playing soccer while the sun sets.;snli
+485;A soccer game played by a blue team and a red team on a perfectly manicured field at dusk.;snli
+486;Two soccer teams are competing on a soccer field.;snli
+487;Two skilled soccer teams are competing against one another for the championship.;snli
+488;Soccer teams play on a field as the sun sets behind a line of trees.;snli
+489;A football team is playing hockey against a soccer team in an ice rink.;snli
+490;A soccer team is about to win a soccer game.;snli
+491;White small child wearing a brown and gray striped hoodie plays at park.;snli
+492;A small child is playing video games in his bedroom.;snli
+493;A small boy is playing tag at a park with his friends.;snli
+494;A little boy in brown pants is playing on ropes at a park.;snli
+495;There is a little boy in brown pants.;snli
+496;There is a little girl in red pants.;snli
+497;There is a little boy who likes the color brown.;snli
+498;Toddler in striped sweatshirt plays on rope on playground.;snli
+499;A woman wearing a pink hat is looking at a pink car with the truck open.;snli
+500;The woman is wondering if she left her car open.;snli
+501;The woman is wearing a grocery bag to her car.;snli
+502;A man in a blue shirt is looking up.;snli
+503;A man in a blue shirt is looking up at a dog.;snli
+504;A man in a red shirt is looking up.;snli
+505;Three girls on an amusement ride enjoying themselves.;snli
+506;Woman at Walmart check-out having her groceries bagged by an employee.;snli
+507;Brown dog is sleeping next to the water;snli
+508;Brown dog treads through water as he is soaked in water;snli
+509;Brown dog treads through water as he swims towards shore;snli
+510;A woman is waiting with children as she is checked out at Walmart.;snli
+511;A woman is standing at the counter at Target.;snli
+512;A woman has children with her at the check out counter.;snli
+513;A blond woman with two children is checking out at a Walmart register.;snli
+514;A mother is with her two children at Walmart buying food;snli
+515;A mother is with her two children at walmart;snli
+516;A woman sitting in a laundromat looking at the camera.;snli
+517;A woman is modeling appliances for the camera.;snli
+518;A young boy paddles across the water in a makeshift boat.;snli
+519;A baseball player is about to throw a baseball.;snli
+520;A baseball player is swinging to hit the ball.;snli
+521;A dog is chasing a ball on the beach.;snli
+522;A dog is sleeping in the living room.;snli
+523;A white dog runs along a rocky shoreline.;snli
+524;A dog is running up the stairs at home.;snli
+525;A dog is running with his owner outside.;snli
+526;A fuzzy white lap dog runs along a rocky beach.;snli
+527;A dog snuggle down under blankets on the couch.;snli
+528;A small white dog running on a pebble covered beach.;snli
+529;A dog runs after his boy and the frisbee.;snli
+530;A baseball player is putting all his might in to throwing a ball.;snli
+531;Cheerleaders are waiting for the game to begin.;snli
+532;The football player killed the cheerleader with his bullet pass.;snli
+533;The Dallas Cowboys' cheerleaders are trying to pump-up the crowd.;snli
+534;Cheerleaders cheer on a field for an activity.;snli
+535;Some football players are practicing a running play.;snli
+536;The cheerleaders cheer for the start of the big game.;snli
+537;A woman in a blue shirt and green hat looks up at the camera.;snli
+538;A woman wearing a blue shirt and green hat looks at the camera;snli
+539;A woman wearing a blue shirt and green hat smiles at the camera;snli
+540;A woman wearing a blue shirt and green hat is on her cellphone;snli
+541;Cheerleaders are doing a cheer at a football field.;snli
+542;The cheerleaders are wearing black and red uniforms.;snli
+543;An excited, smiling woman stands at a red railing as she holds a boombox to one side.;snli
+544;A lady is kneeling wearing a blue shirt.;snli
+545;A lady is kneeling before the priest at church.;snli
+546;The silhouette of three people in front of a wall.;snli
+547;The people are running down the country road.;snli
+548;Two people wearing blue clothing are making hand gestures next to one another.;snli
+549;A man and a woman are standing next to each other and communicating through sign language.;snli
+550;A man is sitting with his hands in his pockets.;snli
+551;A spotted black and white dog splashes in the water.;snli
+552;the dog is eating out of his favorite bowl in the kitchen;snli
+553;A large group, wearing pink shirts, waves to onlookers.;snli
+554;A baby is playing with a strand of beads.;snli
+555;A woman is running a marathon in a park.;snli
+556;A group of people point forwards while performing some kind of act.;snli
+557;A group of people point forwards while doing something.;snli
+558;A group of people point somewhere while speaking.;snli
+559;people are dancing with one another during a religious ritual;snli
+560;An adult couple enjoys time in a hot tub.;snli
+561;A couple is in a hot tub outside.;snli
+562;An average looking man is playing the guitar.;snli
+563;Two tan and white dogs and one tan dog racing down the beach near the water.;snli
+564;A man and woman are walking down the street holding hands.;snli
+565;A man and woman are walking down opposite sides of the street.;snli
+566;A couple of people are holding hands while walking.;snli
+567;A newlywed couple hold hands and skip down the street.;snli
+568;A man is using his computer while seated at a desk.;snli
+569;A woman drinks a beer at her desk.;snli
+570;A camera crew is filming two women in formal dresses sitting on a blanket in the middle of a park.;snli
+571;man sitting down playing a game of chess alone;snli
+572;A guy playing a board game by himself.;snli
+573;A human sitting down playing one game of chess alone.;snli
+574;Young woman running as two guys in the back try to catch up to her.;snli
+575;A man in a blue shirt sits outside alone with a chessboard laid out in front of him.;snli
+576;A man in a blue shirt sitting outside behind a large wooden chessboard.;snli
+577;A man dressed in blue shirt and shorts sits at a table while playing black in chess.;snli
+578;A young man in a blue blazer and shorts sits alone in front of table with a chess game set up.;snli
+579;A man sits in front of a set up chess game.;snli
+580;A man is waiting for his chess opponent to arrive.;snli
+581;A grandma plays a game of connect four at the rotary club meeting.;snli
+582;A young Asian man sits behind a set chessboard waiting for the other player to arrive.;snli
+583;Two young men drink beer, leaning on a graffitied wall.;snli
+584;The men are being sprayed with cans of paint while they are passes out drunk in the alley.;snli
+585;A man being airlifted to safety after being in danger.;snli
+586;The helicopter is putting people in a dangerous area.;snli
+587;People in a meeting setting paying attention to a speaker in an orange shirt.;snli
+588;The people are listening to music on their CD players.;snli
+589;A meeting of young people sitting at a conference table.;snli
+590;young people are at a party having fun;snli
+591;A woman in a red shirt is speaking at a table in a room where three other people are listening to her.;snli
+592;A woman talks to two other women and a man with notepads in an office building with large windows.;snli
+593;a woman in an office building talks to a group of three taking notes on a notepad;snli
+594;a man talks to ducks in a pond;snli
+595;a woman in an office building talks to two other women and a man with notepads;snli
+596;A woman talks to dogs inside an office building.;snli
+597;The people are outside of the building looking inside.;snli
+598;A woman talks to others indoors about lunch.;snli
+599;Four people stand near a wall speaking to each other.;snli
+600;A woman happily talks to two other women.;snli
+601;A classroom is discussing the topics of the day.;snli
+602;The students are discussing the lecture in history class.;snli
+603;A man holds a clipboard and a pen as a woman looks at them.;snli
+604;A woman is looking at a man's possessions;snli
+605;A man with a bright green shirt is talking to a woman in a pink shirt.;snli
+606;A man in a green shirt holds out a clipboard for a woman in pink's attention.;snli
+607;A man wants a woman to look at his clipboard;snli
+608;a man is trying to get a woman to sign something;snli
+609;A man takes off his shirt to get a womans attention;snli
+610;A man in a bright green shirt shows a woman in a bright pink shirt something on a clipboard.;snli
+611;A man shows his boss something on a clipboard.;snli
+612;The man has something to tell the woman.;snli
+613;A man is teaching a woman a concept;snli
+614;Two people are looking at notes on an electronic tablet.;snli
+615;The man is drinking a cup of coffee.;snli
+616;A man is wearing a bright green shirt;snli
+617;The man and the woman are employees at the same business.;snli
+618;A man in a green shirt shows a woman his paychecks on a clipboard.;snli
+619;A man on a street in a bright t-shirt holds some sort of tablet towards a woman in a pink t-shirt and shades.;snli
+620;A man is showing a woman a funny video on his tablet;snli
+621;The man is on another street than the woman.;snli
+622;A man and a woman are eating in a resteraunt.;snli
+623;A woman shows a cell phone to a person standing nearby.;snli
+624;A couple are using a tablet to watch a video on the street.;snli
+625;A woman is shown a tablet by a man standing on the street.;snli
+626;A man having cell phone in his hand;snli
+627;A man shows directions to a museum on a tablet to a woman nearby.;snli
+628;The man handover the cell phone to the woman;snli
+629;A child with a yellow cup and milk all over his face.;snli
+630;The child had milk all over his face.;snli
+631;Two barefoot men are playing on a green lawn outside a building with other people in the background.;snli
+632;Two men in sandles are on the beach.;snli
+633;Small laughing child with blond-hair sitting at a table holding a green sippy cup.;snli
+634;A little boy drinks milk and gets milk all over his face and table.;snli
+635;the kid has milk on his face on a school day;snli
+636;Two pre-teen girls listening to music on an MP3 player with headphones.;snli
+637;A man is running behind a dogsled being pulled by four dogs.;snli
+638;A child was making a mess with milk.;snli
+639;The toddler has milk around the corners of his mouth.;snli
+640;A toddler just drank his first glass of milk.;snli
+641;The child was still unable to drink milk properly.;snli
+642;The toddler with milk around his mouth is making a mess.;snli
+643;A man dressed in warm clothing sleds behind four dogs in the snow.;snli
+644;A cowboy Roping a calf in a rodeo.;snli
+645;A cowboy with a brown hat is roping a calf in a rodeo.;snli
+646;A man is working in an office on a laptop.;snli
+647;A man wearing a blue shirt screaming or yelling with his arms raised up in the air.;snli
+648;Four people near a body of water, one sitting and three standing, while two people walk on a nearby sidewalk.;snli
+649;one person sits while three stand near a body of water.;snli
+650;A group of people are inside a building.;snli
+651;one person rests, sitting down while three others stand near a body of water;snli
+652;Two little girls lie on the carpet next to an O made of wooden blocks.;snli
+653;Two girls are taking a nap on the carpet.;snli
+654;People are fishing and walking next to the water.;snli
+655;Two guys playing football on a campus green.;snli
+656;They are eating fried fish on the boat;snli
+657;They are practicing before the big game tomorrow;snli
+658;Asian school children sitting on each others shoulders.;snli
+659;A man wearing a red sweater is sitting on a car bumper watching another person work.;snli
+660;there was a speed breaker on the road by which people are taking care;snli
+661;A young woman frolicking on the lawn in front of the us capitol building.;snli
+662;A young woman having a picnic on the lawn in front of the capitol building.;snli
+663;A young lady playing in front of the capitol building.;snli
+664;A young lady playing chase in front of the capitol building.;snli
+665;a man wearing a multicolored striped shirt playing the guitar on the street;snli
+666;A man in a colorful shirt is playing an instrument.;snli
+667;A man wearing a colorful and striped sweater plays music in the street.;snli
+668;Two goldfish are riding bikes in a giant pile of mashed potatoes.;snli
+669;The man is playing music on an instrument.;snli
+670;The man likes to receive attention for his music, which sounds terrible.;snli
+671;A man wearing a multi-color coat is playing the guitar on the street.;snli
+672;the man is trying to raise money for drugs;snli
+673;Street performer in colorful shirt performing with small guitar.;snli
+674;The street performer is sleeping on a park bench.;snli
+675;A street performer is trying to earn extra money.;snli
+676;Two men are painting a building while a third is walking past on his cellphone.;snli
+677;No one ever comes to this unpainted and dilapidated building.;snli
+678;A supervisor calls in his report on the painting crew.;snli
+679;Two men are on scaffolding as they paint above a storefront while a man on the sidewalk stands next to them talking on the phone.;snli
+680;A blue excavator digging a large hold in cement.;snli
+681;A man with khaki shorts on is holding a little girls hand while she walks in the water of a creek.;snli
+682;A man is holding a girls hand and walking through a creek.;snli
+683;A man with jean shorts on is holding a little girls hand while she flies a kite.;snli
+684;A man with shorts on is helping a little girl find her way home.;snli
+685;Two women are walking down a dirt path carrying loads on their heads.;snli
+686;Two beautiful women wearing white are walking down a dirt path carrying loads of nuts on their heads.;snli
+687;A street vendor in Asia tries to bring in more customers.;snli
+688;A man closing his shop for the day.;snli
+689;Young woman in a cafe checking her cellphone.;snli
+690;A woman and a girl are playing in a field of leaves;snli
+691;A mother and daughter are playing in a field.;snli
+692;A girl wearing a blue shirt, shorts, and sneakers is seated on a stool at a round table, looking at her phone.;snli
+693;Young lady dressed in black shorts and light blue shirt sitting outside at a public table looking at a picture on her camera with her left hand on her face.;snli
+694;A lady is using a cat to take pictures.;snli
+695;A young lady is riding her bike down a bike trail.;snli
+696;A young lady is embarrassed at the pictures she took.;snli
+697;A young lady is looking at a picture.;snli
+698;A lady looks at a picture on her camera;snli
+699;A young lady is looking at a picture of her dog on camera.;snli
+700;A young lady is looking at her camera.;snli
+701;A lady is taking pictures of the table.;snli
+702;A lady looks at pictures on her camera to print.;snli
+703;An ingnue sits with a world-weary expression, staring at old honeymoon photos.;snli
+704;A woman sitting at a table, taking a picture.;snli
+705;A woman in a blue shirt is sitting at a table and looking at her cellphone.;snli
+706;a woman looking at her cellphone call log;snli
+707;A boy in a blue, yellow, and orange shirt holding his arms out from his sides.;snli
+708;A gentleman in sleeveless blue shirt swings his hands at his sides;snli
+709;The boy is trying to pass a sobriety test.;snli
+710;A boy in a tri-colored shirt has his arms out to the side.;snli
+711;The boy does not have his arms out;snli
+712;A boy in multi-colored shirt hold his arms out from his sides;snli
+713;A little boy has his arms held out to his sides and he is sticking out his tongue.;snli
+714;The boy is pretending to be an airplane.;snli
+715;A girl dressed in bikinis walk graciously past a group of gentlemen at the beach;snli
+716;The boy in the blue and yellow top is standing with arms outstretched.;snli
+717;The boy in the blue and yellow top is standing with arms outstretched 40 feet wide.;snli
+718;The boy in the blue and yellow top is standing with arms outstretched waiting for his grandmother to hug him.;snli
+719;A boy in a blue, yellow, and orange shirt plays outside.;snli
+720;A child with a brightly colored shirt plays outside.;snli
+721;The child is playing on the jungle gym.;snli
+722;The child is outdoors in his bright colored shirt.;snli
+723;A boy looks down and spreads his arms wide;snli
+724;A boy is holding his arms out to hug his mother.;snli
+725;A boy has his arms crossed over his chest.;snli
+726;A man wearing a gray sweater walking through a pile of leaves.;snli
+727;A lady wearing a blue print shirt and green head cover smiles for the camera.;snli
+728;The man wearing lots of medals is watching the girl in the yellow bikini top.;snli
+729;A military officer watches girls at the base pool.;snli
+730;A man dances with a woman in a gown.;snli
+731;A decorated man sees a scantily clad female.;snli
+732;A young man in his mid twenties is kicking his left foot about two feet off the leaf covered ground, with paved asphalt and green plants and trees in the background.;snli
+733;someone in his twenties kicks at the ground;snli
+734;A woman wearing a green headscarf laughs while a woman in the background paddles a boat.;snli
+735;A woman laughs while another paddles a boat.;snli
+736;Young people playing with a long jump rope in the street.;snli
+737;A group of children play jump rope in the streets while others watch in the background.;snli
+738;Several children in green uniforms are jumping rope in the middle of a road while other kids watch;snli
+739;Several children are jumping rope in the middle of a road while other kids watch;snli
+740;A brilliant red sun sets over a deserted beach;snli
+741;Hispanic woman wearing a red plaid shirt works on sewing an article of clothing.;snli
+742;A group of young girls playing jump rope in the street.;snli
+743;A man in a tan suit is using a pay phone to make a call.;snli
+744;Some children are trying out for the jump rope competition.;snli
+745;A large golden dog sniffing the butt of a white dog;snli
+746;A pair of mutts exchange a greeting in a park.;snli
+747;A sumo wrestler with a brown belt is pushing another wrestler in a bout.;snli
+748;Two large dogs greet other while their owners watch.;snli
+749;A man in a red and black jacket, blue shirt, lots of silver necklaces, and his blue jeans falling down, checks out a woman wearing a black leather jacket, yellow bra, pink fingerless gloves, and sunglasses.;snli
+750;A boy is playing with a toy truck.;snli
+751;A man is trying to impress a woman at a bar.;snli
+752;A woman with a green sweater has a happy expression.;snli
+753;A woman is smiling because she just won the lottery.;snli
+754;A woman with dark hair is wearing a green sweater.;snli
+755;A woman with black hair is wearing a sweater.;snli
+756;A smiling lady in a green jacket at a public gathering.;snli
+757;A woman wearing a bathing suit at the beach with her friends;snli
+758;A woman enjoying a gathering with her office buddies;snli
+759;A woman in a green jacket and black sunglasses outside in a crowd.;snli
+760;The woman needs sunglasses because it is bright.;snli
+761;A lady with sunglasses on her head and a green sweatshirt is looking off-camera.;snli
+762;A woman is taking a break from a photo shoot.;snli
+763;A climber is making his way up a snowy mountainside.;snli
+764;A man dressed in snow-gear takes a leap into a snow-covered ravine.;snli
+765;A guy is skiing in the Colorado mountains.;snli
+766;a lone person jumping through the air from one snowy mountain to another.;snli
+767;A person jumps in the air to see how high they can jump.;snli
+768;A man in shorts and a white garment stands at the base of stairs framed by black railing.;snli
+769;A woman is waiting for someone framed by white fencing.;snli
+770;A man in shorts waits for his wife at the bottom of the stairs.;snli
+771;A man stands at the bottom of the stairs.;snli
+772;There is no snow where the man is;snli
+773;Two Asian people sit at a blue table in a food court.;snli
+774;A couple is sleeping with their baby at home;snli
+775;A couple is singing a lullaby to a baby;snli
+776;A soccer player jumping in air during a game.;snli
+777;A soccer player taking flight across the field during a game.;snli
+778;A soccer player jumping into the air during a game to avoid being hit in the face.;snli
+779;A soccer player jumping up while a game is in progess.;snli
+780;A shot-on-goal action photo of soccer players in red and black uniforms.;snli
+781;a decisive moment in a soccer game is frozen in photo.;snli
+782;a hockey player nails his first hat trick;snli
+783;The red team knocked the ball toward the goal and the black team tried to block it.;snli
+784;The red and black team are playing a game.;snli
+785;Six soccer players on field with player in red uniform in the air and ball airborne.;snli
+786;One team is in red, the other, blue.;snli
+787;Two little kids showing their American pride in their star spangled wagon.;snli
+788;Two adults mix up a batch of margaritas.;snli
+789;Two kids are in a parade in a wagon wearing red white and blue;snli
+790;A young man in a red quilted vest displays an assortment of silver pendants around his neck as he watches a woman in a yellow bikini top, a black jacket, and bright pink fingerless gloves go by.;snli
+791;An elderly couple dances next to a table where a boy is sitting with his head down.;snli
+792;A young man has his head on the table.;snli
+793;The boy's grandparents approached and asked if he was okay.;snli
+794;A small girl stands among many large watermelons.;snli
+795;There is a girl sitting near the watermelon;snli
+796;There is a girl standing thinking about purchasing the watermelon;snli
+797;An elderly couple dance in front of a juke box while a guy in shorts sleeps at a nearby table;snli
+798;An old couple dance in by a juke box while a dude wearing shorts sleeps near a table;snli
+799;An old couple dance next to a guy sleeping;snli
+800;An elderly couple, both wearing white shirts, dancing and a young male sitting at a table.;snli
+801;The couple has been together a long time.;snli
+802;A child stoops to pick up a watermelon from a large pile of them.;snli
+803;A girl is shopping for watermelon with her parents at a farmers' market.;snli
+804;A woman is alone, planting watermelon seeds in a garden in the spring.;snli
+805;A small girl dressed in a yellow dress with flowers on it bends over near a large pile of watermelons.;snli
+806;The girl is under the age of 88 years old.;snli
+807;The girl is alone and asleep in her bedroom.;snli
+808;A little girl picking up a watermelon from a pile.;snli
+809;a young girl in a flowery dress surrounded by watermelons;snli
+810;A seated woman with short hair and a camera throws a Frisbee to a brown dog.;snli
+811;The woman throws a Frisbee to the dog.;snli
+812;The woman is chasing the dog that took her camera.;snli
+813;A woman throws a disc to a dog and gets ready to take a picture.;snli
+814;Asian city scene of people in street with bright lights and glass buildings behind.;snli
+815;A group of people are sitting in a field;snli
+816;There are people in front of buildings that are brightly lit.;snli
+817;There is a group of people in Seoul at night.;snli
+818;A man is painting a portrait of an outside scene that includes a street sign with a bicycle chained to it.;snli
+819;A man is painting a landscape of an outdoors area.;snli
+820;A man is painting a landscape of a city.;snli
+821;An older man stands on the sidewalk painting the view.;snli
+822;The old man is painting a view of a bathroom.;snli
+823;A crowded street, in an Asian country, where the buildings are dominated by the Seiko building.;snli
+824;The crowds are at an indoor swimming meet.;snli
+825;there was a storm so nobody went outside;snli
+826;A crowded street in Asia has tall buildings.;snli
+827;A crowded street in china where there are lots of buildings.;snli
+828;A small boy has gotten into the cabinet and gotten flour and crisco all over himself.;snli
+829;A male painting a scene in front of him.;snli
+830;A person is painting the sky and trees.;snli
+831;There are lots of cars on the street.;snli
+832;Cars are passing through a town in road race;snli
+833;A picture of a city with a sign welcoming travelers on a busy street.;snli
+834;A picture of a city is on a street;snli
+835;Overlooking a street with a sign above shops that states Welcome To Golden.;snli
+836;The shop sign is laying on the sidewalk.;snli
+837;"The ""Welcome to Golden"" sigh if lit up.";snli
+838;There are cars driving down a street with a sign displaying Welcome to Golden.;snli
+839;"A main street scene of a small town with an overhead welcome sign that says ""Welcome to Golden"".";snli
+840;Little Girl in brown shirt and blue jean skirt dances on wood floor.;snli
+841;A girl is dancing in a brown shirt and blue jean skirt on a wooden floor with her father;snli
+842;A girl is dancing in a brown shirt and blue jean skirt on a wooden floor;snli
+843;Poop's on the floor while the girl dances;snli
+844;A young man is performing a jump on a skateboard while another young man photographs his stunt.;snli
+845;Two boys are taking skateboarding photographs for a magazine.;snli
+846;Two boys are riding bikes down the street.;snli
+847;A young girl dancing in her socks on a wooden floor strewn with pink balloons.;snli
+848;The girl seems very sad about the blue balloons.;snli
+849;Child with pink strings on head dancing surrounded by confetti, balloons.;snli
+850;"A good-looking firefighter sets up ""Do Not Cross"" tape in the city.";snli
+851;A firefighter sets up a do not cross;snli
+852;A firefighter sets up tape in a city;snli
+853;A fireman protects an area by setting up a boundary while others watch.;snli
+854;A fireman is working hard to keep people safe.;snli
+855;A fireman is trying to run away from the fire.;snli
+856;A fireman is trying to stop the brushfire.;snli
+857;The blond girl is dancing inside a house.;snli
+858;The girl is sitting on a bench in a park.;snli
+859;Two people standing in front of a large statue of a woman, other statues and busts visible in the background.;snli
+860;Two people waiting in line for food at a crowded restaurant.;snli
+861;Two people posing for photos with an ancient statue outdoors.;snli
+862;Two people standing standing near a large statue, with other states nearby.;snli
+863;a man with a white covering is walking up a flight of stairs.;snli
+864;An old woman is falling down the stairs.;snli
+865;A man is climbing the stairs to his apartment after a long day at work.;snli
+866;A woman talking to four little children outside.;snli
+867;The teacher is showing her students some items in the park.;snli
+868;A teacher is reading a book in class.;snli
+869;A woman posing for a picture with her children.;snli
+870;A woman and a few children in an alleyway in between a vehicle and a fence.;snli
+871;The woman and children are in their dining room.;snli
+872;The people are trapped between the vehicle and fence.;snli
+873;A woman in a floral dress talks to children in front of a van.;snli
+874;A lady in a dress is taking kids to a museum.;snli
+875;Two men with heads down signing a paper.;snli
+876;A man and a woman having an intimate conversation in front a statue.;snli
+877;A couple are having dinner in a restaurant.;snli
+878;A man in a Tour De Force shirt is working on a bicycle.;snli
+879;A man is working on his favorite bike.;snli
+880;A young toddler wearing pink sandals is walking on hopscotch numbers.;snli
+881;A young girl wears sandals and walks on hopscotch numbers.;snli
+882;A grown man wearing pink sandals plays hopscotch.;snli
+883;Two women are talking while children are sitting on their laps.;snli
+884;Two women, each embracing a little girl, catch up at a small family gathering.;snli
+885;The women were showing their daughters an animal.;snli
+886;Two women holding children talking to one another.;snli
+887;The women are having a playdate with their toddlers.;snli
+888;Two women are running at the park looking for their children.;snli
+889;Two women, each with a child, look at each other.;snli
+890;A black-and-white dog carries a stick in his mouth as he swims in the clear water.;snli
+891;A black and white dog with a stick in its mouth is swimming.;snli
+892;A dog with an object in it's mouth is in the water.;snli
+893;A Dalmatian with a stick in its mouth is swimming slowly.;snli
+894;A cat with a stick in its mouth is in a bathtub.;snli
+895;A pirate is chasing a princess down the sidewalk.;snli
+896;A dog is fetching a stick out of very clear water.;snli
+897;A dog is fetching a stick out of very clear water in the back yard.;snli
+898;A dog is sleeping on the front porch.;snli
+899;A dog in the water carries a stick in his mouth.;snli
+900;A dog is going for a walk in the park.;snli
+901;A dog fetches a stick out of the lake.;snli
+902;A dog carries a stick in his mouth.;snli
+903;Two children are running down a sidewalk dressed in costumes.;snli
+904;1 little boy wearing a pirate costume following closely behind a little girl wearing a blue dress carrying a orange pumpkin bucket and walking down the sidewalk.;snli
+905;Boy in costume followed by a girl in costume.;snli
+906;A boy in a clown costume followed by a girl.;snli
+907;A little boy in a pirate costume is running behind a little girl in a princess costume carrying an orange pumpkin along the sidewalk.;snli
+908;The kids are sitting in their desks during class.;snli
+909;A man with a gray shirt holds a young infant in his hands.;snli
+910;Two girls, each in a dress walking together.;snli
+911;Two girls are doing exercise to live healthy.;snli
+912;A group of people are sitting around a table under a blue sunshade.;snli
+913;The wedding party guests sit down to enjoy the feast.;snli
+914;Several men sit outside on brick ledges built around tall trees.;snli
+915;Workers are eating a meal while one man sits on a pile of plywood.;snli
+916;Workers are talking and sitting on metal beams.;snli
+917;Workers are sitting next to a work zone eating food.;snli
+918;A motorcycle racer is in action at the track.;snli
+919;A blond woman with her hair up is taking off a white sweatshirt.;snli
+920;A woman is taking off a blue shirt.;snli
+921;A person is a red hat and winter jacket is looking into the distance.;snli
+922;A farmer stares to see if he can see his cattle herd.;snli
+923;A man is riding a dirtbike with his friend.;snli
+924;The man is accelerating on the dirt bike.;snli
+925;A biker is racing his dirt bike on a course.;snli
+926;A man is sitting with his head facing down, while other people are looking in his direction.;snli
+927;Small blond-haired girl drinking a glass of juice.;snli
+928;The girl drinking the juice has brown hair.;snli
+929;A person in a red coat and a running black and brown dog.;snli
+930;A person in a red dress is running behind a black animal.;snli
+931;A person in a red dress is trying to catch a dog.;snli
+932;A person in a red dress is cooking.;snli
+933;a woman in a red jacket watches as a black and brown dog runs away from her in woodland clearing.;snli
+934;Outside by the trees, a woman wearing jeans and red jacket throws something for a German shepherd to chase.;snli
+935;A woman throwing a squeaky toy into the water for her dog to chase.;snli
+936;A woman throws a ball for a german sheherd to chase;snli
+937;a woman plays fetch with her boyfriends dog;snli
+938;A young lady is teaching her pet dog how to play fetch.;snli
+939;A man in a dog costume is staring creepily through a restaurant window.;snli
+940;A woman and an animal are interacting outdoors.;snli
+941;a woman and a german shepherd are pictured;snli
+942;A woman plays with her cat in a grassy field;snli
+943;A dog is preparing to run away from a person interacting with it.;snli
+944;A dog cowers in the corner as the veterenarian approaches with a thermometer;snli
+945;A woman in a black and orange jacket throws a stick for a brown and black dog to fetch.;snli
+946;A woman is training her dog in the park.;snli
+947;Two men trying to build something together, while having fun.;snli
+948;Two women and one man sit on a bench.;snli
+949;The women and the man are on a bench.;snli
+950;A man and two women sitting on a bench.;snli
+951;A man and his two sisters sit together.;snli
+952;A man and two women in black jackets holding umbrellas sit on a long wooden bench.;snli
+953;A man is talking about a threesome with two women.;snli
+954;A man is sitting on a bench with 22 women.;snli
+955;man in red canada shirt standing with three men in army uniform;snli
+956;Man standing with three men in army uniform;snli
+957;Man standing with three men in army uniform near School;snli
+958;A woman checks her purse while at a outside cafe.;snli
+959;A man checks his back pocket for his wallet;snli
+960;A woman looks for her money to tip the waiter.;snli
+961;A person looks in her purse at a restaurant.;snli
+962;The cowboy waved to the crowd while he was riding the horse.;snli
+963;A woman is sitting at an outdoor dining table.;snli
+964;A person is at an outdoor restaurant waiting for their food.;snli
+965;Lady wearing a yellow top is sitting on a chair;snli
+966;A lady wearing a yellow top is standing on the kitchen table.;snli
+967;A lady wearing a yellow top is sitting on a chair and shaving her legs.;snli
+968;a child is pushing another kid in a wheeler dressed in a red top and wearing a cap.;snli
+969;The kids are pretending they are in a race.;snli
+970;A cowboy is riding a bucking bull in a rodeo arena.;snli
+971;A man rides a horse on a trail.;snli
+972;A cowboy rides a bull at a rodeo.;snli
+973;A professional bull rider rides a large black bull.;snli
+974;A blond child is pulling a wagon with a little blond boy in it.;snli
+975;A child is pulling a toy wagon filled with toys.;snli
+976;A man wearing a tan coat signs papers for another man wearing a blue coat.;snli
+977;One man writes on papers, while another man stands by.;snli
+978;A guy signs away his rights to his gold mine, while his lawyer waits by.;snli
+979;A male lifeguard busily saves someone's life while his companion simply scratches his head.;snli
+980;A groom and a bride are standing on the grass with his hand on her waist.;snli
+981;They are about to have their first kiss as man and wife.;snli
+982;The groom and bride are sitting at the table.;snli
+983;a girl wearing a blue and pink swimsuit is throwing stones into a lake.;snli
+984;A man and a woman being intimate, with their legs in the water.;snli
+985;a husband and wife are playing footsies in the tub;snli
+986;A group of people stand on a grassy field.;snli
+987;A group of people are sitting in the bleachers;snli
+988;Men in beach clothes work by themselves at the park.;snli
+989;An elderly woman places carrots into a casserole.;snli
+990;An elderly woman puts beets into a casserole;snli
+991;An elderly woman puts carrots into a casserole;snli
+992;An elderly woman slices carrots for a casserole;snli
+993;A man in a gray vehicle feeding sheep.;snli
+994;Three men are grouped around the back of a car with its tailgate out, two of the men clothed in yellow uniforms and one in blue.;snli
+995;Three men are grouped around the back of a car.;snli
+996;Three men are grouped around the back of a car laughing.;snli
+997;Three men, two wearing yellow suits, are looking in the back of a car.;snli
+998;Emergency personnel looking into the back of a car.;snli
+999;Emergency personnel are looking for a child in a car.;snli
+1000;Firefighters are rescuing a cat from the tree.;snli
+1001;Firefighters are looking for a cat in the car.;snli
+1002;A man in a kitchen is frying breaded food in a cast iron pan.;snli
+1003;A woman in colorful garb with her back to the camera and cloth on her hear.;snli
+1004;A woman has her back to the camera.;snli
+1005;A woman in colorful native attire featuring a blue shirt with a colorful design displays her dark hair braided with red ribbons.;snli
+1006;A woman is dressed stylishly in native garb.;snli
+1007;A woman is dressed in her native clothing in preparation for her wedding.;snli
+1008;A man in ruffles pushes a stroller through a park.;snli
+1009;The man has his baby in the stroller.;snli
+1010;The man is pushing the stroller through his house.;snli
+1011;An oddly dressed man pushing a stroller down a sidewalk in a park.;snli
+1012;The man is walking his dog on the beach.;snli
+1013;A man wearing weird clothes is walking through a park.;snli
+1014;The man is preparing a feast for his wife;snli
+1015;a young man wearing a backpack and sunglasses is walking towards a shopping area.;snli
+1016;The man is planning to rob the store;snli
+1017;A young man wearing a backpack and dark glasses approaches the brick building where there is a bit of graffiti on the wall.;snli
+1018;The young man has glasses on his face.;snli
+1019;There is nothing on the wall but bricks.;snli
+1020;A brown dog running with two white and brown dogs on the seashore with crashing waves behind them.;snli
+1021;The dogs are running along the shore to meet their master who just beached his kayak;snli
+1022;The dogs were indorrs waiting for their dinner;snli
+1023;The dogs were outdoors running along the shore;snli
+1024;A young man in blue sunglasses walking in front of a red brick building.;snli
+1025;A guy with red glasses is sitting here.;snli
+1026;Man in blue glasses walking pass a building;snli
+1027;Some guys with glasses are going pass the buildings;snli
+1028;A dog jumps to catch a toy in the snow.;snli
+1029;A dog jumps to catch a toy in Waikiki.;snli
+1030;A dog jumps to catch a ball in the snow.;snli
+1031;An animal is jumping in a place that is not hot.;snli
+1032;Black dog jumping into the air to catch a toy in the snow.;snli
+1033;The dog is jumping to catch a frisbee.;snli
+1034;A black dog in snow is jumping off the ground to catch a stick.;snli
+1035;A dog is about to catch a stick in his mouth.;snli
+1036;A person is hanging up pictures of women with a few onlookers watching surrounded by bikes.;snli
+1037;People are paying attention to the person hanging pictures;snli
+1038;There are people watching another person hang up pictures.;snli
+1039;A man is hanging paintings of women for an art gallery in a museum.;snli
+1040;No one is hanging up pictures at all.;snli
+1041;Somebody is hanging up pictures while people watch.;snli
+1042;There's a person drawing a crowd by hanging up nude photos of ladies.;snli
+1043;The person is a photographer selling his pictures.;snli
+1044;A creepy guy is putting his favorite photos of the woman he's stalking up in his shrine to her.;snli
+1045;Five men, one wearing a white shirt standing on something, hanging up a picture of a child.;snli
+1046;Five men, one standing on a chair, are hanging a picture.;snli
+1047;The men are walking to the nearest gentleman's club.;snli
+1048;A group of men are hanging a picture on a wall.;snli
+1049;A man in a black shirt hangs a picture.;snli
+1050;A group of men, all wearing white shirts, hang a picture.;snli
+1051;There's a group of men hanging up a picture.;snli
+1052;Five men are helping a child to hang a picture.;snli
+1053;A man is hanging a picture of a child.;snli
+1054;A man is hanging up a picture of a child.;snli
+1055;Four men are watching a fifth as he hangs a picture of a child.;snli
+1056;The men are hanging up a picture of a missing child.;snli
+1057;A man is hanging a picture of his child surrounded by family memebers and friends.;snli
+1058;There are four Eastern guys working on and hanging pictures of humans.;snli
+1059;A man in a white shirt hangs a painting in a run down store while other men watch.;snli
+1060;An artist is showing his painting to others.;snli
+1061;Men are playing soccer, the one in front is about to kick the ball.;snli
+1062;The man kicks the ball towards the goal.;snli
+1063;A man is putting up a poster in front of a shop.;snli
+1064;A man is cleaning a bathroom in a shop.;snli
+1065;The shop did not agree to let the man put up the poster.;snli
+1066;A man is putting up a sale sign in front of a shop.;snli
+1067;A man hangs a poster of Iron Man in front of a shop.;snli
+1068;A woman walks into a comic book shop.;snli
+1069;A man is putting a movie poster up for the next big action movie.;snli
+1070;A man hangs a poster in front of a shop.;snli
+1071;There is a man in front of the shop.;snli
+1072;A man is standing in front of a shop.;snli
+1073;The Arsenal football club warms-up on the soccer field as a few fans watch.;snli
+1074;A soccer teaming getting ready for a game.;snli
+1075;Soccer players warm up by kicking the soccer ball around while the crowd waits.;snli
+1076;The players were on a bus which broke down on the highway;snli
+1077;The crowd looked on while the players prepared themselves.;snli
+1078;The crowd watched the players warm up and shouted encouragement;snli
+1079;People sit and relax next to a pool in a plaza.;snli
+1080;The pool is in a hotel, and these are guests.;snli
+1081;This is the pool of Queen Elizabeth II, and these people are Hessians from the Revolutionary War.;snli
+1082;In a bowling alley, a man holding a green bowling ball looks ahead at the pins that he must knock down.;snli
+1083;The man is playing in an professional bowling competition.;snli
+1084;The man is bowling with a frozen turkey.;snli
+1085;A man wearing blue jeans and red bowling shoes stands in a bowling alley lane with a green ball in his hand.;snli
+1086;A man stands in a bowling alley lane.;snli
+1087;The man is bowling with his bowling group tonight.;snli
+1088;A guy stands with a green bowling ball in his hand, and looks down the bowling lane.;snli
+1089;A man holding a green bowling ball stands by the ball return machine in a bowling alley.;snli
+1090;A sad man holding a green bowling ball stands by the ball return machine in a bowling alley.;snli
+1091;A woman holding a green bowling ball stands by the ball return machine in a bowling alley.;snli
+1092;A person holding a green bowling ball stands by the ball return machine in a bowling alley.;snli
+1093;A man is standing up holding a green bowling ball with his right hand.;snli
+1094;A man is playing with his bowling league.;snli
+1095;A man is riding a horse on the beach.;snli
+1096;A group of people sitting at a table outside talking.;snli
+1097;A group sits together outside and talk over drinks.;snli
+1098;A man stands at the bar ordering drinks for his friends.;snli
+1099;A group of men and women are having a discussion in a restaurant.;snli
+1100;a crowd has a discussion in a hospital;snli
+1101;A group of adults is having a discussion at a table under a tent.;snli
+1102;A group of people sitting around a picnic table.;snli
+1103;A group of people gathers on the grass in a backyard with tents, tables, and chairs set up.;snli
+1104;A group of people gathering on the concrete.;snli
+1105;A group of people gathering on the grass.;snli
+1106;A group of people standing on the grass.;snli
+1107;A black dog swimming in water near rocks.;snli
+1108;A dog is laying in front of a fireplace.;snli
+1109;A dog is outside playing in the water.;snli
+1110;A dog is chasing a turtle through the water.;snli
+1111;the three boys are all holding onto a flotation device in the water.;snli
+1112;Three boys are in a body of water.;snli
+1113;A soccer game where the team in yellow is attempting to advance past the team in white towards the goalie wearing a black top and blue shorts.;snli
+1114;The team in yellow is going to score.;snli
+1115;The team in yellow is playing a hockey game.;snli
+1116;The goalie is sitting down on the sideline, wearing a white top and red shorts.;snli
+1117;This World Cup match has a very close score.;snli
+1118;The yellow team is ahead by three points.;snli
+1119;The team in yellow is trying to score a goal.;snli
+1120;Soccer game is happening the yellow team is winning.;snli
+1121;A group of people are playing a game of soccer.;snli
+1122;There is a soccer game with a team in yellow.;snli
+1123;A group of people are playing soccer and two players from opposing teams are battling for the ball.;snli
+1124;Men are playing for the final goal in a soccer game.;snli
+1125;A soccer match between a team with white jerseys, and a team with yellow jerseys.;snli
+1126;People relax around a large community fountain in a park.;snli
+1127;Community members are spending time in the park near a foundtain.;snli
+1128;A woman playing the violin with sunglasses on her head.;snli
+1129;a woman is learning to play the violin;snli
+1130;A female violinist surrounded by other violinists competing for a prize.;snli
+1131;A man, wearing revolutionary period clothes, is ringing a bell.;snli
+1132;A man, wearing a revolutionary apparel is making noise with a bell.;snli
+1133;A man,wearing revolutionary apparel is ringing a bell with his right hand.;snli
+1134;A couple of people working around a pile of rocks.;snli
+1135;A man wearing a gray cap is looking down.;snli
+1136;A man is looking down at a puddle;snli
+1137;An older man dressed in blue historical clothing is ringing a bell in his right hand.;snli
+1138;Three young children consisting of two girls and a boy who is holding an apple with a bite out of it, are posing on a scenic mountain view background.;snli
+1139;The children are posing because their parents made them.;snli
+1140;The three young childeren were hold an apple with a bite on it;snli
+1141;Sisters and brother are posing for a shoot;snli
+1142;A boy eats an apple that his sisters threw at him in the car on the way to the mountains.;snli
+1143;The elderly women are posing for a picture.;snli
+1144;The children are posing for a family photo.;snli
+1145;Kids pose in front of a mountain background.;snli
+1146;The three childeren were enjoying the mountain view background.;snli
+1147;two little girls, one in a green jacket and one in a pink jacket, and a little boy in a green jacket holding an apple sitting on a rock.;snli
+1148;A bunch of old people sit on a rock.;snli
+1149;Three kids are waiting for their fourth friend.;snli
+1150;An old man wearing khaki pants and a brown shirt standing on the sidewalk in front of a building.;snli
+1151;The old man is standing outside of a building.;snli
+1152;An old man is standing by a building in downtown.;snli
+1153;The old man is taking a nap at a house.;snli
+1154;A man in costume is ringing a bell.;snli
+1155;A man in costume is reading a book.;snli
+1156;The women are reading the charts to assess their patients' condition.;snli
+1157;The women are playing a game of badminton.;snli
+1158;A person in an orange shirt is laying on the ground while others are standing around her, smiling.;snli
+1159;Two men are mixing stuff in a bowl.;snli
+1160;Two men are eating junk food in a car.;snli
+1161;Five people on stage performing and acting while girl lay's on belly.;snli
+1162;The troup of actors is performing in a play.;snli
+1163;The group of actors performs on the street corner.;snli
+1164;Four people are acting behind a woman in a yellow shirt is lying on the ground.;snli
+1165;Two men cook together with a metal bowl, near a hanging plant.;snli
+1166;Near a hanging plant, a metal bowl was used to cook by two mens;snli
+1167;a woman on a yellow shirt is on the floor.;snli
+1168;A woman lying on her shirt so her pants wont get dirty.;snli
+1169;Two men share a laugh while in the kitchen.;snli
+1170;Two men share a laugh while in the kitchen at the table and with dinner on their plates.;snli
+1171;Two men engage in a fight while in the kitchen.;snli
+1172;Two men are cooking in the kitchen using rice milk.;snli
+1173;The men go out to eat at a restaurant.;snli
+1174;A kite surfer begins to fall in the ocean.;snli
+1175;A kite surfer is trying to keep their balance;snli
+1176;There is a windsurfer balancing on choppy water.;snli
+1177;There is a windsurfer who fell on the ground.;snli
+1178;There is a windsurfer who fell in choppy water.;snli
+1179;The water was choppy as the man parasailed.;snli
+1180;The calm waves turned choppy as the main started to parasail.;snli
+1181;A woman in a white dress with a tiara sings in a chorus, which has a row of men in sailor hats.;snli
+1182;The men in sailor hats are dancing on stage.;snli
+1183;The woman wearing a tiara is getting married.;snli
+1184;A little kid enjoying some sledding on a winter day.;snli
+1185;The person is interested in a water jet.;snli
+1186;two people in the water of a fountain;snli
+1187;A boy in a red and blue shirt painting a log.;snli
+1188;A boy painting a log in the rain.;snli
+1189;Child in red and blue shirt painting a log.;snli
+1190;A log is being painted by a child.;snli
+1191;A child in a multicolored shirt is painting a log;snli
+1192;The child is painting a log for his grandpa.;snli
+1193;A child with clothes on is painting somthing;snli
+1194;A child in a plaid shirt is painting.;snli
+1195;The child in the purple shirt is playing basketball.;snli
+1196;The child uses a log to float down the river.;snli
+1197;This crazy dog in a yellow shirt learned how to paint!;snli
+1198;Two people are next to a fountain with a red bottom and arches of water.;snli
+1199;Two people are next to a fountain together.;snli
+1200;Two people are next to a fountain in the park.;snli
+1201;An expectant woman happily lets another listen to the baby inside of her.;snli
+1202;A woman shares photos of her unborn child smiling.;snli
+1203;A pregnant lady shares the sounds of her pregnancy.;snli
+1204;Someone puts their ear up to a pregnant belly.;snli
+1205;Soccer players on a field from a distance.;snli
+1206;Busy ChinaTown street corner where people are walking past an open front store.;snli
+1207;A girl wearing a dress is blowing bubbles at a dock.;snli
+1208;A man wearing a dress at the dock.;snli
+1209;A girl standing at the dock in Atlantic City.;snli
+1210;A man wearing a blue shirt is sitting on a brick planter next to some paintings.;snli
+1211;A man is sitting on a planter admiring the art.;snli
+1212;A child in formal clothing is walking along the edge of a stony area that is littered in places.;snli
+1213;A young boy wearing a light blue jacket walks across the brick patio.;snli
+1214;A young boy with a blue coat makes a funny face as he walks towards the grass.;snli
+1215;The child was walking near the grass making a funny face.;snli
+1216;The man was walking near the grass making a funny face.;snli
+1217;A little boy with a blue jacket is making a sour face at the camera.;snli
+1218;The little boy hates having his picture taken.;snli
+1219;People in a truck-full of sacks in a field full of sheep.;snli
+1220;Three people stand proudly by a truck stocked with building supplies in the street.;snli
+1221;Habitat for Humanity prepares to build a house.;snli
+1222;Three working men smile in front of a truck while holding construction equipment.;snli
+1223;The three men are laughing at a joke.;snli
+1224;Three men are smiling and posing behind a truck loaded with various construction supplies.;snli
+1225;A view of a marketplace full of people in an asian country.;snli
+1226;A busy Asian Market where people are doing business.;snli
+1227;A view of a crowed place in an asian country.;snli
+1228;A woman in blue jeans and a dark jacket walks in front of a building.;snli
+1229;A woman walked pasted the front of a building.;snli
+1230;THe woman is wearing pink shorts and blue jacket.;snli
+1231;The surfer catches a big wave but stays on his board.;snli
+1232;The dogs run and play with a red ball.;snli
+1233;Gray dog running down pavement toward laundry line in courtyard.;snli
+1234;A dog is chasing a ball in a backyard.;snli
+1235;A cocker spaniel is playing in the grass.;snli
+1236;A cat is playing with yarn in the kitchen.;snli
+1237;An older couple posing in front of a fountain for a picture;snli
+1238;Older couple posing for a picture in front of a fountain.;snli
+1239;The parents of the younger male are posing for a picture in front of a water fountain.;snli
+1240;A photographer takes a picture of the boy's parents by the fountain.;snli
+1241;A girl and her parents sit by the fountain.;snli
+1242;A man and woman watching two kids while the man holds a balloon.;snli
+1243;A group of people sitting at some sort of gathering.;snli
+1244;A couple pose in front of a fountain.;snli
+1245;They are waiting to be picked up by aliens;snli
+1246;a couple of friends share an umbrella on a rainy day;snli
+1247;a brown dog is jumping up at a woman who is wearing a brown skirt.;snli
+1248;The dog sees his owner after a few hours.;snli
+1249;One dog is jumping at the lady while the other walks away.;snli
+1250;Two dogs are sleeping next to the lady.;snli
+1251;A golden retriever is excitedly greeting a woman as a little dog walks towards the camera.;snli
+1252;The little dog is also a golden retriever.;snli
+1253;A little dog rides on top of the golden retriever;snli
+1254;A dog charges towards the camera because its food is in front of it.;snli
+1255;The dog is running away from the woman.;snli
+1256;Two children are building something on the floor.;snli
+1257;Children playing with or cleaning up miscellaneous items.;snli
+1258;Young children outside playing with computer junk on the ground.;snli
+1259;The children are trying to build a robot.;snli
+1260;Two dogs are playing with a bone in their masters house.;snli
+1261;Two dogs are playing and wrestling with each other.;snli
+1262;Two cats are chasing each other through the house.;snli
+1263;Two dogs are playing together on white carpet near a couch.;snli
+1264;A scuba diver stands on top of rocks after emerging from the water.;snli
+1265;A scuba diver performnef on top of rocks.;snli
+1266;A scuba diver stand on a top of rocks to jump into the well.;snli
+1267;3 safety jacket clad Construction workers appear to be poking something interesting with their shovels.;snli
+1268;The construction workers are looking at something interesting.;snli
+1269;Some construction workers are falling from a tower.;snli
+1270;The construction workers are using a pick axes to poke each other.;snli
+1271;3 construction workers poking a dead animal with shovels.;snli
+1272;The workers are poking something that is alive.;snli
+1273;Three construction workers have found historical artifacts on their job site.;snli
+1274;Three male construction workers are examining something in a field, two of them are holding shovels.;snli
+1275;Two out of three costruction workers are holding shovels while examining an item in the field.;snli
+1276;Three male construction workers hold shovels as they examine something in a field.;snli
+1277;One worker holding a shovel examines something in a field with two colleagues.;snli
+1278;Construction workers are looking at a deer in a field.;snli
+1279;Three men stand outdoors examining something that is in a field.;snli
+1280;Construction workers are looking at something in a field.;snli
+1281;Two dogs are playing chase in a field.;snli
+1282;Two of the three are also wearing high heels;snli
+1283;Construction workers are sitting around a table playing poker.;snli
+1284;Three male workers in bright jackets are working in a field with shovels.;snli
+1285;The three workers are not working at all.;snli
+1286;The men are construction workers, working in the field.;snli
+1287;The male workers were working up a sweat.;snli
+1288;The men are wearing very dull work clothes.;snli
+1289;People with safety vests stand in a field with shovels.;snli
+1290;People in safety vests sit in benches eating lunch.;snli
+1291;The safety vests are a bright yellow color.;snli
+1292;A man in the city on a cellphone.;snli
+1293;A man talks to his wife on a cellphone.;snli
+1294;Two people heavily dressed, carrying backpacks, walk through snow.;snli
+1295;There are two people walking in the snow.;snli
+1296;The two people with backpacks are hiking on a sunny day.;snli
+1297;A silver car with all of its doors open.;snli
+1298;Two people walk along the side of a snowy mountain.;snli
+1299;A man and a woman are walking in the snow.;snli
+1300;The people are trying to get a better view of something.;snli
+1301;There is snow and more than one person.;snli
+1302;Two people, with buildings behind them, are standing near a blue car with two doors open.;snli
+1303;People in a city gathered around a blue station wagon.;snli
+1304;People are next to a vehicle in the city.;snli
+1305;A family has gathered around a car to say goodbye to a departing relative.;snli
+1306;A light blue car stopped outside with all its doors open.;snli
+1307;A car has been jacked and left abandoned.;snli
+1308;A car is parked with all of its doors open.;snli
+1309;Woman in white dress holds dove while sitting in flowered tree.;snli
+1310;The woman is trying to nurse the dove back to health.;snli
+1311;The woman is wearing black with doves perched in the tree above her.;snli
+1312;A blond woman in a white dress sits in a flowering tree while holding a white bird.;snli
+1313;The woman beats two eggs to make breakfast for her husband.;snli
+1314;The woman is playing the trumpet on the diving board.;snli
+1315;The woman is being photographed for a magazine.;snli
+1316;A white bird is being held by a woman who is blonde, dressed in a white dress, and sitting in a flowering tree.;snli
+1317;The woman uses her other hand to balance on the branch.;snli
+1318;A nice looking woman, who is dressed in white, is sitting in a tree holding a bird.;snli
+1319;A bird is caged by a woman in a house.;snli
+1320;The woman is older than 15 years old.;snli
+1321;a blond girl in a white dress holding a bird in a tree.;snli
+1322;A lady is wearing a dress holding a mouse;snli
+1323;A lady is wearing a dress holding a bird;snli
+1324;A lady is wearing a dress holding a friendly bird;snli
+1325;A woman is holding a bird while sitting in a flowering tree.;snli
+1326;the woman is returning a bird to its nest.;snli
+1327;the tree has fallen on a bird while sad owner looks concerned;snli
+1328;The woman is swimming in the ocean with her bird.;snli
+1329;A woman is feeding a sick bird while sitting in a tree.;snli
+1330;People are picking in a marsh in Louisiana.;snli
+1331;A woman and a bird are near each other.;snli
+1332;The lady is in her apartment staring at a sparrow.;snli
+1333;A woman tends to an injured bird at the bird's nest.;snli
+1334;two people working in water next to field;snli
+1335;Two people are planting small bushes near a grassy area.;snli
+1336;a woman walking in front of an outdoor mural, prominently featuring a portrait of a bald man.;snli
+1337;A person is walking in front of an outdoor mural of the president.;snli
+1338;A girl walking in front of a mural featuring a portrait of a bald guy.;snli
+1339;A woman is on her way home and passes a mural.;snli
+1340;a lady walks past a large painting outside;snli
+1341;A person is walking past the portrait of our new alien overlord king.;snli
+1342;A person walks in front of a wall painting of a man with no hair.;snli
+1343;A woman is looking at an outdoor mural.;snli
+1344;A girl walking in front painting featuring a guy wearing black.;snli
+1345;a lady walks past a large painting that she did;snli
+1346;A woman is looking at a mural inside of a museum.;snli
+1347;A person is walking in front of an outdoor portrait of a man.;snli
+1348;A woman dressed in a white shirt is walking by graffiti.;snli
+1349;A woman is walking in a dangerous neighborhood.;snli
+1350;Woman walking by a mural of an old bald man.;snli
+1351;A woman is walking in an art museum.;snli
+1352;This wall has a picture of a man on it.;snli
+1353;There is a wall and it has a picture on it.;snli
+1354;There is a wall with a painting on it.;snli
+1355;She is admiring the painting on the wall;snli
+1356;A woman is a red tank top is riding horse.;snli
+1357;There is no person is on a horse.;snli
+1358;Two men riding on a motorbike in an Asian community.;snli
+1359;A man sits on a deck, taking a break from fishing.;snli
+1360;A man sits in his fishing boat out at sea.;snli
+1361;A man sits on a deck with his fishing pole nearby.;snli
+1362;The man is sitting on a wooden rail near two fishing poles.;snli
+1363;Someone in a yellow hat is sitting next to two fishing poles.;snli
+1364;The person is next to a fishing pole.;snli
+1365;The person is sitting next to one fishing pole.;snli
+1366;A man sits on the edge of a wooden bench with two fishing poles behind him.;snli
+1367;A man with fishing poles behind him sits on a bench.;snli
+1368;A man sits on a wooden bench in a train station filled with bags.;snli
+1369;A man sides on a green painted wooden bench.;snli
+1370;A man sits on the edge of a brige, looking out, fishing poles behind him.;snli
+1371;Young men and women gather outside in the streets for a party.;snli
+1372;Young men and women are gathering inside in the streets for a party.;snli
+1373;Young men and women are gathering outside to celebrate the Fourth of July.;snli
+1374;People on the roof of a building look down on a crowded street.;snli
+1375;People are outside on the roof looking at an accident on the street.;snli
+1376;Several people watching a scene on the street below from an apartment building.;snli
+1377;A group of people gathered around a brick building that has three men on top of it.;snli
+1378;The men are making a lot of noise.;snli
+1379;The man rows the boat down the river.;snli
+1380;The guitarist ends the song with a leap.;snli
+1381;A young man in black glasses and a striped shirt jumping up while playing a guitar.;snli
+1382;A man gets excited as he performs his music in front of the large crowd.;snli
+1383;A man sits calmly as he plays a slow piece for the group on his guitar.;snli
+1384;a young man playing an electric guitar while jumping up and down in front of fans.;snli
+1385;The guitar playing a new solo he just worked on.;snli
+1386;The guitar playing is rolling around on the floor covered with peanuts.;snli
+1387;A guitar playing is playing for a audience.;snli
+1388;The guy in a striped shirt is playing his electric guitar.;snli
+1389;A male has a musical instrument taking request.;snli
+1390;A man in a striped polo plays a blue electric guitar.;snli
+1391;The man is riding a unicycle in the circus.;snli
+1392;Two men playing instruments for money while a woman is on her phone.;snli
+1393;people playing instruments for money because they are homeless;snli
+1394;Two men, playing a soprano saxophone and guitar play music on a street corner while a listener checks her phone.;snli
+1395;the men were playing music on the street corner;snli
+1396;the musicians were playing in a large stadium;snli
+1397;the listener was using an iphone to check her texts;snli
+1398;A lady standing on the corner using her phone.;snli
+1399;A girl photographs street musicians with her phone.;snli
+1400;A person aquestrian horse jumping over a wooden fence.;snli
+1401;A person who was surgically connected to a horse escapes from captivity.;snli
+1402;A person kills a horse to send it to a glue factory.;snli
+1403;Two men are playing instruments on a sidewalk.;snli
+1404;Street performers make their living on the corner.;snli
+1405;Two musicians perform in a sold out hall.;snli
+1406;A woman wearing a black top and red skirt is throwing a ball into the air.;snli
+1407;A woman is playing catch with her son.;snli
+1408;Several people read by a campfire at night.;snli
+1409;The lonely camper poured water on the campfire.;snli
+1410;A group of people are burning everything they can.;snli
+1411;A large black and white dog is swimming in the water.;snli
+1412;A woman in a butchers shop leans over a counter and handles a large strip of meat.;snli
+1413;The lady butcher shows a customer a large cut.;snli
+1414;A woman with thinning hair is working in a meat processing plant.;snli
+1415;A woman is handling meat from a clear glass meat cage while standing before a wooden counter with a large metal bowl on it.;snli
+1416;Woman handling meat from in front of a wooden counter.;snli
+1417;Woman petting her dog in the backyard, on a calm sunny day.;snli
+1418;Female chef preparing meat at a large wooden counter, with seasonings in a bowl.;snli
+1419;A room full of children raise their hands, fingers extended, to the sky.;snli
+1420;There is a room full of seventeen children.;snli
+1421;There is a room with a single child.;snli
+1422;A woman walks past a fountain with palm trees in the background.;snli
+1423;A girl walks passed a puddle with trees behind here.;snli
+1424;A woman walks past water with tall trees in the background.;snli
+1425;A woman goes for a swim in the water fountain with trees in the background.;snli
+1426;An African American man in a suit gestures with his hands as he speaks.;snli
+1427;A black man in a suit is moving his hands diligently while speaking.;snli
+1428;A white man in overalls is moving his hands while speaking.;snli
+1429;A black man has great enthusiasm and is waving his hands while speaking.;snli
+1430;A man is browsing things for sale on the street.;snli
+1431;A man is browsing things for sale on the road.;snli
+1432;A sad man is browsing things for sale on the street.;snli
+1433;A woman is browsing things for sale on the street.;snli
+1434;A man on a high ladder is painting the outside of a house.;snli
+1435;A man outside on a high ladder is painting the outside of a house.;snli
+1436;A man is giving his house a fresh coat of paint.;snli
+1437;Repairing a house in the hot sun how unfunny that has to be.;snli
+1438;The sun is shining directly on the house to be repaired.;snli
+1439;A man in khaki pants and a light shirt and hat stands on scaffolding to apply stucco to a building.;snli
+1440;Children getting temporary tattoos from a Muslim lady.;snli
+1441;Old man paint on canvas by the river;snli
+1442;A little boy with blue jeans runs on the leaves in the woods.;snli
+1443;A small boy runs away from his babysitter and into the woods.;snli
+1444;A young boy in a blue shirt is walking on a trail through the woods.;snli
+1445;A young boy is looking for birds in the woods.;snli
+1446;A young child with blond-hair, wearing a blue shirt and jeans is walking in the woods.;snli
+1447;A child walks through the woods looking for animals.;snli
+1448;A small child in blue shirt and blue jeans is running through a wooded path over dry leaves.;snli
+1449;A child is running in Autumn with his dad.;snli
+1450;Little Timmy was chased by goblins through the forest;snli
+1451;a small child in a pink shirt running through a flowery field.;snli
+1452;A boy is running through a rose garden.;snli
+1453;A crew gets ready at the sideline in an empty basketball stadium.;snli
+1454;Men standing at the edge of a basketball court talking to each other.;snli
+1455;commentators and broadcasters at there both in an arena before the game.;snli
+1456;Commentators and broadcasters are preparing at the arena before a game;snli
+1457;Commentators and broadcasters are rehearsing at the arena before a game;snli
+1458;Commentators and broadcasters are rushing through traffic before a game;snli
+1459;Three basketball commentators are talking while standing on the sidelines.;snli
+1460;Three basketball commentators are fighting the basketball players.;snli
+1461;Three people are watching basketball from the sideline;snli
+1462;Reporters or commentators at a sporting event are standing and sitting behind a large sign.;snli
+1463;Reporters or commentators at a sporting event await the press conference from the head coach.;snli
+1464;A group of people have gathered at a sporting event behind a large sign.;snli
+1465;No one gathered at a sporting event near the large sign.;snli
+1466;Two women attempt to blow out the candles of a multicolored, multi-tiered cake while a third woman holds a candle up in the air.;snli
+1467;There is only one food item visible, and it is a burrito.;snli
+1468;One of the women is having her 30th birthday.;snli
+1469;A girl touches the fountain with her foot.;snli
+1470;A little girl dressed in pink and white is walking.;snli
+1471;The girl is being blown away by the wind.;snli
+1472;A young girl in all pink clothing walking.;snli
+1473;A young Asian girl wearing a pink outfit is walking past a bicycle.;snli
+1474;A young girl wears blue in the classroom.;snli
+1475;A young girl wears pink with black shoes.;snli
+1476;A man poses in mid jump beside a left turn road sign and a recumbent bicycle in the snow, behind him there is a large body of water.;snli
+1477;A man is posing beside a road sign in the snow;snli
+1478;A man is making faces while jumping in the air.;snli
+1479;A little girl is dressed in the same color.;snli
+1480;A little girl is wearing a pink dress.;snli
+1481;A man jumping up in the snow next to a body of water.;snli
+1482;A young boy paddling in a body of water on a small floating vessel near the shoreline.;snli
+1483;A little boy is swimming by the Jersey Shore;snli
+1484;A little boy is swimming in his backyard pool;snli
+1485;A little boy is outside in the water;snli
+1486;A nurse treating a child with cleft palate.;snli
+1487;There are four canoes in the background, beautiful green grass, with three kids standing at the shore of the lake, that is crystal and crisp looking, and there is a redheaded boy wearing a red shirt, red life vest, and is in a yellow kayak, with a double ended yellow paddle.;snli
+1488;Three kids prepare to go canoeing while their friend uses his kayak.;snli
+1489;Some kids are taking a test at school.;snli
+1490;Three kids stand at the shore of a lake.;snli
+1491;The kids are getting ready to go for a swim.;snli
+1492;The redheaded boy is ready to kayak on the lake.;snli
+1493;A church youth group prepares to go out on the lake in kayaks and canoes.;snli
+1494;Three children stand near a clear lake and some canoes, while a fourth child sits in a kayak holding a paddle, dressed in red.;snli
+1495;A lake is trying to pull the kids into it.;snli
+1496;In the background, there are 3 people on the shore among several canoes, and the young man in the foreground is paddling through the water, while wearing a life jacket and smiling.;snli
+1497;The people are on a family canoe trip.;snli
+1498;A group of people white water rafts down a raging river.;snli
+1499;A child goes paddleboarding for the first time.;snli
+1500;A smiling young girl sitting at a table has an upturned bowl on her head.;snli
+1501;A child has a bowl on her head.;snli
+1502;A young girl has a bowl on her head filled with spaghetti.;snli
+1503;A girl has a plate on her head.;snli
+1504;Three men sit together while one looks at a book.;snli
+1505;A nurse monitors a young child who appears to be post-op.;snli
+1506;The little girl in the blue sweater is reading her book.;snli
+1507;A little girl is playing a board game with her brother.;snli
+1508;A small child is reading her book to her stuffed animals.;snli
+1509;The nurse smiles as she gently rubs the tummy of the sleeping child.;snli
+1510;The sleeping child lies on a hospital bed.;snli
+1511;A little girl with a backpack sitting down looking at a book.;snli
+1512;A baseball player holds his bat, while the catcher and umpire squat behind him and a crowd watches.;snli
+1513;There is a baseball player standing at home plate, the catcher behind him has his hand up in the air with his glove, and the umpire is standing behind him, and many people in the stands.;snli
+1514;The final game of the championship is being played while many fans are in the stands.;snli
+1515;Fans fill the seats as they watch their favorite soccer teams battle it out on the pitch.;snli
+1516;The baseball player is batting with a blue bat.;snli
+1517;The basketball player is going to throw the ball.;snli
+1518;A man in a red and white uniform holding a bat.;snli
+1519;One man with a bat wearing red and white.;snli
+1520;Someone wearing green and yellow holds a crickett bat.;snli
+1521;The person has a piece of athletic equipment.;snli
+1522;A boat sits alone at the docks edge.;snli
+1523;The boat was surrounded by other large steam ships.;snli
+1524;A girl in a pink tank top and green pants is running through a field of tall flowers.;snli
+1525;A girl in a tank top and pants is running.;snli
+1526;A girl in a pink tank top and green pants is running through a field of tall yellow flowers.;snli
+1527;A girl in a blue dress is sitting under a tall tree.;snli
+1528;The people are all on the same team.;snli
+1529;Two men talk at a crowded beach on a nice day.;snli
+1530;Two men talk about their wives at the beach.;snli
+1531;Four skaters are competing in a high speed skating competition, and turning on the track.;snli
+1532;Four athletes from two different teams are competing in their sport on the ice rink.;snli
+1533;People are playing a game on the ice.;snli
+1534;People are playing a game wearing colorful skates.;snli
+1535;Four people turn a corner in a speed skating event.;snli
+1536;The skaters compete in an olympic qualifying event.;snli
+1537;The boy and girl are swimming across the lake.;snli
+1538;A team of soccer players in white strips are running around cones on a sports field.;snli
+1539;The soccer players are standing around drinking water.;snli
+1540;Runners must go uphill in the marathon to reach the checkpoint.;snli
+1541;An older man in jeans and a sweater is lifting down a box from the top of a pile.;snli
+1542;The man is looking for something in the boxes.;snli
+1543;An older man places a wooden crate on top of a stack of wooden crates.;snli
+1544;Man in sweater stacks wooden crates next to pile of plastic crates.;snli
+1545;Man stacking wooden crates on top of each other.;snli
+1546;A man is using a machine to stack crates.;snli
+1547;A man stacks crates next to each other.;snli
+1548;An elderly male is reaching for a crate.;snli
+1549;An old man trying to get to a crate;snli
+1550;A girl in a green sweatshirt sitting down and a girl in a dress leaning on blue lockers.;snli
+1551;The girls are getting dressed for the game.;snli
+1552;A girl is on a stool while another girl is reading and leaning on some lockers;snli
+1553;A girl is busy reading while another sits nearby.;snli
+1554;Two girls are getting books out of their lockers.;snli
+1555;Two men in baseball hats and bright yellow shirts work behind a fence.;snli
+1556;Construction workers are digging a hole behind the fence.;snli
+1557;Two men are standing on top of a fence.;snli
+1558;Two men a hats and yellow shirts are working behind a fence.;snli
+1559;The group of men are fighting chickens behind a fence.;snli
+1560;The men in hats and shirts are working fast behind a fence.;snli
+1561;Two men work on digging up something behind a fence.;snli
+1562;Two men in yellow shirts doze off in the grass.;snli
+1563;Two men wearing bright green shirts are looking for something by a bush.;snli
+1564;Two men are looking for a lost ring.;snli
+1565;Two workers in neon green shirts opening a utility box.;snli
+1566;Two workers are hammering in nails on a deck.;snli
+1567;Men wearing lime green shirts work behind a chain link fence.;snli
+1568;Sad Men wearing lime green shirts work behind a chain link fence.;snli
+1569;People wearing lime green shirts work behind a chain link fence.;snli
+1570;Women wearing lime green shirts work behind a chain link fence.;snli
+1571;A man with a drink cup is talking to another man.;snli
+1572;Two guys are talking and someone interrupts them.;snli
+1573;An older man with a cane stands against a wall.;snli
+1574;A disabled man is resting his painful back;snli
+1575;One person holds a giant snowball over two others on the ground in a snowy background.;snli
+1576;One person holds a giant snowball over two others on the school grounds in a snowy background.;snli
+1577;One person is holding two other people hostage with a gun on a plane.;snli
+1578;A man holding a large chunk of snow over two people on the ground.;snli
+1579;The guy is getting ready to throw snow at some people.;snli
+1580;The father and the two kids are playing on the beach.;snli
+1581;The father is going to throw snow on his two kids.;snli
+1582;Two friends await their demise as a man with a giant snowball held above his head waits for the perfect time to strike;snli
+1583;The two dogs are sleeping under the porch of the house.;snli
+1584;The two dogs are chasing a frisbee across the field, thrown over and over by their owner.;snli
+1585;Two dogs are in the backyard glaring at each other over which will get to reach the bone first.;snli
+1586;Two small dogs run across the green grass.;snli
+1587;the pets are laying on the floor inside.;snli
+1588;some small dogs are running to their owners;snli
+1589;Two small brown dogs run across the green grass.;snli
+1590;two small dogs playing with each other in the grass;snli
+1591;A man in a white jacket standing in front of an older woman in a white jacket playing crochet.;snli
+1592;The man wearing the jacket stood in front of two women.;snli
+1593;The man was playing crochet with the two women.;snli
+1594;a woman in a coat watching a man in a jacket kick balls.;snli
+1595;A woman is watching a man kick things.;snli
+1596;A man and woman are looking at many balls on the ground.;snli
+1597;A girl looking at some squares on the bench;snli
+1598;A man and old woman is playing a game;snli
+1599;An old woman plays a game with her son.;snli
+1600;The animal likes to roll in the winter to stay warm.;snli
+1601;Elderly bald man with a beard playing the guitar in a band.;snli
+1602;The band is eating lunch at their favorite cafe;snli
+1603;The band is playing a benefit concert in the park.;snli
+1604;An older man plying a guitar in a band.;snli
+1605;The man is playing the harmonica in his bathroom.;snli
+1606;An older man in a white sure is playing a guitar while others play different instruments.;snli
+1607;A band playing for their fans at the local arena;snli
+1608;A group of people holding babies in a hospital;snli
+1609;Man in white t-shirt and white beard plays electric guitar with a fiddler in a band.;snli
+1610;The band was trying to get their break.;snli
+1611;The band had a fiddler and a guitarist.;snli
+1612;Two children are laughing and playing in a tire swing at a park.;snli
+1613;Children are playing on a slide at the park.;snli
+1614;Children are playing in a tire swing on a sunny morning.;snli
+1615;Students in a classroom of some sort are doing art projects.;snli
+1616;Students are working on their art projects in the classroom.;snli
+1617;The students are using crayon for their art projects.;snli
+1618;The students are being taught an algebra lesson.;snli
+1619;A small black and brown dog is standing in the snow.;snli
+1620;A dog is rolling around in the snow.;snli
+1621;a large black dog fighting with another large brown and black dog.;snli
+1622;A group of cheerleaders are cheering on a field.;snli
+1623;A group of cheerleaders practicing during a football game.;snli
+1624;A old man with a cane standing outside.;snli
+1625;An old man talks to his neighbor while standing in the park.;snli
+1626;The woman, in the beret, is in the process of writing information in regard to what she sees in the microscope.;snli
+1627;a woman writes down what she is seeing;snli
+1628;A woman with brown hair and wearing a black hat is looking in a microscope and writing something down.;snli
+1629;The woman is in the beauty salon having her hair and nails done;snli
+1630;The woman is using a microscope and taking notes;snli
+1631;The scientist has just made a discovery and is writing it down;snli
+1632;A woman wearing a black code and hat is at school looking through a microscope and taking notes.;snli
+1633;The teaching assistant shows the class how to document changes in the bacteria slides.;snli
+1634;Ensuring that an accurate account of all I see here is appropriately recorded.;snli
+1635;Ensuring that all the clothes are clean and pressed.;snli
+1636;Ensuring an accurate account is kept in case there are legal issues in the future.;snli
+1637;There are people getting on a tour boat.;snli
+1638;A large dock runs into a lake next to a group of people swimming.;snli
+1639;An iced over lake is bereft of anyone around it;snli
+1640;A group gathers at the lake on the first day of summer;snli
+1641;Dog is searching for somehting in the snow;snli
+1642;A woman buys fresh food from a stand at a farmer's market.;snli
+1643;Girl gets all her fingers cutoff trying to catch a Frisbee, fail!;snli
+1644;A girl is about to go to the hospital.;snli
+1645;Two woman playing a frisbee game, the frisbee in the air about to be caught by one of the women.;snli
+1646;Two women are playing frisbee together in a grass field outdoors.;snli
+1647;A couple of women are playing frisbee on the beach.;snli
+1648;A couple of women are playing catch with a baseball.;snli
+1649;Two women are watching a spaceship fly through the air.;snli
+1650;Two men in baseball hats selling asparagus and other vegetables from an outdoor stand to a woman carrying a green bag.;snli
+1651;Two men sell vegetables at an outdoor stand.;snli
+1652;The men are selling home made cheese and butter.;snli
+1653;Man serving a customer from a vegetable stand.;snli
+1654;A woman in a white dress sits while another woman blow dries her hair.;snli
+1655;A lady is getting ready for a banquet.;snli
+1656;A young man in a green long-sleeved shirt and tie playing a saxophone.;snli
+1657;the young man is wearing a black t-shirt modeled after a tuxedo;snli
+1658;Three men and one woman in a band on a stage.;snli
+1659;The blond boy is playing the saxophone for a band.;snli
+1660;A boy is playing in the school band on stage.;snli
+1661;Young man in a school band who has center stage and is doing his best.;snli
+1662;A young band is competing in a talent show.;snli
+1663;A group of men are working in a play.;snli
+1664;A woman in a blue dress sings while her bandmates play instruments.;snli
+1665;Some people are playing instruments for a school holiday concert.;snli
+1666;The singing woman is wearing a green dress.;snli
+1667;A band with four members, one female, plays for a small audience.;snli
+1668;A musical quintet are performing at a festival.;snli
+1669;A musical quintet are performing their favorite song at a festival.;snli
+1670;A 5-person band is performing on a stage inside a tent.;snli
+1671;A solo performer sits alone on the stage.;snli
+1672;A band performs a musical number on stage.;snli
+1673;A large woman in a blue jacket is looking irritated.;snli
+1674;a heavy set woman wearing a jacket is not happy.;snli
+1675;a slim woman is enjoying her blue jacket.;snli
+1676;Two men in wheelchairs crash and they reach for the ball.;snli
+1677;A boogie boarder surfs on a man made wave.;snli
+1678;There is a person with a boogie board.;snli
+1679;The person with the boogie board is walking home on the sidewalk.;snli
+1680;A bride and groom dance surrounded by people at the reception.;snli
+1681;Two people in love are in the middle of a huge crowd.;snli
+1682;Two complete strangers are the only ones in the room.;snli
+1683;A married couple is in the proximity of other humans.;snli
+1684;A young blond woman in a blue top sits at a green table studying;snli
+1685;The young women is outside at a red table.;snli
+1686;A referee is speaking to some players on a field.;snli
+1687;Man and woman discussing a topic while sitting in chairs, a water bottle sitting on the table.;snli
+1688;Two teams compete in a game of football and are hurrying to catch the ball midair.;snli
+1689;Players from two teams tangle together in pursuit of a flying rugby ball.;snli
+1690;Black and White Team rugby players are struggling over the ball in front of a white wall that has blue writing.;snli
+1691;The rugby players forgot to bring their ball today.;snli
+1692;The words on the wall are wrote in blue.;snli
+1693;A team of men are playing a game in which several of them are jumping to reach the ball.;snli
+1694;A group of rugby players are struggling over the ball.;snli
+1695;A group of basketball players rest on the sidelines.;snli
+1696;A group of rugby players fight for a ball in the final minutes of a game.;snli
+1697;A boy is hugging a smaller boy from behind.;snli
+1698;Two young boys wearing jerseys are washing their hands in the bathroom.;snli
+1699;A couple of young boys are washing their hands.;snli
+1700;A couple of kids are covered in dirt.;snli
+1701;A couple of kids are running down a hall.;snli
+1702;Asian women in traditional garb are walking in a parade.;snli
+1703;A man in green shorts and a brown shirt and sunglasses takes a picture.;snli
+1704;The sun is behind the subject of the man taking the picture.;snli
+1705;The man taking the picture is wearing shorts and sunglasses.;snli
+1706;A man in purple shorts takes a picture.;snli
+1707;A group of people sitting at an outdoor table eating food and drinking alcoholic beverages.;snli
+1708;The people are inside at the dining room table.;snli
+1709;A man and a woman are standing in front of a building with some graffiti on it.;snli
+1710;A woman and man are standing in front of a building.;snli
+1711;A couple is painting graffiti on the side of a building.;snli
+1712;A single man is alone in a boat on the ocean.;snli
+1713;A young girl and a young guy are outside on a street facing each other.;snli
+1714;The man is asking his girlfriend to marry him.;snli
+1715;Two people are sitting in the movie theater.;snli
+1716;A woman in a black jacket is talking to a man who's wearing white sneakers next to a yellow building.;snli
+1717;"Two people stand in front of a building with graffiti that reads ""Boss Life"".";snli
+1718;The building was burnt down due to arson.;snli
+1719;A group of adults in casual dress sit down to eat a barbecued meal.;snli
+1720;Two people are facing each other on the corner of a street.;snli
+1721;The two people are standing back to back.;snli
+1722;A woman in red sips a drink as she looks at the people below her.;snli
+1723;A woman in black sips a drink as she looks at the dogs below her.;snli
+1724;A woman in red sips a drink as she looks at the people below her in the street.;snli
+1725;Many people wearing red and white are walking in the street as another lady, wearing a red blouse, watches from above holding a drink.;snli
+1726;A view of a city street where many people wearing white and red are walking.;snli
+1727;There is a view of a city street with some people wearing white and red walking.;snli
+1728;There is a view of a city street with many people wearing white and red while walking.;snli
+1729;There is no view of the city street with some people wearing black and yellow while walking.;snli
+1730;Two elderly people sing in microphones while playing instruments.;snli
+1731;The couple sing harmoniously as the woman plucks her glittery banjo, it's sparkle standing out in the crowd.;snli
+1732;The man and woman singing due play their instruments, although the woman's instrument is blocked by something.;snli
+1733;The couple sing and play together nicely, even if the man's brown hat is blocking the woman's instrument.;snli
+1734;A young woman sips a drink on a balcony during a Bull run.;snli
+1735;The woman ate a candy bar on the balcony.;snli
+1736;The woman sat on the balcony and watched the Bull run.;snli
+1737;A couple of old people playing instruments and singing.;snli
+1738;the old people are on their death beds watching tv;snli
+1739;Several people are standing in a fenced in area.;snli
+1740;There are some people standing around whilst fenced in.;snli
+1741;There are eight people surrounded by a fence.;snli
+1742;A few people are sitting down in a fenced area.;snli
+1743;A winter landscape with four people walking in the snow.;snli
+1744;A winter scene with four people walking to a party.;snli
+1745;A winter landscape with people dressed in swimsuits.;snli
+1746;A pit bull and a golden retriever take the short cut home.;snli
+1747;The dogs are walking to the water in the desert.;snli
+1748;Two dogs are walking away from the camera through shrubs and grass.;snli
+1749;A man holds onto a tether as he waterskis splashing water every direction!;snli
+1750;A couple of mutts are chasing a squirrel.;snli
+1751;A young Indian girl in a blue dress is pointing and smiling at the camera.;snli
+1752;Girls wearing a blue dress holding a thin, long, blue fabric while one girl is smiling and pointing to the camera.;snli
+1753;Girls wearing blue dresses play with a piece of fabric and pose for a picture.;snli
+1754;There is a smiling girl pointing to the camera.;snli
+1755;A man holding fabric while a girl is smiling and pointing to the camera.;snli
+1756;a number of girls dressed in blue, one of whom smiles;snli
+1757;A lady holds fabric while another woman points at the camera.;snli
+1758;A girl smiles and points at a picture.;snli
+1759;Girls in swimsuits get ready to dive into an empty pool.;snli
+1760;two woman pose for a picture, and one of them is holding fabric.;snli
+1761;A dog watches a frisbee pass over his head and yawns.;snli
+1762;A dog catches a frisbee in the park.;snli
+1763;Girls in blue dresses are holding large blue cloths.;snli
+1764;A group of girls using cloths to wash a car.;snli
+1765;A group of girls in blue holding cloths.;snli
+1766;A man wearing swim goggles is doing the crawl in a lane in a swimming pool.;snli
+1767;Two Indian people are dancing at a wedding with flower petals all over the floor.;snli
+1768;Two Indian people people dancing at a wedding.;snli
+1769;The boys draw in the sand with sticks.;snli
+1770;The teenagers try to out draw each other on the beach.;snli
+1771;A girl wearing a blue dress is sliding down a tube slide.;snli
+1772;A girl wearing a red dress is playing on the monkey bars.;snli
+1773;A girl wearing a blue dress is playing at a playground.;snli
+1774;A girl wearing a blue dress is playing at a playground with friends.;snli
+1775;The swimmer is coming up from the water.;snli
+1776;A bearded man wears a red bandanna and a leather jacket over a teeshirt with an American flag on it.;snli
+1777;A bearded man is wearing an America-themed shirt.;snli
+1778;A swimmer's hand is taken as he gets out of the water.;snli
+1779;The swimmer is diving deep into the ocean.;snli
+1780;The swimmer is getting out of the water.;snli
+1781;A swimmer exits the water after a competition.;snli
+1782;The child wearing the green shirt is on the beach talking with some people.;snli
+1783;Four people in sunhats are sitting and talking together on the sand of the ocean shore.;snli
+1784;Three people without hats are sitting on the beach.;snli
+1785;Three guys sitting on a sandy beach near the water and one is talking to the two little girls.;snli
+1786;The guys sat on the beach near the water.;snli
+1787;The guys sat on the beach near the water watching the sunset.;snli
+1788;A small group of adults and children are wearing hats and shorts on the sandy beach near the blue water.;snli
+1789;A small group of adults and children are not wearing hats;snli
+1790;A small group of adults and children are wearing hats;snli
+1791;A small group of adults and children are joyously wearing hats;snli
+1792;Four people with hats are relaxing at the coast.;snli
+1793;Some people are having a large party on the coast.;snli
+1794;A man wearing a beret walks down the street and smiles.;snli
+1795;Two people are outside walking through the snow.;snli
+1796;People sitting on black chairs on a bus.;snli
+1797;A woman who has just finished her dance performance3.;snli
+1798;A woman just finished dancing for a massive audience.;snli
+1799;A young woman is drawing with a Sharpie marker.;snli
+1800;A young girl is drawing using a Sharpie marker;snli
+1801;Three art students are walking in the art classroom and exchanging their paint brushes;snli
+1802;A young women is drawing in art class.;snli
+1803;An art student is performing a sketch of the field in Sharpie marker;snli
+1804;A man is drawing with a colored pencil.;snli
+1805;A woman is drawing at a table with a blue permanent marker.;snli
+1806;A woman is drawing a dinosaur at a table with a blue permanent marker.;snli
+1807;A woman is writing on a wall with a colored pencil.;snli
+1808;A young woman draws lines on a tile with a permanent marker.;snli
+1809;The carpenter draws lines on the wooden board.;snli
+1810;The artist makes a quick sketch on the tile.;snli
+1811;A woman with strawberry blond-hair decorates a tile in yellow and black.;snli
+1812;A woman is painting a tile at a picnic table.;snli
+1813;An art student uses a blue Sharpie to create a pattern on thick, white poster board.;snli
+1814;A student draws a chevron pattern on poster board.;snli
+1815;A military man walks in front of a procession of people during a parade.;snli
+1816;Barefooted, someone appears to be looking in a bathroom mirror.;snli
+1817;A person appears to be looking in a mirror.;snli
+1818;A person in a black shirt is looking in a mirror.;snli
+1819;A woman is looking down into a pool of tears preparing to dive into them.;snli
+1820;A biker pops a wheelie along side the colorful wall.;snli
+1821;A person is riding a bike near a wall.;snli
+1822;A biker does a trick with other bikers.;snli
+1823;A person is walking their bike by a wall.;snli
+1824;A woman in a yellow shirts walks through a park with her dog not far behind.;snli
+1825;The man is running away from the cat;snli
+1826;The woman is trying to out-walk her dog;snli
+1827;A man on a small bicycle performing a trick on a wall covered with graffiti.;snli
+1828;A man is riding a bicycle up a graffiti covered wall.;snli
+1829;A man is performing a trick on a bicycle to a small crowd.;snli
+1830;A man is riding a bicycle down a country road.;snli
+1831;someone hitting a ball during the championship baseball game;snli
+1832;A trials biker doing a stunt on a graffiti-filled wall.;snli
+1833;A bmx rider does a trick against a graffiti covered wall.;snli
+1834;The bmx rider has been riding his entire life.;snli
+1835;The bike rider is sitting on a chair.;snli
+1836;Two men, both wearing green cycling clothes and helmets, are riding bicycles.;snli
+1837;Two guys eat hamburgers in front of TV.;snli
+1838;A lady in a purple shirt is painting a picture of a person on a curved wall.;snli
+1839;A naked lady painting stick figures with her feces.;snli
+1840;A lady painting a picture of a famous person.;snli
+1841;A woman with a purple shirt painting another woman on a wall.;snli
+1842;A woman who is wearing a purple shirt is painting another woman who has purple on as well.;snli
+1843;A man is dancing at a party while a woman is on the wall.;snli
+1844;A woman who is wearing purple is painting another woman.;snli
+1845;The woman was painting a portrait of herself.;snli
+1846;Three young boys are dressed in hoodies facing the same way.;snli
+1847;Three young boys are all in swimming trunks and no shirts.;snli
+1848;A man and a woman conversing in a city.;snli
+1849;A man and a woman eating at an outdoor table.;snli
+1850;The man and woman eat here all the time.;snli
+1851;The man and woman are on their phones.;snli
+1852;A couple having lunch on a public lunch table.;snli
+1853;Three boys in hooded sweatshirts standing and looking at camera.;snli
+1854;A little girl smiling in a colorful knitted hat.;snli
+1855;Little girl wearing a colorful hat while propped up on a cushion.;snli
+1856;A little girl runs through the living room laughing;snli
+1857;A child sits for her first birthday photos;snli
+1858;A girl wearing a hat smiles with some people.;snli
+1859;A girl rides a horse in a field.;snli
+1860;A little girl is wearing a colorful hat, the same one that her father used to wear.;snli
+1861;A girl is posing for a family portrait.;snli
+1862;A child is posing on a pillow in a pretty hat.;snli
+1863;A little girl is lying down, as she is very sick.;snli
+1864;A little girl with a knit hat laying on a pillow propping her head up with her hands.;snli
+1865;A girl is trying to take a nap.;snli
+1866;A little girl in a pink, blue, orange and green hat with her hands on her face posing for the camera.;snli
+1867;A little girl poses for a picture her mom is taking.;snli
+1868;A little girl chases an ice cream truck.;snli
+1869;Several people are moving away from a brightly colored tower.;snli
+1870;There is a group of people near a tower.;snli
+1871;Three young men wearing hooded sweatshirts are posing for a photo.;snli
+1872;Asian Child in fancy hat posing for picture;snli
+1873;A man looking at the scenery through binoculars.;snli
+1874;A man is using a tool to improve his view.;snli
+1875;The man does not like the scenery he is viewing.;snli
+1876;A man photographs out off of the frozen land.;snli
+1877;A guy is standing on an ice patch by the sea, looking through a telescope at sunset.;snli
+1878;a man looks through a telescope by the sea;snli
+1879;a man near the sea looks through a telescope;snli
+1880;There are many people walking at Times Square in New York near a building with a Lion King poster in the window.;snli
+1881;There are many people walking at Times Square.;snli
+1882;People are walking next to a building that has a Cinderella poster in the window.;snli
+1883;There are many people sitting at Times Square;snli
+1884;People are walking next to the building where the Lion King is being performed.;snli
+1885;There are many people happily walking at Times Square;snli
+1886;Photographer taking pictures of of a birthday party.;snli
+1887;A girl in a black shirt is looking to the side while sitting on a wooden bench.;snli
+1888;A girl in a red shirt is eating some ice cream.;snli
+1889;A girl in a black shirt and blue jeans is sitting on a wooden bench.;snli
+1890;A young girl playing on a log swing.;snli
+1891;a girl swings on a rotten log swing;snli
+1892;A girl sitting on a bench amongst the grass;snli
+1893;A girl is sitting on a bench outside;snli
+1894;A woman sitting on a bench in a park on a cloudy day;snli
+1895;There is a woman on a bench outside.;snli
+1896;A woman holding a girl's wrist walking down the street.;snli
+1897;Some people walking down the street holding hands escaping the rain.;snli
+1898;Some people being lazy sitting on the curb.;snli
+1899;A woman holding a little girls hand walking across a bridge.;snli
+1900;A woman and a child are running on a bridge.;snli
+1901;A girl is swinging on a piece of wood.;snli
+1902;A girl with dark hair swings on a hanging log.;snli
+1903;A man wearing a wedding band is pouring a white liquid into a cup of brown liquid.;snli
+1904;the man is getting ready to drink his coffee while reading the paper;snli
+1905;The baby is wearing a red shirt and walking in a plaza.;snli
+1906;The baby is wearing a red shirt and walking with his parents.;snli
+1907;Monks in red robes sell vegetables at a market.;snli
+1908;A group of teenagers sitting in the hall at school.;snli
+1909;A group of teenagers plays tennis at the park;snli
+1910;A group of teenagers are playing cards in the hallway at school;snli
+1911;A baby in jeans and a winter jacket sits on top of a blue slide.;snli
+1912;A baby sitting on top of a slide;snli
+1913;A woman in a flower shirt is working on a piece of pottery.;snli
+1914;Two people climb a set of stairs onto a bridge.;snli
+1915;two people climb a set of stairs onto a pirate ship.;snli
+1916;two people are climbing stairs to jump off the bridge.;snli
+1917;Man and woman walking up the stairs to an overpass.;snli
+1918;A husband and wife are swimming in the ocean.;snli
+1919;2 people walking up a set of stairs in the city.;snli
+1920;People walking up stairs on their way home.;snli
+1921;A man walking a dog and a young girl climb the stairs to a red bridge in a city.;snli
+1922;A sad man walking a dog and a young girl climb the stairs to a red bridge in a city.;snli
+1923;A person walking a dog and a young girl climb the stairs to a red bridge in a city.;snli
+1924;A woman walking a dog and a young girl climb the stairs to a red bridge in a city.;snli
+1925;A couple is walking up the stairs to a bridge in a downtown part of a city.;snli
+1926;A child climbs steps by themselves next to a bridge.;snli
+1927;A couple walks up steep steps to a large blue bridge.;snli
+1928;A man sits down to adjust his uncomfortable green shoes.;snli
+1929;A man wearing cutoff jeans and green sneakers sits with one leg crossed across the other one.;snli
+1930;A man wearing cutoff shorts, a tank top, and green sneakers sitting in a garden with a beer.;snli
+1931;A drunk man is drinking in a garden;snli
+1932;a casually dressed man sits in the garden;snli
+1933;An individual sits drinking a beer in a garden.;snli
+1934;A man is trying to unwind from the workweek;snli
+1935;A man is taking a break from weeding his garden.;snli
+1936;The man is on a ladder hanging a sign.;snli
+1937;a man jumps from earth to the moon;snli
+1938;A woman is sitting and eating cake in a garden.;snli
+1939;a beer is held by a man in casual attire;snli
+1940;a casually dressed man sits and waits for his wife;snli
+1941;A man in shorts in a lawn chair sits surrounded with plants in a backyard.;snli
+1942;There's a guy in a chair out in the yard.;snli
+1943;There's a guy sleeping in a chair in the yard.;snli
+1944;A man in denim shorts and green shoes is sitting and relaxing in a lawn chair.;snli
+1945;Woman with blue gloves and floral shirt handling a large ceramic bowl in a ceramic shop.;snli
+1946;The woman is wearing a plain, green shirt.;snli
+1947;A little girl smiles as she slides down a tube on a sunny day.;snli
+1948;A little girl is crying as she slides down a tube.;snli
+1949;A little girl slides down a tube at a park.;snli
+1950;Two dogs chase another dog that has a ball.;snli
+1951;The dogs are chasing each other after a long day cooped up in the house.;snli
+1952;3 dogs are sitting in a dog shelter hoping someone will adopt them and play ball with them.;snli
+1953;A man wearing glasses is singing into a microphone.;snli
+1954;A bride in a groom don't share a kiss.;snli
+1955;A man in a blue shirt walking down the street.;snli
+1956;A man is walking to his neighbor's house.;snli
+1957;A man is walking around inside his house.;snli
+1958;All the fans like this performance the best.;snli
+1959;Three soldiers are having a discussion in front of a playground, while others look on.;snli
+1960;The soldiers are having a discussion outdoors while others look.;snli
+1961;A blond child is drinking from a garden hose.;snli
+1962;The redhead is drinking from the garden hose.;snli
+1963;The kid is using a garden hose for drinking.;snli
+1964;Several armed forces officers and civilians are standing around a children's playground.;snli
+1965;Armed forces officers balance their guns on childrens heads at a playground.;snli
+1966;Civilians and armed forces officers trade insults at a playground;snli
+1967;US troops keeping calm in a no fly zone at one of the crucial points in Tripoli, Libya.;snli
+1968;A group of troops are getting ready to deploy from a plane.;snli
+1969;A group of troops are laughing and talking.;snli
+1970;A group of troops are attempting to stay quiet .;snli
+1971;A young girl wearing Mardi Gras beads and a green dress is accompanied by two boys, one on foot and one on a bicycle, as she walks down a dirt road.;snli
+1972;A young girl and her brothers walk down a rural road.;snli
+1973;A young girl and two boys travel down a dirt road.;snli
+1974;A group of boys enjoying a day by down the creek.;snli
+1975;Some people enjoying the day by the farmhouse.;snli
+1976;Five boys standing a one boy sitting by the lake.;snli
+1977;boys stand next to another boy sitting by the water;snli
+1978;Five young boys observe remote control boat in water.;snli
+1979;One boy is controlling a remote control boat while others watch.;snli
+1980;Five young boys are in a boat on the water.;snli
+1981;Group of asian boy on the right of the long table of vegetables and food and asian adults on the left.;snli
+1982;The group of Asians are playing a round of golf.;snli
+1983;The group Asians are eating dinner at the table.;snli
+1984;Boy jumping in the air with a girl on the couch punching towards him.;snli
+1985;three young african children in a poor part of africa one riding a bike.;snli
+1986;Three children are taking turns riding a bike.;snli
+1987;A child in a green shirt rides a bicycle.;snli
+1988;An African American base player wearing a blue shirt, being backed up by a drummer.;snli
+1989;A caucasian base player is wearing a gray shirt.;snli
+1990;A drummer is backing up a base player.;snli
+1991;An African American base payer and a drummer are wearing blue shirts.;snli
+1992;A boat captain steering a large green wheel.;snli
+1993;A guy is at the green helm of a boat.;snli
+1994;The boat pilot is testing a new lightweight anodized aluminum steering wheel at the helm of a ship.;snli
+1995;An older man in nautical gear smilingly turns a ship wheel.;snli
+1996;A ship wheel is manned by a well-equipped older man.;snli
+1997;An older man takes his ship on the sea.;snli
+1998;The smiling ship captain is holding the wheel of his wooden ship.;snli
+1999;The ship captain is holding the sterring wheel.;snli
+2000;A large, green, navigating wheel is held by an older man in a captain's hat and uniform.;snli
+2001;Three firefighters are about to start shooting a themed porno.;snli
+2002;Three men are looking to find the guy who prank called them.;snli
+2003;Two brothers take a nap on a gray couch.;snli
+2004;A man with hairy arms and a watch pours creamer into a cup of coffee, making color ripples along the surface.;snli
+2005;A man in camouflage pants and a backwards cap carrying a toolbox and a backpack.;snli
+2006;A woman with brown hair, wearing sunglasses asking a asian gentleman for directions.;snli
+2007;A woman challenges her karate instructor to a fight.;snli
+2008;Female street entertainer with horns doing a curtsey.;snli
+2009;Little girl in pink coat on a swing.;snli
+2010;The band is playing music for an audience.;snli
+2011;Several stall-shops selling various goods line a dimly-lit cobblestone street.;snli
+2012;The vendors in stalls are on a street.;snli
+2013;Stalls on a cobblestone street are selling goods.;snli
+2014;A cowboy riding on the back of a bronco in a competition.;snli
+2015;Two women and a man are sitting at a round table.;snli
+2016;a family deciding what to other at a restaurant;snli
+2017;A family looks over a menu at a restaurant;snli
+2018;A young family at a local steak house decide which cut of meat they want;snli
+2019;A family at home orders a delivery pizza;snli
+2020;Three people sit and talk about the menu at a chinese restaurant.;snli
+2021;Pedestrians stop to watch a man create a mural on a wall at the side of a street.;snli
+2022;people are watching a man create a clay sculpture.;snli
+2023;people are watching a man create a mural.;snli
+2024;people are watching a man create a mural of flowers.;snli
+2025;An older man with glasses clasps his hands together as two seated individuals watch him.;snli
+2026;Two men are playing basketball while a man is clasping his hands.;snli
+2027;A woman and a man is sitting and another is man is clasping his hand.;snli
+2028;A woman with beads around her neck is performing a dance as part of a parade.;snli
+2029;A person painting a mural on the side of a building while people are standing around watching.;snli
+2030;The painter is painting an ad for a local moving company.;snli
+2031;People watch as a person paints the side of a building.;snli
+2032;A crowd of people underneath a Hi-Pointe neon sign.;snli
+2033;A crowd of people stand under a sign in Las Vegas.;snli
+2034;A crowd of people standing on the summit of a mountain.;snli
+2035;A crowd of people stand under a sign.;snli
+2036;A crowd of young adults outside a nightclub.;snli
+2037;A small white car is stuck on the track, while the train car that hit it at a slow speed, sits still, as a rescue worker helps the driver.;snli
+2038;THe driver did not see the approaching train.;snli
+2039;A male is looking at different colored yarn wearing a white shirt.;snli
+2040;The man had a green shirt on earlier today;snli
+2041;A young man and an older man sit on a plaid loveseat.;snli
+2042;A young man and an older man play street hockey.;snli
+2043;A grandfather sits and watches his favorite tv show whithhis grandson.;snli
+2044;A man plays the piano, while a second man plays a guitar and a third man plays the saxophone.;snli
+2045;Three men are in a garage working under the hood of an old car.;snli
+2046;Three men are performing on stage in front of a crowd of people who are cheering.;snli
+2047;A painting of a man drinking from a bottle on the side of a building.;snli
+2048;A homeless man is drinking booze outside the liquor store;snli
+2049;A woman is sitting in her living room sipping on champagne;snli
+2050;Three construction men on a beam working with high rises in the background.;snli
+2051;Three construction men are taking a lunch break.;snli
+2052;A manager is directing the workers from below.;snli
+2053;The construction worker is walking an I-beam 30 feet in the air without a harness.;snli
+2054;Two guys in blue shirts are standing on top of a construction surface doing construction work.;snli
+2055;It is almost time for the men to quit for the day;snli
+2056;Two men drink wine and watch the opera.;snli
+2057;A couple of workers are are doing construction.;snli
+2058;There are two men wearing blue uniforms who are working atop a house that is being built.;snli
+2059;The two men are working on a job.;snli
+2060;A few miners are working on extracting ore from the earth.;snli
+2061;Two men are on break at a restaurant;snli
+2062;The workers are getting ready to jackhammer into the street to fix a water main leak.;snli
+2063;Workers on a platform work together to carry an item with skyscrapers in the background.;snli
+2064;Workers on a platform work to carry an item with tall buildings in the background;snli
+2065;Male workers on a platform work together to carry a piece of metal with skyscrapers in the background;snli
+2066;Workers on a platform work to clean windows by the ocean.;snli
+2067;Three older men playing live music in a grand hall.;snli
+2068;A trio of jazz muscicians performing at a nightclub.;snli
+2069;A trio of older gentlemen play chamber music in a concert hall.;snli
+2070;A trio of older gentlemen performing in a musical concert.;snli
+2071;Two children perform a karate move on a red mat.;snli
+2072;The children are watching a karate movie on the floor.;snli
+2073;Two children are arguing and fighting each other.;snli
+2074;Adolescent white man with black hair, black pants, and a white and black polka-dotted shirt holding and singing into a microphone.;snli
+2075;A man is rapping at a hip hop show;snli
+2076;The man is naked in the shower by himself.;snli
+2077;Donkey drive a bus into a herd of waffles;snli
+2078;Young country boy tries to rap for the first time;snli
+2079;Young boy performs folk song for a crowd;snli
+2080;A man wearing a white shirt with black dot is holding a microphone as he stands in front of a background of black with white symbols on it.;snli
+2081;Two dogs are walking on a rugged path, one with a blue rope tied to a red object in its mouth.;snli
+2082;Dogs on a walk and one has a leash;snli
+2083;A young man in a white polka dot shirt is singing into a microphone.;snli
+2084;Two dogs walking through the woods to get home.;snli
+2085;A man in a brown coat standing on a porch;snli
+2086;An old lady standing on a porch looking off in the distance;snli
+2087;A woman is looking at her neighbors erect a new barn.;snli
+2088;A woman is sitting in her rocking chair knitting a hat.;snli
+2089;The lady on the porch is wearing a brown jacket.;snli
+2090;This person is wearing winter clothing,hat,coat and scarf,while standing outside her front door;snli
+2091;A man is wearing a sun hat in the backyard.;snli
+2092;A woman is wearing a heavy coat,standing on the patio.;snli
+2093;a elderly woman in a tan jacket is standing by the door of a wooden house carrying a green and beige bag.;snli
+2094;A man in a brown jacket standing in front of an open porch door.;snli
+2095;A man is standing in front of the porch door.;snli
+2096;Many people are dunking to support Special Olympics.;snli
+2097;Several people are in close proximity to each other.;snli
+2098;Several people are getting their heads shaved to benefit charity.;snli
+2099;Many onlookers are watching from a short distance.;snli
+2100;fully clothed adults splash each other as they play in water.;snli
+2101;A man in a pink shirt stands next to a man in orange.;snli
+2102;The two people weaaring brightly colored shirts are men.;snli
+2103;The woman is wearing a pink and orange dress.;snli
+2104;The person in orange is standing next to a person wearing pink.;snli
+2105;Three men stand around in bright solid colored shirts and colorful hats.;snli
+2106;The colored clothes make the group of people stand out.;snli
+2107;The three people are in bright colored clothes.;snli
+2108;The three men are wearing to much dark clothes.;snli
+2109;Three men are at a concert with black hoodies.;snli
+2110;Many people playing and splashing in a fountain.;snli
+2111;People wearing life jackets jumping into or looking at the river.;snli
+2112;A line of basketball players doing a drill.;snli
+2113;A girl in a life jacket is swimming while others watch from the rocks.;snli
+2114;A lonely girl swims alone in a lake, hoping that someone on the shore might come swim with her.;snli
+2115;A group of men stand in a gymnasium with a basketball.;snli
+2116;A man in a white restaraunt shirt smokes next to a dumpster.;snli
+2117;Women of all ages and backgrounds practice yoga in an indoor studio.;snli
+2118;A smiling toddler brings her notebook to a table to color.;snli
+2119;A happy toddler is playing with her blocks.;snli
+2120;A singer rehearses a song with his keyboard.;snli
+2121;A blond headed toddler walking with a red piece of paper in hand.;snli
+2122;A toddler girl is walking with a red piece of paper.;snli
+2123;An adult is walking with a red piece of paper in hand.;snli
+2124;A woman plays a synthesizer in a dark room.;snli
+2125;The synthesizer is shaped like a tennis racket.;snli
+2126;A little boy is running down the aisle clutching a book.;snli
+2127;Billy was running with his book clutched next to him.;snli
+2128;Little boy happily holds red booklet near rows of folding-chairs.;snli
+2129;The alter boy cleans up after the church service.;snli
+2130;A little boy stands by folding chairs holding a red book.;snli
+2131;A girl holds a candle by a stage.;snli
+2132;A flight attendant is putting on a show;snli
+2133;A flight attendant is using a seat belt;snli
+2134;A stewardess reviews safety procedures on a plane.;snli
+2135;A flight attendant showing passengers how to use the airplane safety vest.;snli
+2136;An elderly woman and another younger woman greeting each other.;snli
+2137;An mean elderly woman and another younger woman;snli
+2138;The woman is demonstrating a floatation device on a boat.;snli
+2139;Two asian females are taking a stroll together;snli
+2140;The two young women are walking in the park.;snli
+2141;A man and a women are walking together.;snli
+2142;The two young women are sitting on a bench.;snli
+2143;Two young women walk past a door in a white wall.;snli
+2144;Two friends are walking down the street looking for a restaurant;snli
+2145;There are two people walking in a park.;snli
+2146;A man is playing guitar and wearing sunglasses.;snli
+2147;A man is playing an Oasis song in a college courtyard.;snli
+2148;A man wearing sunglasses is playing the guitar.;snli
+2149;A man wearing sunglasses playing an acoustic guitar.;snli
+2150;A man playing a slow song on a outside.;snli
+2151;A man playing an accordion for a crowd.;snli
+2152;A woman window shops outside of a Louis Vuitton store.;snli
+2153;The woman is wearing high heel shoes while window shopping.;snli
+2154;The woman is standing outside the Dior store.;snli
+2155;The woman is standing outside the shop's window.;snli
+2156;A man with sunglasses is playing the guitar.;snli
+2157;The guitarist smashes his guitar at the end of the set.;snli
+2158;Two girls hold up their younger sister as a sacrifice to the Gods.;snli
+2159;Two girls are holding up their little sister.;snli
+2160;Two girls are struggling to hold on to their heavy sister.;snli
+2161;A motocross biker about to descend after his big jump.;snli
+2162;A biker waits for his turn to race.;snli
+2163;A man and a woman with a head covering are on a bridge looking at the water and a boat.;snli
+2164;A husband and a wife with a head covering are on a bridge looking at the water and a boat.;snli
+2165;A man and a woman are looking at a boat.;snli
+2166;Two girls holding another girl wearing a yellow top in a room with tan carpet.;snli
+2167;Two girls order a pizza from an older woman.;snli
+2168;a person sits on the couch eating cheetos;snli
+2169;Two girls are watching a third girl being lifted by a couple boys.;snli
+2170;A guy uses a hose to water his bush.;snli
+2171;Three girls are sitting on the grass eating ice cream;snli
+2172;Two girls lift a third at a cheer leading competition.;snli
+2173;Two blonde haired girls are lifting a brown haired girl;snli
+2174;A wooden door has a hole in it.;snli
+2175;Two small girls are hoisting up a larger girl on their shoulders.;snli
+2176;An old dog running on bright green grass.;snli
+2177;The furry brown dog is running through the grassy area.;snli
+2178;A brown dog is running and looking up at the sky.;snli
+2179;A brown dog runs to catch a stick;snli
+2180;A brown dog runs while looking at the sky.;snli
+2181;A golden colored dug prances in the grass.;snli
+2182;A dog prances in the grass after catching a stick.;snli
+2183;The brown dog is eating in the kitchen.;snli
+2184;The brown poodle is playing outside with a tree branch.;snli
+2185;Asian man shooting a gun in between rocks.;snli
+2186;He is aiming at a target in between rocks.;snli
+2187;The man is using a bow and arrow.;snli
+2188;An Asian man, crouching on a stone wall in the mountains aiming a rifle.;snli
+2189;The man is going to shoot a rhino.;snli
+2190;A man on a hilltop is crouched and holding a gun.;snli
+2191;The man is swinging on a tire swing;snli
+2192;Two young boys are playing with two toddler girls.;snli
+2193;Two boys are outside playing with their young cousins.;snli
+2194;An Asian man in a jacket, glasses, and sandals is at a high altitude aiming a gun.;snli
+2195;An Asian man gets ready to shoot a gun.;snli
+2196;An Asian man is dressed up so someone can take photos of him.;snli
+2197;A man with a baseball cap and black jacket stands in a bathroom while holding a coffee mug.;snli
+2198;A naked man is standing in the bathroom.;snli
+2199;A man is holding a coffee mug with soup in it.;snli
+2200;A man goes to the bathroom on some coffee.;snli
+2201;A person stands in a bathroom and drinks coffee.;snli
+2202;a man drinks beer from a coffee mug;snli
+2203;A man stands in a bathroom with a coffee cup.;snli
+2204;There are other people in the bathroom with the man.;snli
+2205;The man is waiting to go to the bathroom.;snli
+2206;A man is wearing a hat on his head.;snli
+2207;A woman walking down the side of a highway.;snli
+2208;A woman is walking down the middle of the road carrying a bottle.;snli
+2209;A woman in a short skirt holds a plastic bottle as she walks down a street with auto and pedestrian traffic.;snli
+2210;The woman in a short skit is holding a bottle and walking outdoors.;snli
+2211;A woman wearing a jean skirt walks down a city street.;snli
+2212;A man in jeans runs through a park.;snli
+2213;A woman walking parallel to a yellow line against traffic.;snli
+2214;A person is walking along the side of the road.;snli
+2215;Fellows writing on the back of a friend with black markers.;snli
+2216;People are bullying a kid by writing cruel things on his back with permanant marker.;snli
+2217;People are writing silly things on their friend's back with markers.;snli
+2218;A couple dressed in hoodies kissing on the beach.;snli
+2219;A man holds up a fish he just caught.;snli
+2220;The man was using a sword to catch fish with.;snli
+2221;A woman in a green t-shirt speaks into a microphone.;snli
+2222;There is a woman in a green t-shirt.;snli
+2223;A man in green shorts speaks into a microphone.;snli
+2224;A little girl walking down a dirt road behind a group of other walkers.;snli
+2225;The girl is not at the head of the pack of people.;snli
+2226;A little girl walking down a dirt road to meet up with her friends.;snli
+2227;A small girl is sneaking up on some people walking down a dirt road;snli
+2228;A girl rides her bike on the sidewalk;snli
+2229;A girl is riding a bicycle down a grassy hill.;snli
+2230;The young girl is following her parents down the road.;snli
+2231;A tired girl is having trouble keeping up with her parents.;snli
+2232;A small girl is following people walking down a dirt road.;snli
+2233;A group of people are crowded for a street performer.;snli
+2234;A young adult wearing jeans and a camouflage t-shirt playing a black electric guitar.;snli
+2235;The guitar player weras black and camo clothing.;snli
+2236;There is an Asian woman in a black suit who is standing around and waiting at an airport.;snli
+2237;A woman is knitting a hat for a baby.;snli
+2238;The woman is talking on her cell phone while she is waiting at an airport.;snli
+2239;A woman of Asian looking descent in a black outfit standing in the airport baggage area.;snli
+2240;A woman waiting to collect her luggage after flying in from the Orient to join the symphony orchestra on it's tour;snli
+2241;A woman waiting at the airport baggage claim;snli
+2242;A woman walking three dogs in the park;snli
+2243;People are waiting with their luggage at an airport check-in.;snli
+2244;People are waiting to check in for their flights.;snli
+2245;A couple nearly misses their cruise departure due to traffic.;snli
+2246;A very long line of people are waiting to check in for their flights.;snli
+2247;People in a airport with luggage waiting on something.;snli
+2248;A kid does a tumbling move over a leaf-covered lawn near sundown.;snli
+2249;A band take a break in the green room.;snli
+2250;A woman in a black shirt walking down the street;snli
+2251;A young man in a red shirt is riding a skateboard down thew street.;snli
+2252;A woman in a black shirt is walking to work.;snli
+2253;There is a woman wearing a back shirt walking in the street.;snli
+2254;A man with a blue and white trucker style hat with a logo is wearing glasses in front of a man with a yellow shirt.;snli
+2255;a man wairs a blue hat and glasses;snli
+2256;A man in a t-shirt, glasses and a National Bohemian Beer cap is looking to his right and smiling.;snli
+2257;a man is happily wearing his beer cap outside;snli
+2258;a man is smiling because of his shirt;snli
+2259;A woman in pink is singing on stage next to three guitar players.;snli
+2260;A woman in a black-shirt is walking holding a silver cellphone.;snli
+2261;A group of people are at an aquarium to view marine life.;snli
+2262;A group of people are looking at Zebras at the zoo.;snli
+2263;A group are at the aquarium on a tour.;snli
+2264;A group are viewing all the different types of fish at the aquarium.;snli
+2265;A young women smiling and a young man smirking in front of a speaker.;snli
+2266;A person stands in the middle of traffic.;snli
+2267;A person is sitting in the the middle of nowhere.;snli
+2268;A person stands in the middle in the public waiting to move.;snli
+2269;A man dressed in a red shirt sits watching his laundry being washed.;snli
+2270;A man watches the only machine in the room.;snli
+2271;There is a person watching machines designed to clean laundry.;snli
+2272;Some people are watching fish in an aquarium.;snli
+2273;People looking at fish for a school project.;snli
+2274;A group of people is observing aquatic life.;snli
+2275;The group of people have reached the top of the Eiffel Tower.;snli
+2276;People are spending their day off inside of an aquarium with sharks.;snli
+2277;There are two sharks in an aquarium exhibit.;snli
+2278;People are gathered around a dinosaur exhibit at a museum.;snli
+2279;People are gazing upon fish in an aquarium.;snli
+2280;People are looking at fish in the ocean on a beach.;snli
+2281;There are people at an aquarium looking at fish.;snli
+2282;A field trip visits an aquarium to look at fish.;snli
+2283;A man sitting at the public laundromat waiting for his clothes to finish drying.;snli
+2284;A woman swimming with two children in blue life vests;snli
+2285;A woman and two children who are wearing blue life vests are swimming.;snli
+2286;A woman and two children are swimming in water.;snli
+2287;The mother with two son are swimming in the sea.;snli
+2288;two boys are swimming while the mom is tanning on the beach;snli
+2289;the sons are being chased by their mom in the ocean;snli
+2290;A woman and kids swimming in a lake.;snli
+2291;The mother is having the kids race in the lake.;snli
+2292;A woman is making cookies for the kids.;snli
+2293;A woman in kids are outside playing in water.;snli
+2294;Four guys in striped shirts playing music instruments in a restaurant.;snli
+2295;A group of ladies is hunting an elephant.;snli
+2296;A woman wearing black glasses is sharing sweets with a toddler girl wearing a princess hat.;snli
+2297;The woman and her grandson enjoy their day out by themselves.;snli
+2298;A woman gives a girl dressed like a princess candy on Halloween.;snli
+2299;A man wearing a cape gives a boy a baseball.;snli
+2300;The woman shared her candy with the child.;snli
+2301;The woman is not selfish with the young girl.;snli
+2302;A woman is giving a girl some treats.;snli
+2303;A father eats breakfast with a teenage boy.;snli
+2304;The woman is sharing the fruit with the toddler.;snli
+2305;Woman in red shirt and sunglasses gives candy to her daughter who is wearing a crown.;snli
+2306;A woman passes out Halloween candy to a girl dressed as a princess.;snli
+2307;A woman in a red shirt gives her daughter her backpack for school.;snli
+2308;A woman holds a plate of goodies for her little princess.;snli
+2309;Woman with plate of goodies for her little princess;snli
+2310;A little girl with a tiara eating in someones lap.;snli
+2311;The girl was with other people having a meal.;snli
+2312;The girl was drinking a soda next to a fountain.;snli
+2313;The girl was in her mothers lap eating dinner after she won a tiara in the contest.;snli
+2314;The man gives his son an icecream cone.;snli
+2315;The woman is hang gliding above the trees.;snli
+2316;The lady is playing in a cricket tournament.;snli
+2317;A fat lady feeding a girl who is starving.;snli
+2318;The lady is holding out a spoon to her child.;snli
+2319;The tourist is taking pictures of her vacation.;snli
+2320;The tourist is buying souvenirs of her trip.;snli
+2321;The woman is taking a picture of a dog.;snli
+2322;A woman in a black dress and shades takes a photo.;snli
+2323;a women in a black dress and glasses takes a photo;snli
+2324;A lady wearing a black summer top and dark sunglasses is taking a photograph.;snli
+2325;A lady is taking a picture of a statue.;snli
+2326;An oriental women with black sunglasses and a black shirt holding up a cellphone.;snli
+2327;the asian woman in shades holds a phone;snli
+2328;the asian woman in shades holds the phone she got for christmas;snli
+2329;A man plays an instrument in a band.;snli
+2330;A boat is loaded with many barrels on its roof.;snli
+2331;An African-American man wearing a purple shirt, white shoes and blue jeans is playing a saxophone while standing inside of a building which has many archways and a red and gray tiled floor.;snli
+2332;A man is playing a saxophone in room;snli
+2333;A man is playing a saxophone in inside of a building;snli
+2334;A ship filled with supplies is docked on the shore with several others in the background and several men in the foreground.;snli
+2335;The men are about to board the ship.;snli
+2336;The ship has had all of its supplies removed.;snli
+2337;A man playing his saxophone in a public area.;snli
+2338;A man is performing for a crowd for tips.;snli
+2339;A man is playing a trumpet in a car.;snli
+2340;A man is playing a song on his instrument.;snli
+2341;Local villagers are preparing for a fishing trip on this gorgeous fishing boat.;snli
+2342;People are getting to go fishing on a boat.;snli
+2343;Young woman with scrabble shoes and white rimmed sunglasses talks and smiles on cellphone while opening package.;snli
+2344;A young woman is talking on the phone with her mom as she opens her birthday present from her.;snli
+2345;A young woman is taking a nap in her bed.;snli
+2346;A woman with red-hair, a brown shirt, and a green bag is sitting down and talking on a phone.;snli
+2347;The lady is having a conversation while not standing.;snli
+2348;The girl is walking in the grocery store silently.;snli
+2349;A woman with red-hair talks on her cellphone while sitting down.;snli
+2350;A woman is laying down and typing on her computer.;snli
+2351;A woman is talking to her child on the phone about school.;snli
+2352;A woman is sitting and talking on her cellphone.;snli
+2353;A woman talks on her cellphone while standing near a brick wall.;snli
+2354;A woman is talking to her lawyer on her cellphone.;snli
+2355;Bishop making the cross with ashes on a man's forehead;snli
+2356;the man had a ash on his forehead;snli
+2357;the bishop talked to the woman while putting a cross on her cheek;snli
+2358;A priest rubs a cross on a man's forehead.;snli
+2359;"a priest rubs a man with his ""cross.""";snli
+2360;A man in a white robe with a purple sash places his hand on the forehead of another man.;snli
+2361;A priest is meditating alone on his beliefs.;snli
+2362;The man in the robe has no arms.;snli
+2363;There are two men next to each other;snli
+2364;A priest is giving a blessing to a man.;snli
+2365;A man places his hand on the forehand of a man kneeling down in front of him;snli
+2366;A man wearing a white robe places his hand on the other man's forehead.;snli
+2367;A group of people looking around in a dirt or stone shaded area.;snli
+2368;A small group of adults and children are standing on a dirt trail on a hill.;snli
+2369;The group of peopel are on a hiking trip.;snli
+2370;The group of dogs are standing on the dirt.;snli
+2371;A group of people going for a hike.;snli
+2372;A group of people dance in the woods.;snli
+2373;A group of people hike in the woods.;snli
+2374;A group of tourists are exploring the sight.;snli
+2375;The tourists are part of a tour group.;snli
+2376;A group of people are on a canyon.;snli
+2377;People are hiking to the bottom of the canyon.;snli
+2378;Three women are enjoying a plane ride through the air.;snli
+2379;Three women are taking a tour of the city by means of a hot air balloon.;snli
+2380;A group of people enjoying a hot air balloon ride.;snli
+2381;Some people are in a hot are balloon;snli
+2382;A group of dogs are in a hot air balloon.;snli
+2383;Tourists enjoying a hot air balloon type ride.;snli
+2384;There is only one person in the balloon.;snli
+2385;a group of people are enjoying their time on a carnival ride.;snli
+2386;Children ride a balloon ride in an amusement park.;snli
+2387;Kids are enjoying rides at an amusement park at night;snli
+2388;Children stuck mid air on a balloon ride.;snli
+2389;Children on a balloon ride at a carnival.;snli
+2390;Some kids are riding on a balloon ride at the amusement park.;snli
+2391;A group of brothers and sisters are riding on a balloon ride at the amusement park.;snli
+2392;Only one child is on a balloon ride at the amusement park.;snli
+2393;This person, seated on a type of go-cart, is riding downhill.;snli
+2394;A go-cart race is happening down the hill.;snli
+2395;A go-cart picks up speed on the decline.;snli
+2396;a young person riding a small wagon down a hill.;snli
+2397;A young person is riding a wagon pushed by their parents.;snli
+2398;A man is standing in front of a motor-scooter holding up a picture.;snli
+2399;A mans stands in front of a scooter and holds up a some sceneries picture;snli
+2400;A man sitting at the back of scooter;snli
+2401;A mans stands in front of a scooter and holds up a picture;snli
+2402;a boy is riding a buggy down a woodland path.;snli
+2403;A boy is on his way to see his grandmother.;snli
+2404;The boy is on a path in the woods.;snli
+2405;Many people have arms lifted in a crowd.;snli
+2406;People stand with arms raised in the crowd.;snli
+2407;Many people were really enjoying the concert and raise their arms in support.;snli
+2408;Many people crossed their arms in the scarce crowd.;snli
+2409;A canoe of children is floating in the water with one boy rowing.;snli
+2410;A girl in a red dress is surrounded by a lot of other people holding their hands up.;snli
+2411;A girl is sitting in a chair with people around her.;snli
+2412;A crowd of people is facing the same direction while some hold their hands in the air.;snli
+2413;The crowd is looking at the same thing.;snli
+2414;Several people in a crowd, some with their arms raised.;snli
+2415;The girl in the red dress is raising her hand amidst a group of people.;snli
+2416;A dog is eating kibble in the kitchen;snli
+2417;A young girl in a red dress is in a crowd of people;snli
+2418;A young Asian girl in a red dress is in a crowd of people;snli
+2419;People standing in front of a big wall with graffiti painted on it.;snli
+2420;A big wall with no graffiti on it.;snli
+2421;A big wall with graffiti art on it.;snli
+2422;Three people in red shirts wait for a bus next to a wall with graffiti on it.;snli
+2423;Three people dressed in red and black stand on a sidewalk in front of a beige wall adorned in graffiti.;snli
+2424;The 3 people standing outside are trying to figure out what they want to paint on the wall behind them.;snli
+2425;The 3 people are sitting on a red and black blanket in the country eating fried chicken.;snli
+2426;Here is a picture of locals hanging out in front of a store, talking on the phone and making sure their graffiti sign does n't get tagged.;snli
+2427;The people have painted a sign with graffiti.;snli
+2428;Three people standing next to a building that has graffiti on it.;snli
+2429;Pitcher on mount, in red and white suite, pitching.;snli
+2430;Band playing in front of a small crowd outside.;snli
+2431;A band plays to a crowd of different ages outside.;snli
+2432;A band eats lunch and waits for the sun to go down.;snli
+2433;There are thousands of people watching them perform.;snli
+2434;A small crowd listens to a charity band outside.;snli
+2435;A large crowd gathers for a speech in a town hall.;snli
+2436;A small crowd listens to a band outside.;snli
+2437;Two young adults are enjoying time in the snow.;snli
+2438;Bruce Springsteen sings a hit with a smile on stage.;snli
+2439;A man is lying in snow laughing while a female is looking on.;snli
+2440;The girlfriend is happy to see his boyfriend is enjoying his time on the snow.;snli
+2441;The man and the woman are having fun in a snowy day.;snli
+2442;Bruce Springsteen, dressed in black, is holding a microphone and pointing to a crowd.;snli
+2443;There is a man pointing at a crowd outdoors;snli
+2444;There is a man looking at a crowd not pointing;snli
+2445;There is a man pointing to a crowd;snli
+2446;A photo of a Volvo dealership at night with two people surrounded by orange cones.;snli
+2447;A photo of a Volvo dealership has two people and orange cones.;snli
+2448;There is a crime scene at the Volvo dealership.;snli
+2449;A man standing in the middle of traffic cones in front of a Volvo dealership.;snli
+2450;A woman standing in the middle of traffic cones in front of a Honda dealership.;snli
+2451;Someone is standing in the middle of the traffic cones in front of a car dealership.;snli
+2452;A man standing in the middle of traffic cones in front of a Volvo dealership, waiting for the car salesman.;snli
+2453;Two men stand in the middle of a square of traffic cones placed underneath a traffic signal in front of a Volvo dealership.;snli
+2454;Two men stand in the middle of a square of traffic;snli
+2455;Two men joyously stand in the middle of a square of traffic;snli
+2456;Two men don't stand in the middle of a square of traffic;snli
+2457;A man walks in a Volvo sales lot in the dark with only the Volvo sign illuminated.;snli
+2458;A man walks around a Volvo car lot at night.;snli
+2459;A man visits his dealership to see new Volvo models.;snli
+2460;A woman at a salon getting her nails done in a pink-like color.;snli
+2461;The woman is digging in her flowerbed, getting rid of all the weeds.;snli
+2462;The woman is treating herself to a nice day of spa/nails/hair after a stressful week at work.;snli
+2463;A woman painting another woman's fingernails a bright purple.;snli
+2464;A woman is giving another woman a pedicure.;snli
+2465;A woman is giving another woman a manicure.;snli
+2466;A woman is painting a womans acrylics purple.;snli
+2467;A woman with long black hair paints the nails of another person a deep maroon color.;snli
+2468;A woman is painting another womans finger nails.;snli
+2469;A woman is painting her bestfriends nails for a date.;snli
+2470;A woman is getting a massage at a spa.;snli
+2471;A lady wearing a green shirt with long hair is doing a purple manicure.;snli
+2472;Only one person is getting a green manicure.;snli
+2473;There is a pack of dogs are drinking water.;snli
+2474;A group of dogs standing in a river.;snli
+2475;a large group of dogs walking in a body of water.;snli
+2476;A large group of dogs are swimming in deep water.;snli
+2477;An owner walks his dogs in shallow water at the beach.;snli
+2478;The white dog is standing on its hind legs, looking over a ledge.;snli
+2479;A white dog is laying on the rug.;snli
+2480;A white dog is staring over a ledge at a cat.;snli
+2481;A white dog is peering over a ledge.;snli
+2482;A boy in blue slides down a tan slide.;snli
+2483;A sad boy in blue slides down a tan slide.;snli
+2484;A girl in blue slides down a tan slide.;snli
+2485;A person in blue slides down a tan slide.;snli
+2486;A young boy in a blue jacket going down a slide.;snli
+2487;A man is sent on a mission to outer space.;snli
+2488;A boy is playing at the playground with his friends.;snli
+2489;A boy wearing a blue shirt is going down a slide.;snli
+2490;A dark-haired boy sits outside on a beige structure.;snli
+2491;A dark-haired boy runs through the living room;snli
+2492;A dark-haired boy is sitting outside of Walmart.;snli
+2493;A dark-haired boy is sitting on the outside of a beige structure.;snli
+2494;A gray terrier runs in a snow-covered field.;snli
+2495;"People standing together under a ""start"" banner in the street.";snli
+2496;Many guards are standing in front of the starting line of a race.;snli
+2497;The guards are sleeping in a bell tower.;snli
+2498;The guards are standing at the starting line;snli
+2499;A person walking on a path while using a cane.;snli

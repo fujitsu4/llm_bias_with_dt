@@ -28,7 +28,7 @@ import re
 
 TARGET = 2500
 MIN_WORDS = 8
-OUTPUT = "data/cleaned/snli_filtered.csv"
+OUTPUT = "../../data/cleaned/snli_filtered.csv"
 
 print("[INFO] Loading SNLI dataset...")
 ds = load_dataset("snli", split="train")
@@ -111,7 +111,7 @@ for s in selected:
     else:
         rejected_sentences.append("[ROOT] " + s)
 
-rejected_path = "logs/rejected_snli.txt"
+rejected_path = "../../logs/rejected_snli.txt"
 with open(rejected_path, "w", encoding="utf-8") as f:
     for r in rejected_sentences:
         f.write(f"{r}\n")
