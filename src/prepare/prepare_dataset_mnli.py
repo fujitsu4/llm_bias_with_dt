@@ -1,26 +1,27 @@
 """
-prepare_dataset_snli.py
+prepare_dataset_mnli.py
 Author: Zakaria JOUILIL
 
 Description:
-    Prepare the SNLI dataset by:
+    Prepare the MultiNLI dataset by:
         - Cleaning text (whitespace + unicode normalization)
         - Removing sentences < 8 words
         - Removing sentences with semicolons (incompatible with SpaCy tokenization logic)
         - Keeping only sentences with exactly one syntactic ROOT
+        - Removing sentences containing POS = 'X'
+        - Removing sentences with incoherent punctuation (POS = 'PUNCT' but not a real punctuation)
         - Selecting the first 2500 valid sentences
 
 Inputs:
     - None (dataset is downloaded automatically from HuggingFace)
 
 Outputs:
-    - data/cleaned/snli_filtered.csv
-    - logs/rejected_snli.txt   # rejected sentences
+    - data/cleaned/mnli_filtered.csv
+    - logs/rejected_mnli.txt   # rejected sentences
 
 Usage:
-    !python -m src.prepare.prepare_dataset_snli --output data/cleaned/snli_filtered.csv --target 2500
+    !python -m src.prepare.prepare_dataset_mnli --output data/cleaned/mnli_filtered.csv --target 2500
 """
-
 from datasets import load_dataset
 import pandas as pd
 import spacy
@@ -32,8 +33,8 @@ import argparse
 # CLI Parser
 # ----------------------------------------------------------
 
-parser = argparse.ArgumentParser(description="Prepare SNLI dataset")
-parser.add_argument("--output", type=str, default="data/cleaned/snli_filtered.csv",
+parser = argparse.ArgumentParser(description="Prepare MNLI dataset")
+parser.add_argument("--output", type=str, default="data/cleaned/mnli_filtered.csv",
                         help="Output CSV path")
 parser.add_argument("--target", type=int, default=2500,
                         help="Number of sentences to keep")
@@ -43,8 +44,9 @@ TARGET = args.target
 OUTPUT = args.output
 
 MIN_WORDS = 8
-print("[INFO] Loading SNLI dataset...")
-ds = load_dataset("snli", split="train")
+print("[INFO] Loading MNLI dataset...")
+
+ds = load_dataset("multi_nli", split="train")
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -79,13 +81,14 @@ for row in ds:
             if len(text.split()) >= MIN_WORDS:
                 sentences.append(text)
 
-print(f"[INFO] Collected raw sentences : {len(sentences)}")
+print("[INFO] Collected raw sentences : ", len(sentences))
+
 
 # ----------------------------------------------------------
 # 3) Remove duplicates
 # ----------------------------------------------------------
 unique_sentences = list(dict.fromkeys(sentences))
-print(f"[INFO] After deduplication : {len(unique_sentences)}")
+print("[INFO] After deduplication : ", len(unique_sentences))
 
 
 # ----------------------------------------------------------
@@ -105,6 +108,20 @@ def has_unique_root(sentence: str) -> bool:
 def contains_semicolon(sentence: str) -> bool:
     return ";" in sentence
 
+def contains_invalid_punct_token(sentence: str) -> bool:
+    """
+    Detect phrases containing tokens with POS = PUNCT but spacy thinks is_punct=False.
+    This indicates an incoherent tokenization (e.g., '-An').
+    """
+    doc = nlp(sentence)
+    for tok in doc:
+        if tok.pos_ == "PUNCT" and tok.is_punct == False:
+            return True
+    return False
+
+def contains_pos_x(sentence: str) -> bool:
+    doc = nlp(sentence)
+    return any(tok.pos_ == "X" for tok in doc)
 
 # ----------------------------------------------------------
 # 6) Filter sentences
@@ -116,6 +133,14 @@ for s in selected:
     if contains_semicolon(s):
         rejected_sentences.append("[SEMICOLON] " + s)
         continue
+    
+    if contains_pos_x(s):
+        rejected_sentences.append("[POS_X] " + s)
+        continue
+    
+     if contains_invalid_punct_token(s):
+        rejected_sentences.append("[INVALID_PUNCT] " + s)
+        continue
 
     if has_unique_root(s):
         final_sentences.append(s)
@@ -124,13 +149,9 @@ for s in selected:
     else:
         rejected_sentences.append("[ROOT] " + s)
 
-rejected_path = get_project_path("logs", "rejected_snli.txt")
+rejected_path = get_project_path("logs", "rejected_mnli.txt")
 
-with open(rejected_path, "w", encoding="utf-8") as f:
-    for r in rejected_sentences:
-        f.write(f"{r}\n")
-
-print(f"[INFO] Valid sentences after filtering : {len(final_sentences)}")
+print(f"Total sentences after ROOT filter: {len(final_sentences)}")
 print(f"[INFO] Rejected sentences              : {len(rejected_sentences)}")
 print(f"[INFO] Saving rejected sentences to    : {rejected_path}")
 
@@ -141,10 +162,13 @@ df = pd.DataFrame([
     {
         "sentence_id": i,
         "sentence": s,
-        "dataset": "snli"
+        "dataset": "mnli"
     }
     for i, s in enumerate(final_sentences)
 ])
 
 df.to_csv(OUTPUT, sep=";", index=False)
+print("Saved:", OUTPUT)
+print("Final count:", len(df))
+
 print(f"[INFO] Saving cleaned dataset to       : {OUTPUT}")
