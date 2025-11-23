@@ -20,7 +20,7 @@ Outputs:
     - logs/rejected_mnli.txt   # rejected sentences
 
 Usage:
-    !python -m src.prepare.prepare_dataset_mnli --output data/cleaned/mnli_filtered.csv --target 2500
+    python -m src.prepare.prepare_dataset_mnli --output data/cleaned/mnli_filtered.csv --target 2500
 """
 from datasets import load_dataset
 import pandas as pd
@@ -151,9 +151,13 @@ for s in selected:
 
 rejected_path = get_project_path("logs", "rejected_mnli.txt")
 
+with open(rejected_path, "w", encoding="utf-8") as f:
+    for r in rejected_sentences:
+        f.write(f"{r}\n")
+
 print(f"[INFO] Total sentences after ROOT filter : {len(final_sentences)}")
-print(f"[INFO] Rejected sentences               : {len(rejected_sentences)}")
-print(f"[INFO] Saving rejected sentences to     : {rejected_path}")
+print(f"[INFO] Rejected sentences                : {len(rejected_sentences)}")
+print(f"[INFO] Saving rejected sentences to      : {rejected_path}")
 
 # ----------------------------------------------------------
 # 7) Build dataframe
@@ -168,4 +172,4 @@ df = pd.DataFrame([
 ])
 
 df.to_csv(OUTPUT, sep=";", index=False)
-print(f"[INFO] Saving cleaned dataset to        : {OUTPUT}")
+print(f"[INFO] Saving cleaned dataset to         : {OUTPUT}")
