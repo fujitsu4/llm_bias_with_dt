@@ -1,9 +1,9 @@
 """
-prepare_dataset_arxiv.py
+prepare_dataset_agnews.py
 Author: Zakaria JOUILIL
 
 Description:
-    Prepare the MultiNLI dataset by:
+    Prepare the AG News dataset by:
         - Cleaning text (whitespace + unicode normalization)
         - Removing sentences < 8 words
         - Removing sentences with semicolons (incompatible with SpaCy tokenization logic)
@@ -16,11 +16,11 @@ Inputs:
     - None (dataset is downloaded automatically from HuggingFace)
 
 Outputs:
-    - data/cleaned/arxiv_filtered.csv
-    - logs/rejected_arxiv.txt   # rejected sentences
+    - data/cleaned/agnews_filtered.csv
+    - logs/rejected_agnews.txt   # rejected sentences
 
 Usage:
-    python -m src.prepare.prepare_dataset_arxiv --output data/cleaned/arxiv_filtered.csv --target 2500
+    python -m src.prepare.prepare_dataset_agnews --output data/cleaned/agnews_filtered.csv --target 2500
 """
 from datasets import load_dataset
 import pandas as pd
@@ -33,8 +33,8 @@ from src.utils.paths import get_project_path
 # CLI Parser
 # ----------------------------------------------------------
 
-parser = argparse.ArgumentParser(description="Prepare ArXiv dataset")
-parser.add_argument("--output", type=str, default="data/cleaned/arxiv_filtered.csv",
+parser = argparse.ArgumentParser(description="Prepare agnews dataset")
+parser.add_argument("--output", type=str, default="data/cleaned/agnews_filtered.csv",
                         help="Output CSV path")
 parser.add_argument("--target", type=int, default=2500,
                         help="Number of sentences to keep")
@@ -44,10 +44,9 @@ TARGET = args.target
 OUTPUT = get_project_path(*args.output.split("/"))
 
 MIN_WORDS = 8
-print("[INFO] Loading ArXiv dataset...")
-
-ds = load_dataset("CShorten/ML-ArXiv-Papers", split="train")
-ds = ds.shuffle(seed=42).select(range(3000)) # TAREGT * 2
+print("[INFO] Loading AG News dataset...")
+ds = load_dataset("ag_news", split="train")
+ds = ds.shuffle(seed=42).select(range(6000)) # TARGET * 2 not sufficient here !
 print("[INFO] Subset length:", len(ds))
 
 nlp = spacy.load("en_core_web_sm")
@@ -73,23 +72,15 @@ def clean_sentence(text: str) -> str:
 
 
 # ----------------------------------------------------------
-# 2) Collect sentences from abstract
+# 2) Collect all premises + hypotheses
 # ----------------------------------------------------------
-sentences = []
 
 for row in ds:
-    abstract = row["abstract"]
-    if not abstract:
-        continue
-
-    abstract = clean_sentence(abstract)
-
-    # Split into sentences using SpaCy
-    doc = nlp(abstract)
-    for sent in doc.sents:
-        s = clean_sentence(sent.text)
-        if len(s.split()) >= MIN_WORDS:
-            sentences.append(s)
+    text = row["text"]
+    if text:
+        text = clean_sentence(text)
+        if len(text.split()) >= MIN_WORDS:
+            sentences.append(text)
 
 print("[INFO] Collected raw sentences : ", len(sentences))
 
@@ -98,14 +89,14 @@ print("[INFO] Collected raw sentences : ", len(sentences))
 # 3) Remove duplicates
 # ----------------------------------------------------------
 unique_sentences = list(dict.fromkeys(sentences))
-print("[INFO] After deduplication : ", len(unique_sentences))
+len_unique = len(unique_sentences)
+print("[INFO] After deduplication : ", len_unique)
 
 
 # ----------------------------------------------------------
 # 4) Select more than target
 # ----------------------------------------------------------
-selected = unique_sentences[:TARGET * 2]
-
+selected = unique_sentences[: min(len_unique, 6000) ]
 
 # ----------------------------------------------------------
 # 5) Helper functions
@@ -139,7 +130,7 @@ def contains_pos_x(sentence: str) -> bool:
 final_sentences = []
 rejected_sentences = []
 
-for s in selected:
+for s in unique_sentences:
     if contains_semicolon(s):
         rejected_sentences.append("[SEMICOLON] " + s)
         continue
@@ -159,8 +150,7 @@ for s in selected:
     else:
         rejected_sentences.append("[ROOT] " + s)
 
-rejected_path = get_project_path("logs", "rejected_arxiv.txt")
-
+rejected_path = get_project_path("logs", "rejected_agnews.txt")
 with open(rejected_path, "w", encoding="utf-8") as f:
     for r in rejected_sentences:
         f.write(f"{r}\n")
@@ -176,7 +166,7 @@ df = pd.DataFrame([
     {
         "sentence_id": i,
         "sentence": s,
-        "dataset": "arxiv"
+        "dataset": "agnews"
     }
     for i, s in enumerate(final_sentences)
 ])
