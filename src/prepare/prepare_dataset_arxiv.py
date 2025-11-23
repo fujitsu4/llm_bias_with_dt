@@ -73,15 +73,23 @@ def clean_sentence(text: str) -> str:
 
 
 # ----------------------------------------------------------
-# 2) Collect all premises + hypotheses
+# 2) Collect sentences from abstract
 # ----------------------------------------------------------
+sentences = []
+
 for row in ds:
-    for field in ["premise", "hypothesis"]:
-        text = row[field]
-        if text:
-            text = clean_sentence(text)
-            if len(text.split()) >= MIN_WORDS:
-                sentences.append(text)
+    abstract = row["abstract"]
+    if not abstract:
+        continue
+
+    abstract = clean_sentence(abstract)
+
+    # Split into sentences using SpaCy
+    doc = nlp(abstract)
+    for sent in doc.sents:
+        s = clean_sentence(sent.text)
+        if len(s.split()) >= MIN_WORDS:
+            sentences.append(s)
 
 print("[INFO] Collected raw sentences : ", len(sentences))
 
