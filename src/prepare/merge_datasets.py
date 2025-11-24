@@ -11,7 +11,7 @@ Outputs:
     - data/cleaned/merged_datasets.csv
     
 Usage:
-    !python -m src.prepare.merge_datasets \
+    python -m src.prepare.merge_datasets \
     --inputs data/cleaned/snli_filtered.csv \
              data/cleaned/mnli_filtered.csv \
              data/cleaned/arxiv_filtered.csv \
