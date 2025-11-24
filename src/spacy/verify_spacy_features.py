@@ -31,7 +31,7 @@ Outputs:
     - spacy_summary.txt (summary and error samples (max 20 per test))
     
 Usage:
-    python -m verify_spacy_features --sentences_csv data/cleaned/merged_datasets.csv --features_csv outputs/spacy/spacy_features.csv --log_file logs/spacy_logs.txt
+    python -m src.spacy.verify_spacy_features --sentences_csv data/cleaned/merged_datasets.csv --features_csv outputs/spacy/spacy_features.csv --log_file logs/spacy_logs.txt
 """
 
 import argparse
