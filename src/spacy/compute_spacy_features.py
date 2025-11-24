@@ -16,7 +16,7 @@ Outputs:
     - outputs/spacy/spacy_label_maps (dynamic dictionnaries)
 
 Usage:
-    python -m src.spacy.compute_spacy_features -- input data/cleaned/merged_datasets.csv --output outputs/spacy/spacy_features.csv
+    python -m src.spacy.compute_spacy_features --input data/cleaned/merged_datasets.csv --output outputs/spacy/spacy_features.csv
 """
 
 import pandas as pd
