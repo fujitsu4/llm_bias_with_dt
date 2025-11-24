@@ -47,7 +47,7 @@ MIN_WORDS = 8
 print("[INFO] Loading ArXiv dataset...")
 
 ds = load_dataset("CShorten/ML-ArXiv-Papers", split="train")
-ds = ds.shuffle(seed=42).select(range(3000)) # TAREGT * 2
+ds = ds.shuffle(seed=42).select(range(TARGET * 2)
 print("[INFO] Subset length:", len(ds))
 
 nlp = spacy.load("en_core_web_sm")
