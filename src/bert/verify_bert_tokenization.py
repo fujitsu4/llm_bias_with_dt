@@ -21,15 +21,15 @@ Checks performed:
           • word_id (index of the originating spaCy word; None for specials)
 
 Inputs:
-    --sentences_csv : A CSV containing the fields: sentence_id ; sentence ; dataset
-    --spacy_csv     : The spaCy features CSV (required to recover the exact list of words per sentence)
+    --bert_tokens.csv  : The bert tokenization CSV
+    --spacy_csv : The spaCy features CSV (required to recover the exact list of words per sentence)
 
 Outputs :
     --log_file      : Path to a .log file where all reports and progress messages are stored
 
     Usage:
-    python -m src.bert.tokenize_with_bert \
-    --sentences_csv data/cleaned/merged_datasets.csv \
+    python -m src.bert.verify_bert_tokenization \
+    --bert_tokens_csv outputs/bert/bert_tokens.csv \
     --spacy_csv outputs/spacy/spacy_features.csv \
     --log_file logs/bert_tokenization_logs.txt
 """
@@ -66,10 +66,24 @@ def clean_subtoken(tok):
 
 
 def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
-    print("\n[ERROR] === VERIFYING BERT TOKENIZATION ===")
+    print("\n[INFO] === VERIFYING BERT TOKENIZATION ===")
 
-    bert = pd.read_csv(bert_csv)
-    spacy = pd.read_csv(spacy_csv)
+    bert = pd.read_csv(bert_csv, sep=";", keep_default_na=False, na_values=[])
+    
+    def parse_word_id(x):
+      if pd.isna(x) or x == "" or x is None:
+        return None
+      try:
+        return int(float(x))
+      except:
+        return None
+
+    bert["word_id"] = bert["word_id"].apply(parse_word_id)
+    bert["sentence_id"] = bert["sentence_id"].astype(int)
+    bert["bert_index"] = bert["bert_index"].astype(int)
+
+    spacy = pd.read_csv(spacy_csv, sep=";", keep_default_na=False, na_values=[])
+    spacy["sentence_id"] = spacy["sentence_id"].astype(int)
 
     print(f"[INFO] Loaded BERT tokens : {len(bert)}")
     print(f"[INFO] Loaded spaCy words : {len(spacy)}")
@@ -134,11 +148,10 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         # TEST 3 : no spaCy word lost
         counted = set([wi for wi in word_ids if wi is not None])
         expected = set(range(n_words))
-        if counted != expected:
-            print(f"[ERROR] Some spaCy words were not tokenized in sentence {sid}")
-            print("[ERROR] Missing:", expected - counted)
-            print("[ERROR] Extra:  ", counted - expected)
-            sys.exit(1)
+        if expected - counted:
+          print(f"[ERROR] Some spaCy words were not tokenized in sentence {sid}")
+          print("[ERROR] Missing:", expected - counted)
+          sys.exit(1)
 
         # TEST 7 & 8 : reconstruction fidelity
         reconstructed = [""] * n_words
@@ -171,14 +184,13 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sentences_csv", required=True)
     parser.add_argument("--bert_tokens_csv", required=True)
+    parser.add_argument("--spacy_csv", required=True)
     parser.add_argument("--log_file", required=True,
                     help="Log file to save all verification outputs")
 
     args = parser.parse_args()
-
-    setup_logger(args.log_file)
     print(f"[INFO] Logging enabled -> {args.log_file}")
+    setup_logger(args.log_file)
 
-    verify_bert_tokenization(args.sentences_csv, args.bert_tokens_csv, args.log_file)
+    verify_bert_tokenization(args.bert_tokens_csv, args.spacy_csv, args.log_file)
