@@ -71,12 +71,22 @@ def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
         word_ids = encoded.word_ids()
 
         for bert_index, (tok, wid) in enumerate(zip(tokens, word_ids)):
+            # Normalize word_id: save as an integer when present, otherwise empty string
+            if wid is None:
+                wid_val = ""            # will appear as empty cell in CSV
+            else:
+                # word_ids from tokenizer are ints already but sometimes float-like; force int
+                wid_val = int(wid)
+
+            # ensure dataset is a string (avoid NaN)
+            ds_val = dataset if (dataset is not None) else ""
+
             output_rows.append({
-                "sentence_id": sid,
-                "bert_index": bert_index,
+                "sentence_id": int(sid),
+                "bert_index": int(bert_index),
                 "bert_token": tok,
-                "word_id": wid,    # None for CLS/SEP → pandas → NaN
-                "dataset": dataset
+                "word_id": wid_val,    # "" for CLS/SEP, integer for real ids (no .0)
+                "dataset": ds_val
             })
 
     out_df = pd.DataFrame(output_rows)
