@@ -29,7 +29,8 @@ def load_word_sequences(spacy_csv):
     Returns:
         dict[ sentence_id -> list[str] ]
     """
-    df = pd.read_csv(spacy_csv, sep=";")
+    df = pd.read_csv(spacy_csv, sep=";", keep_default_na=False, na_values=[])
+    
 
     word_sequences = {}
     for sid, group in df.groupby("sentence_id"):
@@ -41,7 +42,8 @@ def load_word_sequences(spacy_csv):
 
 
 def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
-    sentences_df = pd.read_csv(sentences_csv, sep=";")
+    sentences_df = pd.read_csv(sentences_csv, sep=";", keep_default_na=False, na_values=[])
+    
     word_sequences = load_word_sequences(spacy_csv)
 
     tokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
@@ -78,7 +80,7 @@ def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
             })
 
     out_df = pd.DataFrame(output_rows)
-    out_df.to_csv(output_csv, index=False)
+    out_df.to_csv(output_csv, sep=";", index=False)
     print(f"[OK] Saving Tokenization saved in : {output_csv}")
 
 
