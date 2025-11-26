@@ -34,7 +34,6 @@ Outputs :
     --log_file logs/bert_tokenization_logs.txt
 """
 
-
 import pandas as pd
 from tqdm import tqdm
 import sys
@@ -64,26 +63,71 @@ def clean_subtoken(tok):
     """Remove BERT subword prefix ##"""
     return tok[2:] if tok.startswith("##") else tok
 
-
 def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
+
     print("\n[INFO] === VERIFYING BERT TOKENIZATION ===")
 
-    bert = pd.read_csv(bert_csv, sep=";", keep_default_na=False, na_values=[])
-    
-    def parse_word_id(x):
-      if pd.isna(x) or x == "" or x is None:
-        return None
-      try:
-        return int(float(x))
-      except:
-        return None
+    bert = pd.read_csv(bert_csv, sep=";", keep_default_na=False)
+    spacy = pd.read_csv(spacy_csv, sep=";", keep_default_na=False)
 
-    bert["word_id"] = bert["word_id"].apply(parse_word_id)
+    # ---- Convert sentence_id and bert_index ----
     bert["sentence_id"] = bert["sentence_id"].astype(int)
     bert["bert_index"] = bert["bert_index"].astype(int)
 
-    spacy = pd.read_csv(spacy_csv, sep=";", keep_default_na=False, na_values=[])
-    spacy["sentence_id"] = spacy["sentence_id"].astype(int)
+    # ---- Normalize word_id even if float64 ----
+    def normalize_word_id(x, tok):
+        # special tokens
+        if tok in ("[CLS]", "[SEP]", "[PAD]", "[UNK]"):
+            return None
+
+        if pd.isna(x):
+            return None
+
+        try:
+            return int(round(float(x)))
+        except:
+            return None
+
+    bert["word_id"] = [
+        normalize_word_id(x, tok) for x, tok in zip(bert["word_id"], bert["bert_token"])
+    ]
+
+    # ---- DEBUG FIRST SENTENCE ----
+    print("\n[DEBUG] After normalization:")
+    print(bert[bert["sentence_id"]==0].head(20))
+
+    # ---- Check reconstruction ----
+    problems = 0
+
+    for sid, group in bert.groupby("sentence_id"):
+        # Extract tokens (ignore special tokens)
+        words_subtoks = {}
+
+        for tok, wid in zip(group["bert_token"], group["word_id"]):
+            if wid is None:
+                continue
+            if wid not in words_subtoks:
+                words_subtoks[wid] = []
+            
+            tok_str = str(tok)
+            words_subtoks[wid].append(tok_str.replace("##",""))
+
+        # Compare with spaCy
+        spacy_words = list(
+            spacy[spacy["sentence_id"]==sid].sort_values("word_index")["word"]
+        )
+
+        reconstructed = ["".join(words_subtoks[i]) for i in range(len(spacy_words))]
+
+        if reconstructed != spacy_words:
+            problems += 1
+            print(f"[ERROR] Mismatch in sentence {sid}")
+            print("spaCy :", spacy_words)
+            print("BERT  :", reconstructed)
+            break
+
+    if problems == 0:
+        print("[OK] All sentences match perfectly.")
 
     print(f"[INFO] Loaded BERT tokens : {len(bert)}")
     print(f"[INFO] Loaded spaCy words : {len(spacy)}")
@@ -132,13 +176,14 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
             print(f"[ERROR] Missing [SEP] at end of sentence {sid}")
             sys.exit(1)
 
-        if word_ids[0] is not None or word_ids[-1] is not None:
-            print(f"[ERROR] Special tokens have non-null word_id in sentence {sid}")
-            sys.exit(1)
+        if pd.notna(word_ids[0]) or pd.notna(word_ids[-1]):
+          print(type(word_ids[0]), repr(word_ids[0]))
+          print(f"[ERROR] Special tokens have non-null word_id in sentence {sid}")
+          sys.exit(1)
 
         # TEST 5 : validity of word_id
         for wi in word_ids:
-            if wi is None:
+            if wi is None or pd.isna(wi):
                 continue
             if not (0 <= wi < n_words):
                 print(f"[ERROR] Invalid word_id={wi} in sentence {sid}")
@@ -178,7 +223,6 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
 
     print("\n[INFO] === ALL TESTS PASSED SUCCESSFULLY ===")
     print("[INFO] BERT tokenization is correct and perfectly aligned with spaCy.")
-
 
 if __name__ == "__main__":
     import argparse

@@ -46,7 +46,7 @@ def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
     
     word_sequences = load_word_sequences(spacy_csv)
 
-    tokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
+    tokenizer = BertTokenizerFast.from_pretrained("bert-base-cased")
 
     output_rows = []
 
@@ -58,15 +58,20 @@ def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
             raise ValueError(f"[FATAL] sentence_id {sid} not in spacy csv !")
 
         words = word_sequences[sid]
+        encoded = tokenizer(
+            words,
+            is_split_into_words=True,
+            add_special_tokens=True)
 
+        """
         encoded = tokenizer(
             words,
             is_split_into_words=True,
             add_special_tokens=True,
             return_attention_mask=False,
-            return_token_type_ids=False,
+            return_token_type_ids=False
         )
-
+        """
         tokens = tokenizer.convert_ids_to_tokens(encoded["input_ids"])
         word_ids = encoded.word_ids()
 
@@ -90,7 +95,7 @@ def tokenize_sentences(sentences_csv, spacy_csv, output_csv):
             })
 
     out_df = pd.DataFrame(output_rows)
-    out_df.to_csv(output_csv, sep=";", index=False)
+    out_df.to_csv(output_csv, sep=";", index=False, na_rep="")
     print(f"[OK] Saving Tokenization saved in : {output_csv}")
 
 
