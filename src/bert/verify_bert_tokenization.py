@@ -92,7 +92,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         normalize_word_id(x, tok) for x, tok in zip(bert["word_id"], bert["bert_token"])
     ]
 
-    # ---- Check reconstruction ----
+    # ---- Test 1 : Check reconstruction ----
     problems = 0
 
     for sid, group in bert.groupby("sentence_id"):
@@ -103,7 +103,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
             if wid is None or pd.isna(wid):
                 continue
 
-            # NEW : force integer index
+            # Force integer index
             wid = int(wid)
 
             if wid not in words_subtoks:
@@ -126,7 +126,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
             sys.exit(1)
 
     if problems == 0:
-        print("[OK] All sentences match perfectly.")
+        print("[INFO] ✓ Test 1 passed: global reconstruction matches spaCy.")
 
     print(f"[INFO] Loaded BERT tokens : {len(bert)}")
     print(f"[INFO] Loaded spaCy words : {len(spacy)}")
@@ -137,7 +137,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         for sid, g in spacy.groupby("sentence_id")
     }
 
-    # ---------- TEST 1 & 2 : completeness & uniqueness ----------
+    # ---------- TEST 2 & 3 : completeness & uniqueness ----------
     sent_ids_bert = set(bert["sentence_id"])
     sent_ids_spacy = set(spacy["sentence_id"])
 
@@ -149,7 +149,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         print("[ERROR] Missing in spaCy:", missing_in_spacy)
         sys.exit(1)
 
-    print("[OK] All sentence_id match between BERT and spaCy.")
+    print("[OK] ✓ Test 2 & 3 passed: sentence_id consistency verified.")
 
     # ---------- begin sentence-level tests ----------
     for sid, group in tqdm(bert.groupby("sentence_id"), total=len(sent_ids_bert)):
@@ -161,12 +161,12 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         spacy_words = spacy_by_sent[sid]
         n_words = len(spacy_words)
 
-        # TEST 9 : bert_index strictly sequential
+        # TEST 4 : bert_index strictly sequential
         if list(group["bert_index"]) != list(range(len(group))):
             print(f"[ERROR] Non-sequential bert_index in sentence {sid}")
             sys.exit(1)
 
-        # TEST 4 : special tokens
+        # TEST 5 : special tokens
         if bert_tokens[0] != "[CLS]":
             print(f"[ERROR] Missing [CLS] at start of sentence {sid}")
             sys.exit(1)
@@ -189,7 +189,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
                 print(f"[ERROR] Expected 0..{n_words-1}")
                 sys.exit(1)
 
-        # TEST 3 : no spaCy word lost
+        # TEST 6 : no spaCy word lost
         counted = set([wi for wi in word_ids if wi is not None])
         expected = set(range(n_words))
         if expected - counted:
@@ -217,12 +217,13 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
                 print(f"[ERROR] Reconstructed: {reconstructed[idx]}")
                 sys.exit(1)
 
-        # TEST 6 : invalid tokens
+        # TEST 9 : invalid tokens
         for tok in bert_tokens:
             if tok.strip() == "":
                 print(f"[ERROR] Empty token in sentence {sid}")
                 sys.exit(1)
 
+    print("\n[INFO] ✓ Test 4 to 9 passed: sentence-level tests")
     print("\n[INFO] === ALL TESTS PASSED SUCCESSFULLY ===")
     print("[INFO] BERT tokenization is correct and perfectly aligned with spaCy.")
 
