@@ -102,7 +102,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
     for sid, group in bert.groupby("sentence_id"):
         # Extract tokens (ignore special tokens)
         words_subtoks = {}
-
+        """
         for tok, wid in zip(group["bert_token"], group["word_id"]):
             if wid is None:
                 continue
@@ -111,6 +111,18 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
             
             tok_str = str(tok)
             words_subtoks[wid].append(tok_str.replace("##",""))
+            """
+        for tok, wid in zip(group["bert_token"], group["word_id"]):
+            if wid is None or pd.isna(wid):
+                continue
+
+            # NEW : force integer index
+            wid = int(wid)
+
+            if wid not in words_subtoks:
+                words_subtoks[wid] = []
+
+            words_subtoks[wid].append(tok.replace("##", ""))
 
         # Compare with spaCy
         spacy_words = list(
@@ -201,9 +213,12 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         # TEST 7 & 8 : reconstruction fidelity
         reconstructed = [""] * n_words
         for tok, wi in zip(bert_tokens, word_ids):
-            if wi is None:
-                continue
-            reconstructed[wi] += clean_subtoken(tok)
+          if wi is None or pd.isna(wi):
+            continue
+
+          wi = int(wi)
+          
+          reconstructed[wi] += clean_subtoken(tok)
 
         for idx in range(n_words):
             original = re.sub(r"\W+", "", spacy_words[idx].lower())
