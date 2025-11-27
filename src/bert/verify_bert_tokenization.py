@@ -92,26 +92,13 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
         normalize_word_id(x, tok) for x, tok in zip(bert["word_id"], bert["bert_token"])
     ]
 
-    # ---- DEBUG FIRST SENTENCE ----
-    print("\n[DEBUG] After normalization:")
-    print(bert[bert["sentence_id"]==0].head(20))
-
     # ---- Check reconstruction ----
     problems = 0
 
     for sid, group in bert.groupby("sentence_id"):
         # Extract tokens (ignore special tokens)
         words_subtoks = {}
-        """
-        for tok, wid in zip(group["bert_token"], group["word_id"]):
-            if wid is None:
-                continue
-            if wid not in words_subtoks:
-                words_subtoks[wid] = []
-            
-            tok_str = str(tok)
-            words_subtoks[wid].append(tok_str.replace("##",""))
-            """
+        
         for tok, wid in zip(group["bert_token"], group["word_id"]):
             if wid is None or pd.isna(wid):
                 continue
@@ -136,7 +123,7 @@ def verify_bert_tokenization(bert_csv, spacy_csv, log_file):
             print(f"[ERROR] Mismatch in sentence {sid}")
             print("spaCy :", spacy_words)
             print("BERT  :", reconstructed)
-            break
+            sys.exit(1)
 
     if problems == 0:
         print("[OK] All sentences match perfectly.")
