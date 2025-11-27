@@ -44,7 +44,7 @@ bert_csv = get_project_path(*args.bert_csv.split("/"))
 output_csv = get_project_path(*args.output.split("/"))
 
 print("[INFO] Loading BERT tokens from:", bert_csv)
-df = pd.read_csv(bert_csv, sep=";", keep_default_na=False, na_values=[], dtype={"bert_token": str})
+df = pd.read_csv(bert_csv, sep=";", keep_default_na=False, na_values=[], dtype={"word_id": str, "bert_token": str})
 
 df["sentence_id"] = df["sentence_id"].astype(int)
 df["bert_index"] = df["bert_index"].astype(int)
@@ -58,7 +58,7 @@ df["is_special_token"] = df["bert_token"].isin(["[CLS]", "[SEP]", "[PAD]", "[UNK
 # ----------------------------------------------------------
 # 2) token_length
 # ----------------------------------------------------------
-df["token_length"] = df["bert_token"].str.len()   # returns 0 for empty strings (CLS/SEP)
+df["token_length"] = df["bert_token"].str.len()
 
 # ----------------------------------------------------------
 # 3) is_subword
@@ -85,8 +85,6 @@ df["relative_position"] = df.groupby("sentence_id")["bert_index"].transform(
 
 # ---- normalize word_id: convert possible floats "3.0" to int; keep None/'' as NaN for grouping ----
 def normalize_word_id(x):
-    if x is None:
-        return pd.NA
     s = str(x).strip()
     if s == "":
         return pd.NA
@@ -101,8 +99,10 @@ print("[INFO] Computing num_subtokens per word...")
 
 # ---- num_subtokens: number of BERT tokens per original word (per sentence_id, word_id) ----
 # compute counts for rows that have a valid word_id
+valid = df[df["is_special_token"] == 0]
+
 counts = (
-    df[df["word_id"].notna()]
+    valid
     .groupby(["sentence_id", "word_id"])
     .size()
     .rename("num_subtokens")
@@ -114,6 +114,9 @@ df = df.merge(counts, how="left", on=["sentence_id", "word_id"])
 
 # set num_subtokens for special tokens / missing word_id to -1
 df["num_subtokens"] = df["num_subtokens"].fillna(-1).astype(int)
+
+# add dataset column at the end 
+df = df.reindex(columns=[c for c in df.columns if c != "dataset"] + ["dataset"])
 
 # ----------------------------------------------------------
 # 7) Save output
