@@ -69,7 +69,6 @@ def clean_sentence(text: str) -> str:
 
     return text
 
-
 # ----------------------------------------------------------
 # 2) Collect all premises + hypotheses
 # ----------------------------------------------------------
@@ -123,6 +122,13 @@ def contains_pos_x(sentence: str) -> bool:
     doc = nlp(sentence)
     return any(tok.pos_ == "X" for tok in doc)
 
+def contains_non_ascii(sentence: str) -> bool:
+    """
+    Reject sentences containing any non-ASCII character.
+    This removes soft hyphens, unicode dashes, exotic punctuation, etc.
+    """
+    return any(ord(c) > 127 for c in sentence)
+
 # ----------------------------------------------------------
 # 6) Filter sentences
 # ----------------------------------------------------------
@@ -140,6 +146,10 @@ for s in selected:
     
     if contains_invalid_punct_token(s):
         rejected_sentences.append("[INVALID_PUNCT] " + s)
+        continue
+
+    if contains_non_ascii(s):
+        rejected_sentences.append("[ASCII] " + s)
         continue
 
     if has_unique_root(s):

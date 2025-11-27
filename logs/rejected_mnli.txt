@@ -6,6 +6,7 @@
 [ROOT] Poirot was now back and I was sorry that he would take over what I now considered my own investigation.
 [ROOT] i often think gee i wish i had a video camera because i could sure use ten thousand dollars so but i like things like Evening Shade with Burt Reynolds i really enjoy that and uh
 [POS_X] To be sure that any needlework item is the genuine article (as opposed to an inferior import or machine-made piece), look for a lead seal with an M, the emblem of IBTAM meaning it's been certified by the Instituto de Bordado, Tapecaras e Arte?­sanato da Madeira (Institute of Madeiran Embroidery, Tapestry, and Handicrafts), an official island organization that has a showroom/museum on Rua Visconde de Anadia, 44.
+[ASCII] The fourth-century Roman emperor Gratianus was an early visitor, followed much later by such luminaries as the Romantic poet Alphonse de Lamartine, Queen Victoria, Saint-Sa?«ns, and Rachmaninov.
 [ROOT] and so i started watching it and all of a sudden stay tuned next week and i went what
 [ROOT] right right well it's it's a beautiful city and but the problem is like first example when i was young they they took me to Las Vegas and that was the most boring place on earth
 [ROOT] There rules are not really clear so we ask our manager for help.
@@ -18,6 +19,7 @@
 [SEMICOLON] Right on the waterfront; offers a more formal atmosphere and a great place to catch a sunset.
 [SEMICOLON] Engakuji is Kamakura's largest temple complex; often wracked by fire and earthquake, 17 of the original 46 buildings have survived.
 [SEMICOLON] the uncompromising Vel?¡zquez portrait of ugly Queen Marianna of Austria; El Greco's powerfully mystic Christ on the Crose Ribera's gruesomely good-humored The Club Foot.
+[ASCII] There are good road connections between Sant Antoni and both CaleT?¡rida and CaleBadella, with the result that both bays have now been developed.
 [ROOT] and if you yeah if you want to so at least you you know you wouldn't have any surprises you can order any type of you know service you want but you stand a good chance you know having to pick up at least part of the bill yourself
 [ROOT] Really, Sir Ernest, protested the judge, "these questions are not relevant." Sir Ernest bowed, and having shot his arrow proceeded.
 [SEMICOLON] He'd stopped wondering and now accepted; he meant to get away from here at the first chance and he was somehow sure he could.
@@ -29,6 +31,7 @@
 [ROOT] You're quite safe." Her breath came more normally, and the colour was returning to her cheeks.
 [ROOT] and i was never in a minor league city until i came Dallas we were a minor league city when i came here in fifty nine and i immediately bought season tickets uh to the class triple A uh uh Dallas Rangers
 [ROOT] yeah i think they did a pretty good job but they didn't follow it exactly but they did give it you know do it justice
+[ASCII] It is recommended that you leave river briefly before ending your trip at Montréal.
 [ROOT] yeah and i you know i think defense really is what wins wins uh in the long run you can have the best half back there is or the best quarterback but if they don't have any blocking maybe they can't do anything
 [SEMICOLON] The number of Arawak had already fallen dramatically, so the Spanish began to import slaves from Africa to work the land; the first Africans arrived in 1517.
 [SEMICOLON] Four sikhara domes rise above the entrance-porch in addition the mandapa hall for worshippers; a larger hall for dancing-girls; and the inner sanctuary, surrounded by an ambulatory for walking around the image of the deity.
@@ -88,7 +91,7 @@
 [ROOT] oh yeah they they spent more money last year than any other team in the in the league and they were you know toward the bottom of the league uh so it's like i said spending money doesn't guarantee you uh winning a pennant it really doesn't so
 [ROOT] so i i know the people at TI who are doing this and i heard about it so i called them and ask if i could could participate and uh
 [ROOT] you're very fortunate well i ran into a problem with my car uh course we have a little colder weather up here and i had set the emergency brake after we'd had a freezing rain apparently
-[ROOT] It is 'up to them' ”as you say over here." Then, suddenly, he asked: "Are you a judge of finger-marks, my friend?"
+[ASCII] It is 'up to them' ”as you say over here." Then, suddenly, he asked: "Are you a judge of finger-marks, my friend?"
 [ROOT] So-called Houston! This one problem, Denise, or maybe Dennis, was repeating.
 [ROOT] okay i uh i have five children all together
 [ROOT] There is a sure fire way to identify the owner. Anse put the book down.
@@ -100,6 +103,7 @@
 [ROOT] oh the potato they were they're delicious but they you don't get seem to get that much for the space they they do
 [POS_X] Then after everyone's gone, stay on to see the marvelous 13th-century sculpted Angel's Pillar (Pilier des Anges) in peace.
 [ROOT] (5)(A) The term baseline heat input means, except under subpart 1 of part B and section 407, the average annual heat input used by a unit during the three years in which the unit had the highest heat input for the period 1997 through 2001.
+[ASCII] You enter by the Carriage Gate, where, on the rare occasions they were permitted outside, the women moun?δed their carriages.
 [ROOT] uh i'm i'm not real sure that the young girls of today are being forced into the job market as many of them imply i think they're going in by choice
 [ROOT] yeah uh-huh yeah we're not too far behind i graduated in seventy one so i'm i'm same generation i i'm it's going to be a short conversation because i agree with you i i think uh i don't i don't even think it ought to be uh voluntary i think it ought to be mandatory
 [ROOT] yeah well about that same time branches were falling off ev erywhere and we were actually in a state of emergency for two weeks
@@ -173,7 +177,7 @@
 [SEMICOLON] Excluded from the definition of land are the natural resources (that is, depletable resources such as mineral deposits and petroleum; renewable resources such as timber, and the outer-continental shelf resources) related to land.
 [POS_X] You can spot, set in the stone walls, little sculpted heads of angels or demons, floral motifs, or the scallop shell (coquille Saint-Jacques) marking the route of medieval pilgrims to Santiago de Compostela in Spain.
 [POS_X] The route of medieval pilgrims to Santiago de Compostela connects Spain to Germany.
-[ROOT] That man's height is about 6′ 6″ and he wears a black tall hat.
+[ASCII] That man's height is about 6′ 6″ and he wears a black tall hat.
 [POS_X] The painterly impact of the burnt sienna glows from the arcaded Gothic Palazzo Pubblico opposite, with its splendid 102-m- (335-ft-) high Torre del Mangia (climb to its first tier at 88 m [288 ft] for a magnificent view of the city and countryside beyond).
 [ROOT] oh yeah the economy uh what i was thinking about is an economical issue concerning it uh
 [SEMICOLON] The town of Antiparoseeems to move at a slower pace than Parikia; in fact, the town can be almost somnolent out of season.
@@ -184,6 +188,7 @@
 [ROOT] now i also uh even though i retired from education i uh i do modeling and i teach at a modeling agency here
 [SEMICOLON] How convincing I'd been; for a brief time I'd even conned myself.
 [ROOT] yeah yeah myself about the only thing i really recycle around here is aluminum cans
+[ASCII] Although Israel is only now 50 years old, the roots of its three prime religious faiths (Juda?­ism, Islam, and Christianity) stretch back over many millennia, and some of its ancient settlements are amongst the oldest on earth.
 [ROOT] no where as far as wind breaks go and and we had secured tents real well even if we had done it in the dark at eleven o'clock at night
 [SEMICOLON] Most people approach Provence from the north; the warmth of the sun, the red-tiled roofs, the cypress trees, the garrigue (scrubland), and the fragrance of lavender alert you that you have arrived.
 [POS_X] There's something about [Corgan's] whole grandiosity that is very four years ago.
@@ -214,9 +219,11 @@
 [SEMICOLON] LAST-IN, FIRST-OUT (LIFO) - A cost flow assumption; the last goods purchased are assumed to be the first goods sold.
 [SEMICOLON] In recent months, Chinese corporations have taken stakes in Hong Kong Telecom, Dragon Air, and China Light &amp; Power.
 [ROOT] well i have i'm really torn on the subject i'm not a good candidate for this one i see what you see and i agree with you
+[ASCII] Christmas time is especially popular here when pilgrims come to admire relics of the holy crib from Beth?­lehem.
 [POS_X] To the left of the high altar is a small chapel whose 10th-century Madonna di Nicopeia, a bejeweled icon also from Constantinople, is said to have healing powers and is a runner-up as Venice's protective patron after St. Mark.
 [POS_X] The small chapel's Madonna di Nicopeia dates to the 10th century.
 [ROOT] yeah it's a nice way to relax i mean in a way i mean i find it anyway although sometimes watching the news isn't very relaxing i get home from from
+[ASCII] These intriguing horseshoe-shaped valleys nestle like narrow amphi?­theaters against abrupt rocky cliffs, making rewarding destinations for a pleasant day's hike.
 [ROOT] Critics chalk up Calder's previous low standing to the abundance of sculptures he made in the '60s for corporate plazas, which are labeled mostly boring (Robert Hughes, Time ). (Click here for the National Gallery site.)
 [SEMICOLON] I dare not, monsieur; I am afraid of them. She turned away.
 [ROOT] yeah you know uh is he going to yell at me for buying this with this you know and he's not a yeller though but
@@ -245,7 +252,7 @@
 [ROOT] I waiteduntil I heard the outside door clank shutbefore I followed.
 [ROOT] nice talking to you too well i appreciate it and and good luck with your uh your future your hopes of buy a Winnebago
 [SEMICOLON] Vast expanses of land are cultivated; orchards and lush cattle pastures produce the famous strong cider and pungent cheeses.
-[ROOT] Buenos días, Don Cazar. For so small a man the Mexican on the cart seat produced a trumpet-sized voice.
+[ASCII] Buenos días, Don Cazar. For so small a man the Mexican on the cart seat produced a trumpet-sized voice.
 [ROOT] right right so and uh yeah on the on the interior do you do uh do y'all have a lot of uh plaster walls that the the uh color is built into the plaster so you don't paint a lot
 [ROOT] oh well anyway so what's your next purchase supposed to be
 [ROOT] i think that adds to the diversity i think that uh i like that uh there i know you know John Wylie Price i don't know if you kept up but he's been protesting that
