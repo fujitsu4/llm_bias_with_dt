@@ -1,4 +1,5 @@
-""" verify_bert_basic_features.py
+"""
+verify_bert_basic_features.py
 Author: Zakaria JOUILIL
 
 Description:
@@ -54,22 +55,28 @@ import math
 from collections import Counter
 import pandas as pd
 import numpy as np
-from datetime import datetime
 
-def setup_logger(path):
-    # simple logger: write console + file
-    logfile = open(path, "w", encoding="utf-8")
-    def log(msg, end="\n"):
-        ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-        out = f"[{ts}] {msg}"
-        print(out, end=end)
-        logfile.write(out + ("" if end=="" else "\n"))
-        logfile.flush()
-    return log, logfile
+def setup_logger(log_file):
+    """Redirect all prints to both console and a .log file."""
+    class Logger:
+        def __init__(self, filename):
+            self.terminal = sys.stdout
+            self.log = open(filename, "w", encoding="utf-8")
 
-def fatal(log, msg):
-    log(f"[ERROR] {msg}")
-    log("[ERROR] Verification FAILED.")
+        def write(self, message):
+            self.terminal.write(message)
+            self.log.write(message)
+
+        def flush(self):
+            self.terminal.flush()
+            self.log.flush()
+
+    sys.stdout = Logger(log_file)
+    sys.stderr = sys.stdout  # redirect errors too
+
+def fatal(msg):
+    print(f"[ERROR] {msg}")
+    print("[ERROR] Verification FAILED.")
     sys.exit(1)
 
 def main():
@@ -82,20 +89,21 @@ def main():
                         help="Tolerance when checking relative positions")
     args = parser.parse_args()
 
-    os.makedirs(os.path.dirname(args.log_file) or ".", exist_ok=True)
-    log, logfile_handle = setup_logger(args.log_file)
-    log("[INFO] Starting verification of BERT basic features")
-    log(f"[INFO] Input CSV: {args.features_csv}")
+    setup_logger(args.log_file)
+    print(f"[INFO] Logging enabled -> {args.log_file}")
+    
+    print("[INFO] Starting verification of BERT basic features")
+    print(f"[INFO] Input CSV: {args.features_csv}")
 
     # --------- Load CSV ----------
     try:
         df = pd.read_csv(args.features_csv, sep=";", keep_default_na=False, na_values=[""], dtype=str)
     except Exception as e:
-        fatal(log, f"Cannot read CSV: {e}")
+        fatal(f"Cannot read CSV: {e}")
 
-    log(f"[INFO] Rows loaded: {len(df)}")
+    print(f"[INFO] Rows loaded: {len(df)}")
     if len(df) == 0:
-        fatal(log, "Empty CSV")
+        fatal("Empty CSV")
 
     # normalize column names (strip)
     df.columns = [c.strip() for c in df.columns]
@@ -108,12 +116,12 @@ def main():
     ]
     missing = [c for c in expected_cols if c not in df.columns]
     if missing:
-        fatal(log, f"Missing required columns: {missing}")
-    log("[INFO] ✓ Required columns present")
+        fatal(f"Missing required columns: {missing}")
+    print("[OK] ✓ Required columns present")
 
     # ensure dataset is last column (not required but preferred)
     if df.columns[-1] != "dataset":
-        log("[WARN] 'dataset' column is not the last column; reordering would be cosmetic")
+        print("[WARN] 'dataset' column is not the last column; reordering would be cosmetic")
 
     # ---------- Type conversions ----------
     # We keep original strings but convert numeric fields carefully and record errors
@@ -122,9 +130,9 @@ def main():
     converted = {}
     for col in int_cols:
         try:
-            converted[col] = df[col].astype(float).astype("Int64")
+            converted[col] = pd.to_numeric(df[col], errors="coerce").astype("Int64")
         except Exception as e:
-            fatal(log, f"Column {col} could not be converted to integer-like values: {e}")
+            fatal("Column {col} could not be converted to integer-like values: {e}")
     # tokens stay as strings
     tokens = df["bert_token"].fillna("").astype(str)
 
@@ -134,7 +142,7 @@ def main():
         vals = df[col].fillna("").astype(str).str.strip()
         invalid = vals[~vals.isin({"0","1","True","False","true","false"})]
         if len(invalid) > 0:
-            fatal(log, f"Column {col} contains invalid values (expected 0/1 or True/False). Examples: {invalid.unique()[:10]}")
+            fatal("Column {col} contains invalid values (expected 0/1 or True/False). Examples: {invalid.unique()[:10]}")
     # normalize to 0/1 integers
     is_special = df["is_special_token"].astype(str).str.strip().replace({"True":"1","true":"1","False":"0","false":"0"}).astype(int)
     is_subword = df["is_subword"].astype(str).str.strip().replace({"True":"1","true":"1","False":"0","false":"0"}).astype(int)
@@ -143,33 +151,34 @@ def main():
     try:
         token_length_col = df["token_length"].astype(float).astype("Int64")
     except Exception as e:
-        fatal(log, f"token_length column cannot be converted to integers: {e}")
+        fatal("token_length column cannot be converted to integers: {e}")
 
     # relative_position numeric float
     try:
         rel_pos = df["relative_position"].astype(float)
     except Exception as e:
-        fatal(log, f"relative_position cannot be converted to float: {e}")
+        fatal("relative_position cannot be converted to float: {e}")
 
     # num_subtokens numeric (allow negative -1 for specials)
     try:
         num_subtokens = df["num_subtokens"].astype(float)
     except Exception as e:
-        fatal(log, f"num_subtokens cannot be converted to numeric: {e}")
+        fatal("num_subtokens cannot be converted to numeric: {e}")
 
+    df["word_id"] = pd.to_numeric(df["word_id"], errors="coerce").astype("Int64")
     # word_id can be NA - parse to integer-like or pd.NA
     def parse_word_id(x):
-        s = str(x).strip()
-        if s == "" or s.lower() in ("nan", "none", "null"):
+        if pd.isna(x): 
             return pd.NA
         try:
-            return int(float(s))
+            return int(x)
         except:
             return pd.NA
+        
     word_id_parsed = df["word_id"].apply(parse_word_id)
 
     # basic checks
-    log("[INFO] Running per-row consistency checks (sampled feedback will be shown)")
+    print("[INFO] Running per-row consistency checks (sampled feedback will be shown)")
 
     n = len(df)
     sample_n = min(5, n)
@@ -180,45 +189,45 @@ def main():
     mismatch_special = (mask_special_by_token != is_special)
     if mismatch_special.any():
         sample_idx = df.index[mismatch_special][:10].tolist()
-        log(f"[ERROR] is_special_token mismatch for {mismatch_special.sum()} rows. Examples index: {sample_idx}")
+        print(f"[ERROR] is_special_token mismatch for {mismatch_special.sum()} rows. Examples index: {sample_idx}")
         for i in sample_idx[:5]:
-            log(f"  idx={i} token='{tokens.iat[i]}' is_special_token={is_special.iat[i]}")
-        fatal(log, "is_special_token misalignment")
+            print(f"  idx={i} token='{tokens.iat[i]}' is_special_token={is_special.iat[i]}")
+        fatal("is_special_token misalignment")
 
-    log(f"[OK] ✓ is_special_token matches token strings for all rows ({n} rows)")
+    print(f"[OK] ✓ is_special_token matches token strings for all rows ({n} rows)")
 
     # 2) check is_subword matches prefix '##'
     mask_subword_by_token = tokens.str.startswith("##").astype(int)
     mismatch_sub = (mask_subword_by_token != is_subword)
     if mismatch_sub.any():
         sample_idx = df.index[mismatch_sub][:10].tolist()
-        log(f"[ERROR] is_subword mismatch for {mismatch_sub.sum()} rows. Examples index: {sample_idx}")
+        print(f"[ERROR] is_subword mismatch for {mismatch_sub.sum()} rows. Examples index: {sample_idx}")
         for i in sample_idx[:5]:
-            log(f"  idx={i} token='{tokens.iat[i]}' is_subword={is_subword.iat[i]}")
-        fatal(log, "is_subword misalignment")
-    log(f"[OK] ✓ is_subword consistent with '##' prefix")
+            print(f"  idx={i} token='{tokens.iat[i]}' is_subword={is_subword.iat[i]}")
+        fatal( "is_subword misalignment")
+    print(f"[OK] ✓ is_subword consistent with '##' prefix")
 
     # 3) token_length correctness (note: token_length includes '##' characters)
     calc_len = tokens.str.len().astype(int)
     mismatch_len = (calc_len != token_length_col.astype(int))
     if mismatch_len.any():
         sample_idx = df.index[mismatch_len][:10].tolist()
-        log(f"[ERROR] token_length mismatch for {mismatch_len.sum()} rows. Examples index: {sample_idx}")
+        print(f"[ERROR] token_length mismatch for {mismatch_len.sum()} rows. Examples index: {sample_idx}")
         for i in sample_idx[:10]:
-            log(f"  idx={i} token='{tokens.iat[i]}' len={calc_len.iat[i]} token_length_col={token_length_col.iat[i]}")
-        fatal(log, "token_length mismatches found")
-    log("[OK] ✓ token_length matches string length for all tokens")
+            print(f"  idx={i} token='{tokens.iat[i]}' len={calc_len.iat[i]} token_length_col={token_length_col.iat[i]}")
+        fatal( "token_length mismatches found")
+    print("[OK] ✓ token_length matches string length for all tokens")
 
     # 4) position_in_sentence equals bert_index
     pos_mismatch = (converted["bert_index"] != converted["position_in_sentence"])
     if pos_mismatch.any():
         sample_idx = df.index[pos_mismatch][:10].tolist()
-        log(f"[ERROR] position_in_sentence != bert_index for {pos_mismatch.sum()} rows. Examples: {sample_idx}")
-        fatal(log, "position_in_sentence mismatch")
-    log("[OK] ✓ position_in_sentence equals bert_index")
+        print(f"[ERROR] position_in_sentence != bert_index for {pos_mismatch.sum()} rows. Examples: {sample_idx}")
+        fatal( "position_in_sentence mismatch")
+    print("[OK] ✓ position_in_sentence equals bert_index")
 
     # 5) relative_position check per sentence
-    log("[INFO] Verifying relative_position per sentence (tolerance {:.1e})".format(args.relative_tol))
+    print("[INFO] Verifying relative_position per sentence (tolerance {:.1e})".format(args.relative_tol))
     bad_rel = 0
     # cast bert_index as int for grouping
     df["_bert_index_int"] = converted["bert_index"].astype(int)
@@ -234,17 +243,17 @@ def main():
         diff = (expected - actual).abs()
         if (diff > args.relative_tol).any():
             bad = idxs[diff > args.relative_tol].tolist()[:5]
-            log(f"[ERROR] Relative position mismatch for sentence {sid}. Examples indices: {bad}")
+            print(f"[ERROR] Relative position mismatch for sentence {sid}. Examples indices: {bad}")
             bad_rel += len(bad)
             # break early
             break
     if bad_rel:
-        fatal(log, f"{bad_rel} relative_position mismatches found.")
+        fatal("{bad_rel} relative_position mismatches found.")
     else:
-        log("[OK] ✓ relative_position consistent with bert_index / max_index per sentence")
+        print("[OK] ✓ relative_position consistent with bert_index / max_index per sentence")
 
     # 6) num_subtokens consistency
-    log("[INFO] Checking num_subtokens consistency by grouping (per sentence_id, word_id)")
+    print("[INFO] Checking num_subtokens consistency by grouping (per sentence_id, word_id)")
 
     # valid rows for grouping: those with a word_id
     grouped = df[df["word_id"].apply(lambda x: not (pd.isna(x) or x==""))]
@@ -255,7 +264,7 @@ def main():
     grouped_valid = grouped[grouped["word_id_parsed"].notna()]
 
     if grouped_valid.empty:
-        log("[WARN] No rows with valid word_id found. Skipping num_subtokens grouping check.")
+        print("[WARN] No rows with valid word_id found. Skipping num_subtokens grouping check.")
     else:
         # compute counts
         grp_counts = grouped_valid.groupby(["sentence_id","word_id_parsed"]).size().rename("count").reset_index()
@@ -282,50 +291,50 @@ def main():
 
         if inconsistencies:
             sample = inconsistencies[:10]
-            log(f"[ERROR] num_subtokens mismatch found for {len(inconsistencies)} rows. Examples:")
+            print(f"[ERROR] num_subtokens mismatch found for {len(inconsistencies)} rows. Examples:")
             for it in sample:
                 idx,sid,wid,rep,exp = it
-                log(f"  idx={idx} sentence={sid} word_id={wid} reported={rep} expected_group_count={exp}")
-            fatal(log, "num_subtokens grouping inconsistent")
+                print(f"  idx={idx} sentence={sid} word_id={wid} reported={rep} expected_group_count={exp}")
+            fatal("num_subtokens grouping inconsistent")
         else:
-            log("[OK] ✓ num_subtokens matches counts computed per (sentence_id, word_id)")
+            print("[OK] ✓ num_subtokens matches counts computed per (sentence_id, word_id)")
 
         if big_values:
-            log("[WARN] Found unusually large num_subtokens for some (sentence,word). Examples (sentence,word,count):")
+            print("[WARN] Found unusually large num_subtokens for some (sentence,word). Examples (sentence,word,count):")
             for sid,wid,c in big_values[:10]:
-                log(f"  {sid},{wid},{c}")
-            log(f"[WARN] threshold for warning = {args.max_subtoken_warn}")
+                print(f"  {sid},{wid},{c}")
+            print(f"[WARN] threshold for warning = {args.max_subtoken_warn}")
 
     # 7) specials num_subtokens check: specials should have num_subtokens == -1 (by convention)
     specials_df = df[tokens.isin(["[CLS]","[SEP]","[PAD]","[UNK]"])]
     if not specials_df.empty:
         bad_specials = specials_df[specials_df["num_subtokens"].astype(float) != -1.0]
         if not bad_specials.empty:
-            log(f"[ERROR] Found special tokens with num_subtokens != -1. Examples (first 10):")
+            print(f"[ERROR] Found special tokens with num_subtokens != -1. Examples (first 10):")
             for i, r in bad_specials.head(10).iterrows():
-                log(f"  idx={i} token={r['bert_token']} num_subtokens={r['num_subtokens']}")
-            fatal(log, "Special tokens must have num_subtokens == -1 (convention used)")
-    log("[OK] ✓ Special tokens have num_subtokens == -1 as expected")
+                print(f"  idx={i} token={r['bert_token']} num_subtokens={r['num_subtokens']}")
+            fatal( "Special tokens must have num_subtokens == -1 (convention used)")
+    print("[OK] ✓ Special tokens have num_subtokens == -1 as expected")
 
     # 8) sanity bounds for num_subtokens overall
     numeric_subtokens = num_subtokens.dropna().astype(float)
     if (numeric_subtokens < -1).any():
-        fatal(log, "num_subtokens contains values < -1 (invalid)")
+        fatal( "num_subtokens contains values < -1 (invalid)")
     # warn for very large but not fatal
     above_reasonable = numeric_subtokens[numeric_subtokens > args.max_subtoken_warn]
     if len(above_reasonable):
-        log(f"[WARN] {len(above_reasonable)} tokens have num_subtokens > {args.max_subtoken_warn}. See log for examples.")
+        print(f"[WARN] {len(above_reasonable)} tokens have num_subtokens > {args.max_subtoken_warn}. See log for examples.")
     else:
-        log("[OK] ✓ num_subtokens values within reasonable bounds")
+        print("[OK] ✓ num_subtokens values within reasonable bounds")
 
     # 9) additional checks
     # - no empty token strings
     empty_tokens = tokens.str.strip() == ""
     if empty_tokens.any():
         idxs = df.index[empty_tokens][:10].tolist()
-        log(f"[ERROR] Found empty bert_token strings at indices: {idxs}")
-        fatal(log, "Empty bert_token strings found")
-    log("[OK] ✓ No empty bert_token values")
+        print(f"[ERROR] Found empty bert_token strings at indices: {idxs}")
+        fatal( "Empty bert_token strings found")
+    print("[OK] ✓ No empty bert_token values")
 
     # - check that for tokens with same (sentence_id,word_id) all num_subtokens identical
     pairs = df[df["word_id"].apply(lambda x: not (pd.isna(x) or str(x).strip()==""))][["sentence_id","word_id","num_subtokens"]].copy()
@@ -334,16 +343,15 @@ def main():
         coll = pairs.groupby(["sentence_id","word_id_parsed"])["num_subtokens"].nunique()
         bad = coll[coll > 1]
         if not bad.empty:
-            log("[ERROR] Inconsistent num_subtokens reported for the same (sentence_id,word_id). Examples:")
+            print("[ERROR] Inconsistent num_subtokens reported for the same (sentence_id,word_id). Examples:")
             for (sid,wid), nvals in bad.head(10).items():
-                log(f"  sentence={sid} word_id={wid} distinct_num_subtokens={nvals}")
-            fatal(log, "Inconsistent num_subtokens within same group")
-    log("[OK] ✓ num_subtokens is consistent across tokens belonging to same word")
+                print(f"  sentence={sid} word_id={wid} distinct_num_subtokens={nvals}")
+            print( "Inconsistent num_subtokens within same group")
+    print("[OK] ✓ num_subtokens is consistent across tokens belonging to same word")
 
     # final summary
-    log("\n[INFO] === VERIFICATION COMPLETE ===")
-    log("[INFO] All checks passed (or warnings reported).")
-    logfile_handle.close()
+    print("\n[INFO] === VERIFICATION COMPLETE ===")
+    print("[INFO] All checks passed (or warnings reported).")
     print(f"[INFO] Detailed log written to: {args.log_file}")
     return 0
 
