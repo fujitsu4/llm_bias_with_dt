@@ -12,12 +12,11 @@ Description:
         - num_subtokens
 
 Inputs:
-    --bert_csv : Path to bert_tokens.csv
+    --bert_csv: outputs/bert/bert_tokens.csv
 
 Outputs:
-    - CSV file containing all original BERT tokens + new feature columns.
-    (Default: outputs/bert/bert_basic_features.csv)
-
+    outputs/bert/bert_basic_features.csv : CSV file containing all original BERT tokens + new feature columns.
+    
 Usage:
     python -m src.bert.compute_bert_basic_features \
         --bert_csv outputs/bert/bert_tokens.csv \

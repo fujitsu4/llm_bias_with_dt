@@ -17,8 +17,14 @@ Description:
      - dataset column present and last (not required but checked)
      - basic statistics and warnings for suspicious values (very large num_subtokens)
 
+Inputs : 
+    --features_csv : outputs/bert/bert_basic_features.csv
+    
+Outputs :
+    --log_file : logs/bert_basic_features_logs.txt
+
  Usage:
-    !python -m src.bert.verify_bert_basic_features --features_csv outputs/bert/bert_basic_features.csv \
+    python -m src.bert.verify_bert_basic_features --features_csv outputs/bert/bert_basic_features.csv \
       --log_file logs/bert_basic_features_logs.txt
 """
 """

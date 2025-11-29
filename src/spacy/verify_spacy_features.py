@@ -24,11 +24,11 @@ B. Feature-by-feature checks (by token), relying on spaCy:
     9) depth_in_tree and num_dependents are recomposed and must match
 
 Inputs:
-    - Merged datasets (merged_datasets.csv)
-    - Initial SpaCy features (spacy_features.csv)
+    --sentences_csv : data/cleaned/merged_datasets.csv
+    --features_csv : outputs/spacy/spacy_features.csv
     
 Outputs:
-    - spacy_logs.txt (summary and error samples (max 20 per test))
+    --log_file logs/spacy_logs.txt (summary and error samples (max 20 per test))
     
 Usage:
     python -m src.spacy.verify_spacy_features --sentences_csv data/cleaned/merged_datasets.csv --features_csv outputs/spacy/spacy_features.csv --log_file logs/spacy_logs.txt

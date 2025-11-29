@@ -4,12 +4,14 @@ Author: Zakaria JOUILIL
 
 Description:
     Tokenize sentences using BERT, preserving the exact correspondence between BERT tokens and original words (word_id)
+
 Inputs :
-    - data/cleaned/merged_datasets.csv
-    - outputs/spacy/spacy_features.csv (necessary to retrieve the exact word order)
+    --sentences_csv : data/cleaned/merged_datasets.csv
+    --spacy_csv : outputs/spacy/spacy_features.csv (necessary to retrieve the exact word order)
 
 Outputs :
-    - bert/bert_tokens.csv
+    outputs/bert/bert_tokens.csv
+
 Usage:
     python -m src.bert.tokenize_with_bert \
     --sentences_csv data/cleaned/merged_datasets.csv \

@@ -25,7 +25,7 @@ Inputs:
     --spacy_csv : The spaCy features CSV (required to recover the exact list of words per sentence)
 
 Outputs :
-    --log_file      : Path to a .log file where all reports and progress messages are stored
+    --log_file      : A log file where all reports and progress messages are stored
 
     Usage:
     python -m src.bert.verify_bert_tokenization \
