@@ -14,7 +14,7 @@ Ouputs :
 Usage:
    python -m src.bert.verify_bert_statistical_features \
        --features_csv outputs/bert/bert_statistical_features.csv \
-       --log_file logs/verify_bert_statistical_features.log
+       --log_file logs/bert_statistical_features_logs.txt
 """
 
 import argparse
@@ -232,25 +232,28 @@ def main():
     # 7) token_rank monotonicity check with global counts
     log("[INFO] Verifying token_rank mapping using DENSE RANK (ties = same rank)")
 
+    # compute expected dense rank
     token_counts = df[df["is_special_token"] == 0].groupby("bert_token").size()
     dense_rank = token_counts.rank(method="dense", ascending=False).astype(int)
     expected_map = dense_rank.to_dict()
 
     mismatches = []
-    for tok in expected_map:
-        recorded = int(df.loc[df["bert_token"] == tok, "token_rank"].iloc[0])
-        expected = expected_map[tok]
+    for tok, expected in expected_map.items():
+        # recorded rank for this token in df
+        recorded = df.loc[(df["bert_token"] == tok) & (df["is_special_token"] == 0),
+                      "token_rank"].iloc[0]
+
         if recorded != expected:
             mismatches.append((tok, recorded, expected))
-        if len(mismatches) >= 20:
-            break
+            if len(mismatches) >= 20:
+                break
 
     if mismatches:
-        log("[WARN] token_rank mismatches detected (dense ranking used for verification):")
-        for tok, rec, exp in mismatches[:20]:
-            log(f"  token='{tok}' recorded={rec} expected_dense={exp}")
+        log("[ERROR] token_rank mismatches detected (dense ranking used for verification):")
+        for tok, rec, exp in mismatches:
+            log(f"  token='{tok}' recorded={rec} expected={exp}")
     else:
-        log("[OK] token_rank matches dense rank for all sampled tokens")
+        log("[OK] token_rank matches dense rank for all tokens.")
 
     # 8) word_burstiness values numeric & within [-1,1] (theoretical bounds)
     log("[INFO] Checking word_burstiness numeric and within [-1,1] (finite)")

@@ -131,7 +131,7 @@ print("[INFO] Computing token_rank (BERT-token-level)...")
 token_counts = df[df["is_special_token"] == 0].groupby("bert_token").size()
 
 # Assign tied ranks (same frequency -> same rank)
-token_ranks = token_counts.rank(method="min", ascending=False).astype(int)
+token_ranks = token_counts.rank(method="dense", ascending=False).astype(int)
 
 # Map to DF
 df["token_rank"] = df["bert_token"].map(token_ranks)
