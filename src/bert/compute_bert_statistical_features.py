@@ -68,15 +68,26 @@ df["is_special_token"] = df["is_special_token"].astype(int)
 # 1) token_relative_frequency
 #    (token count in sentence / total tokens in sentence)
 # ------------------------------------------------------------
-print("[INFO] Computing token_relative_frequency (per sentence)...")
+print("[INFO] Computing token_relative_frequency (per sentence, excluding specials)...")
 
 def relative_freq(group):
     return group.groupby("bert_token")["bert_token"].transform("count") / len(group)
 
-df["token_relative_frequency"] = (
-    df.groupby("sentence_id")["bert_token"]
-      .transform(lambda x: x.map(x.value_counts() / len(x)))
-)
+df["token_relative_frequency"] = 0.0
+
+for sid, group in df.groupby("sentence_id"):
+    non_special = group[group["is_special_token"] == 0]
+
+    if len(non_special) == 0:
+        continue
+
+    N = len(non_special)
+
+    freqs = non_special["bert_token"].value_counts() / N
+
+    df.loc[non_special.index, "token_relative_frequency"] = (
+        non_special["bert_token"].map(freqs)
+    )
 
 # Special tokens must ALWAYS have local frequency = 0
 df.loc[df["is_special_token"] == 1, "token_relative_frequency"] = 0.0

@@ -167,7 +167,7 @@ def main():
     log("[OK] Specials respect conventions (relative_freq=0, token_rank=0, word_sentence_frequency=0, num_subtokens=-1)")
 
     # 5) token_relative_frequency correctness per sentence:
-    # For each sentence, token_relative_frequency should equal count(token)/total_tokens_in_sentence
+    # For each sentence, token_relative_frequency should equal count(token)/total_non_special_tokens
     log("[INFO] Verifying token_relative_frequency equals count(token)/n_tokens per sentence (sampled checks)...")
     bad_count = 0
     # iterate grouped by sentence but limit expensive full-check to a subset if very large
@@ -177,17 +177,17 @@ def main():
         g = df[df["sentence_id"] == sid]
         if g.empty:
             continue
-        total = len(g[ g["is_special_token"].astype(str).map(lambda x: x in ("0","False","false")) ])  # count non special tokens OR include specials? earlier we set specials freq 0 so include all tokens OK
-        # We'll compute count per token string
-        cnts = g["bert_token"].value_counts().to_dict()
-        # compare for each unique token in the sentence
-        for tok, expected_count in cnts.items():
-            # Skip specials: their freq is *defined* as 0 by design
-            row = g[g["bert_token"] == tok].iloc[0]
-            if int(row["is_special_token"]) == 1:
-                continue  # <--- this fixes everything
 
-            expected_rel = expected_count / len(g)
+        # count NON-special tokens
+        mask_non_special = g["is_special_token"].astype(str).isin(["0", "False", "false"])
+        total_non_special = mask_non_special.sum()
+        cnts = g[mask_non_special]["bert_token"].value_counts().to_dict()
+
+        for tok, expected_count in cnts.items():
+            # pick any row of that token (non-special)
+            row = g[ (g["bert_token"] == tok) & mask_non_special ].iloc[0]
+
+            expected_rel = expected_count / total_non_special   # ✅ CORRECT
             actual_rel = float(row["token_relative_frequency"])
 
             if not approx_equal(actual_rel, expected_rel, tol=1e-6):

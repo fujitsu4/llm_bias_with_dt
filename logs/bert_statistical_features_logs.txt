@@ -1,4 +1,4 @@
-[INFO] Logging -> logs/bert_statistical_features_verify.txt
+[INFO] Logging -> logs/bert_statistical_features_logs.txt
 [INFO] Starting verification of statistical features
 [INFO] Rows loaded: 301147
 [OK] Columns presence: all required columns found (15)
