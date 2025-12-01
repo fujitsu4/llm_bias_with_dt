@@ -48,9 +48,10 @@ def load_model(pretrained: bool, seed: int = None):
         if seed is None:
             raise ValueError("Seed must be provided for untrained model.")
         fix_seed(seed)
-        config = BertConfig.from_pretrained("bert-base-cased")
+        config = BertConfig.from_pretrained("bert-base-cased", output_attentions=True)
         model = BertModel(config)
 
+    model.config.output_attentions = True
     model.eval()
     return model
 

@@ -13,17 +13,19 @@ Inputs and parameters :
     --seed : choose the fixed seed (for untrained model)
 
 Outputs :
-    The results are stored at the "debug_examples" repository (fixed repository, not a parameter of the script)
+    Attention score matrixes (per sentence, per head)
+    Sum of attention score matrixes (per sentence, per head and per layer).
+    3 Sentences samples are stored at the "debug_samples" repository (fixed repository, not a parameter of the script)
 
 Usage:
     For pretrained model : 
-        python debug_attention.py \
+        python -m src.attention.debug_attention \
             --input_csv outputs/bert/bert_final_features.csv \
             --num_sentences 3 \
             --model pretrained
 
     For untrained:
-        python debug_attention.py \
+        python -m src.attention.debug_attention \
             --input_csv outputs/bert/bert_final_features.csv \
             --num_sentences 3 \
             --model untrained --seed 123
@@ -34,7 +36,7 @@ import os
 import pandas as pd
 from termcolor import colored
 
-from compute_attention_core import (
+from src.attention.compute_attention_core import (
     load_model,
     compute_attention
 )
@@ -69,7 +71,7 @@ def main():
     tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 
     # Prepare debug folder
-    out_dir = "outputs/debug_examples"
+    out_dir = "outputs/debug_samples"
     os.makedirs(out_dir, exist_ok=True)
 
     # ---------------------------------------------------------

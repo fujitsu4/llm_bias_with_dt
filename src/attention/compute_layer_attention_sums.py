@@ -6,14 +6,6 @@ Description:
     Extract attention matrices from a BERT model (pretrained or randomly initialized),
     aggregate attention per-layer and produce per-token layer-sums and top-k flags.
 
-    Two aggregation modes are supported:
-      - "to"   : sum of attention *received* by each token in the layer
-                (i.e. sum over all source tokens and heads of attention[:, src, tgt])
-                -> useful to know which tokens are looked-at by the rest of the sentence
-      - "from" : sum of attention *sent* from each token in the layer
-                (i.e. sum over heads and target tokens of attention[:, src, tgt])
-                -> useful to know which tokens distribute attention outward
-
 Outputs:
     - CSV with the same rows as input (one row per bert token) plus:
         layer_1_sum, ..., layer_12_sum  (floats)
@@ -24,16 +16,11 @@ Usage examples:
     python -m src.attention.compute_layer_attention_sums \
         --model pretrained \
         --input_csv outputs/bert/bert_final_features.csv \
-        --output_dir outputs/attention/pretrained \
-        --mode to
-
+        
     # untrained with seed
     python -m src.attention.compute_layer_attention_sums \
         --model untrained --seed 100 \
         --input_csv outputs/bert/bert_final_features.csv \
-        --output_dir outputs/attention/untrained \
-        --mode to
-
 """
 
 import argparse
@@ -42,7 +29,7 @@ from tqdm import tqdm
 import torch
 import numpy as np
 import pandas as pd
-from transformers import BertTokenizerFast, BertModel, BertConfig
+from transformers import BertTokenizer, BertModel, BertConfig
 import math
 
 def fix_seed(seed: int):
@@ -67,14 +54,14 @@ def load_model(pretrained: bool, device):
         # load config from pretrained to keep same architecture, but random init
         cfg = BertConfig.from_pretrained("bert-base-cased")
         model = BertModel(cfg)  # random init
+    model.config.output_attentions = True
     model.to(device)
     model.eval()
     return model
 
-def aggregate_attention_per_layer(attentions, mode="to"):
+def aggregate_attention_per_layer(attentions):
     """
     attentions: tuple of length L where each element is tensor (batch, n_heads, seq_len, seq_len)
-    mode: "to" or "from"
     returns: list of arrays length seq_len with aggregated sums per layer
              (list length = number_of_layers; each item a numpy array shape (seq_len,))
     """
@@ -86,12 +73,8 @@ def aggregate_attention_per_layer(attentions, mode="to"):
         arr = layer_att[0].detach().cpu().numpy()  # shape (n_heads, seq_len, seq_len)
         # sum across heads first -> shape (seq_len, seq_len)
         sum_heads = np.sum(arr, axis=0)  # (seq_len, seq_len)
-        if mode == "to":
-            # total attention received by token j: sum over source i of sum_heads[i, j]
-            per_token = np.sum(sum_heads, axis=0)  # sum over source dimension -> shape (seq_len,)
-        else:  # mode == "from"
-            # total attention sent by token i: sum over target j of sum_heads[i, j]
-            per_token = np.sum(sum_heads, axis=1)  # shape (seq_len,)
+        # total attention received by token j: sum over source i of sum_heads[i, j]
+        per_token = np.sum(sum_heads, axis=0)  # sum over source dimension -> shape (seq_len,)
         layer_sums.append(per_token)
     return layer_sums
 
@@ -117,9 +100,6 @@ def main():
                         help="pretrained or untrained model")
     parser.add_argument("--seed", type=int, default=42, help="seed for untrained model")
     parser.add_argument("--input_csv", required=True, help="CSV with bert tokens and features (one row per token)")
-    parser.add_argument("--output_dir", required=True, help="Directory to save outputs")
-    parser.add_argument("--mode", choices=["to","from"], default="to",
-                        help="'to' = attention received by token (default). 'from' = attention sent by token.")
     parser.add_argument("--top_k", type=int, default=5, help="k for top-k labeling (default 5)")
     parser.add_argument("--device", type=str, default=None, help="torch device to use (cpu or cuda). autodetect if omitted")
     args = parser.parse_args()
@@ -128,11 +108,17 @@ def main():
     if device is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    if args.model == "untrained":
+    if args.model == "pretrained":
+        output_dir = "outputs/attention/pretrained"
+        
+    else:  # untrained
+        if args.seed is None:
+            raise ValueError("For untrained model, you MUST provide --seed")
         fix_seed(args.seed)
-
+        output_dir = "outputs/attention/untrained"
+        
     print(f"[INFO] Loading tokenizer & model ({args.model}) on {device} ...")
-    tokenizer = BertTokenizerFast.from_pretrained("bert-base-cased", do_lower_case=False)
+    tokenizer = BertTokenizer.from_pretrained("bert-base-cased", do_lower_case=False)
     model = load_model(args.model=="pretrained", device)
     model.eval()
 
@@ -150,12 +136,12 @@ def main():
         df[f"layer_{L}_sum"] = np.nan
         df[f"top5_l{L}"] = 0
 
-    os.makedirs(args.output_dir, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
     if args.model == "pretrained":
-        out_name = f"attention_pretrained_mode-{args.mode}_topk-{args.top_k}.csv"
+        out_name = f"attention_pretrained_top{args.top_k}.csv"
     else:
-        out_name = f"attention_untrained_seed{args.seed}_mode-{args.mode}_topk-{args.top_k}.csv"
-    out_path = os.path.join(args.output_dir, out_name)
+        out_name = f"attention_untrained_seed_{args.seed}_top{args.top_k}.csv"
+    out_path = os.path.join(output_dir, out_name)
 
     # Process per sentence
     grouped = df.groupby("sentence_id", sort=False)
@@ -184,7 +170,7 @@ def main():
             attentions = outputs.attentions  # tuple length n_layers, each (batch, n_heads, seq_len, seq_len)
 
         # aggregate per layer
-        per_layer_sums = aggregate_attention_per_layer(attentions, mode=args.mode)  # list length n_layers; arrays shape (seq_len,)
+        per_layer_sums = aggregate_attention_per_layer(attentions)  # list length n_layers; arrays shape (seq_len,)
 
         seq_len = len(tokens)
         # write per-layer sums into df rows
