@@ -73,30 +73,28 @@ def compute_attention(model, tokenizer, bert_tokens):
             layer_sums    : list of (seq_len,)  sum over all heads + sources
             head_sums     : [layer][head] -> (seq_len,)  sum over sources
     """
-    # Prepare input
-    enc = tokenizer(
-        bert_tokens,
-        is_split_into_words=True,
-        return_tensors="pt",
-        add_special_tokens=True
-    )
+
+    # ----------------------------------------------
+    # NO RETOKENIZATION → convert tokens directly
+    # ----------------------------------------------
+    input_ids = torch.tensor([tokenizer.convert_tokens_to_ids(bert_tokens)])
+    attention_mask = torch.ones_like(input_ids)
 
     with torch.no_grad():
-        outputs = model(**enc)
+        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+
         # outputs.attentions -> tuple of num_layers tensors
-        # each tensor: (batch=1, num_heads, seq_len, seq_len)
+        # each: (batch=1, num_heads, seq_len, seq_len)
         attentions = torch.stack(outputs.attentions, dim=0).squeeze(1)
         # shape: (num_layers, num_heads, seq_len, seq_len)
-        # Example: (12, 12, seq_len, seq_len)
 
     num_layers, num_heads, seq_len, _ = attentions.shape
 
     # ---------------------------------------------------------
     # Compute layer sums (sum over heads, sum over FROM tokens)
     # ---------------------------------------------------------
-    layer_sums = []  # list of length num_layers, each tensor shape: (seq_len,)
+    layer_sums = []
     for L in range(num_layers):
-        # attentions[L] = (num_heads, seq_len, seq_len)
         layer_sum = attentions[L].sum(dim=0).sum(dim=0)
         layer_sums.append(layer_sum)
 
@@ -107,15 +105,12 @@ def compute_attention(model, tokenizer, bert_tokens):
     for L in range(num_layers):
         per_layer = []
         for H in range(num_heads):
-            head_sum = attentions[L][H].sum(dim=0)  # (seq_len,)
+            head_sum = attentions[L][H].sum(dim=0)
             per_layer.append(head_sum)
         head_sums.append(per_layer)
 
-    # Retrieve the actual tokens BERT used
-    decoded_tokens = tokenizer.convert_ids_to_tokens(enc["input_ids"][0])
-
     return {
-        "tokens": decoded_tokens,
+        "tokens": bert_tokens,
         "attentions": attentions,
         "layer_sums": layer_sums,
         "head_sums": head_sums
