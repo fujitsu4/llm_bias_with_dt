@@ -43,10 +43,15 @@ from src.attention.compute_attention_core import (
 from transformers import BertTokenizer
 
 
-def save_matrix(path, matrix):
+def save_matrix_with_tokens(path, matrix, tokens):
+    seq_len = len(tokens)
+
     with open(path, "w", encoding="utf8") as f:
-        for row in matrix:
-            f.write(" ".join(f"{x:.6f}" for x in row.tolist()) + "\n")
+        f.write("TOKEN\t" + "\t".join(tokens) + "\n")
+
+        for i in range(seq_len):
+            row = [f"{matrix[i][j]:.6f}" for j in range(seq_len)]
+            f.write(tokens[i] + "\t" + "\t".join(row) + "\n")
 
 
 def main():
@@ -71,7 +76,12 @@ def main():
     tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 
     # Prepare debug folder
-    out_dir = "outputs/debug_samples"
+    if args.model == "pretrained":
+        out_dir = "outputs/debug_samples/pretrained"
+
+    if args.model == "untrained":
+        out_dir = f"outputs/debug_samples/untrained/seed_{args.seed}"
+
     os.makedirs(out_dir, exist_ok=True)
 
     # ---------------------------------------------------------
@@ -101,7 +111,7 @@ def main():
                     sentence_dir,
                     f"layer_{L+1:02d}_head_{H+1:02d}.txt"
                 )
-                save_matrix(path, attentions[L][H])
+                save_matrix_with_tokens(path, attentions[L][H], data["tokens"])
         
         # ---------------------------------------------
         # Write layer sums
