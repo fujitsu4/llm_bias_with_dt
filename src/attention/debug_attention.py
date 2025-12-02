@@ -11,6 +11,7 @@ Inputs and parameters :
     --num_sentences : number of sentences to be tested
     --model : choose pretrained or untrained configuration
     --seed : choose the fixed seed (for untrained model)
+    --sentence_ids : (will ignore num_sentences) choose precise IDs of sentences to be tested
 
 Outputs :
     Attention score matrixes (per sentence, per head)
@@ -29,6 +30,12 @@ Usage:
             --input_csv outputs/bert/bert_final_features.csv \
             --num_sentences 3 \
             --model untrained --seed 123
+
+    NOTE : If sentence_ids is choosen, usage for pretrained model will be :
+        python -m src.attention.debug_attention \
+            --input_csv outputs/bert/bert_final_features.csv \
+            --model pretrained \
+            --sentence_ids 2714 4131 4465 4562 4692 4773
 """
 
 import argparse
@@ -110,9 +117,10 @@ def save_matrix_with_tokens(path, matrix, tokens):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_csv", required=True)
-    parser.add_argument("--num_sentences", type=int, required=True)
+    parser.add_argument("--num_sentences", type=int, default = 3, required=False)
     parser.add_argument("--model", choices=["pretrained", "untrained"], required=True)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--sentence_ids", nargs="*", type=int, default=None)
     args = parser.parse_args()
 
     # Load CSV (tokens already BERT WordPiece)
@@ -121,7 +129,18 @@ def main():
     df["bert_token"] = df["bert_token"].astype(str)
 
     groups = df.groupby("sentence_id", sort=False)
-    sentences = list(groups)[: args.num_sentences]
+    # If specific sentence IDs were requested, filter them
+    if args.sentence_ids:
+        print(colored(f"[INFO] Using specific sentence_ids: {args.sentence_ids}", "cyan"))
+        selected = []
+        for sid in args.sentence_ids:
+            if sid in groups.groups:
+                selected.append((sid, groups.get_group(sid)))
+            else:
+                print(colored(f"[WARN] sentence_id {sid} not found in input CSV.", "yellow"))
+        sentences = selected
+    else:
+        sentences = list(groups)[:args.num_sentences]
 
     print(colored(f"[INFO] Debugging {len(sentences)} sentences", "cyan"))
 
