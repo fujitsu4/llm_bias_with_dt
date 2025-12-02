@@ -1,0 +1,6 @@
+sentence_id: 4465
+num_tokens: 15
+original_tokens: [CLS] I heard from none of the representatives from the power generation sector . [SEP]
+model_tokens: [CLS] I heard from none of the representatives from the power generation sector . [SEP]
+
+Note: All attention matrices are stored with both original and model-token headers.

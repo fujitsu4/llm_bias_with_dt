@@ -1,0 +1,6 @@
+sentence_id: 3
+num_tokens: 17
+original_tokens: [CLS] A boy is jumping on skate ##board in the middle of a red bridge . [SEP]
+model_tokens: [CLS] A boy is jumping on skate ##board in the middle of a red bridge . [SEP]
+
+Note: All attention matrices are stored with both original and model-token headers.

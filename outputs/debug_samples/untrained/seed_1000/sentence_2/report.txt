@@ -1,0 +1,6 @@
+sentence_id: 2
+num_tokens: 15
+original_tokens: [CLS] A person is at a diner , ordering an o ##mel ##ette . [SEP]
+model_tokens: [CLS] A person is at a diner , ordering an o ##mel ##ette . [SEP]
+
+Note: All attention matrices are stored with both original and model-token headers.
