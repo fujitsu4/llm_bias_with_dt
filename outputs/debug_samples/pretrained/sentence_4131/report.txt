@@ -1,0 +1,6 @@
+sentence_id: 4131
+num_tokens: 54
+original_tokens: [CLS] Although other types of for ##feit ##ed property must be sold in order to recognize revenue , or construct ##ively sold ( if transferred to another Federal agency or placed into internal use ) , this is the last step in a process that is inherent ##ly none ##x ##chang ##e . [SEP]
+model_tokens: [CLS] Although other types of for ##feit ##ed property must be sold in order to recognize revenue , or construct ##ively sold ( if transferred to another Federal agency or placed into internal use ) , this is the last step in a process that is inherent ##ly none ##x ##chang ##e . [SEP]
+
+Note: All attention matrices are stored with both original and model-token headers.

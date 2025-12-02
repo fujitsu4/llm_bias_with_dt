@@ -1,0 +1,6 @@
+sentence_id: 4692
+num_tokens: 72
+original_tokens: [CLS] EPA has determined that the impacts would be minimal or none ##xi ##sten ##t because , among other reasons , the phase - in of the re ##man ##uf ##act ##uring requirements combined with the compliance flexibility given to small businesses during the initial years of the program will allow them to make the transition into the new marketplace for certified re ##man ##uf ##act ##ures without hard ##ship . [SEP]
+model_tokens: [CLS] EPA has determined that the impacts would be minimal or none ##xi ##sten ##t because , among other reasons , the phase - in of the re ##man ##uf ##act ##uring requirements combined with the compliance flexibility given to small businesses during the initial years of the program will allow them to make the transition into the new marketplace for certified re ##man ##uf ##act ##ures without hard ##ship . [SEP]
+
+Note: All attention matrices are stored with both original and model-token headers.
