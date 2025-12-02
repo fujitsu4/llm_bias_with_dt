@@ -23,7 +23,7 @@ Output format returned by compute_attention():
 """
 
 import torch
-from transformers import BertTokenizer, BertConfig, BertModel
+from transformers import BertConfig, BertModel
 
 
 # ---------------------------------------------------------
@@ -51,7 +51,7 @@ def load_model(pretrained: bool, seed: int = None):
         config = BertConfig.from_pretrained("bert-base-cased", output_attentions=True)
         model = BertModel(config)
 
-    model.config.output_attentions = True
+    model.config.output_attentions = True  # To be sure
     model.eval()
     return model
 
@@ -75,23 +75,34 @@ def compute_attention(model, tokenizer, bert_tokens):
     """
 
     # ----------------------------------------------
-    # NO RETOKENIZATION → convert tokens directly
+    # Convert directly without retokenization
     # ----------------------------------------------
     input_ids = torch.tensor([tokenizer.convert_tokens_to_ids(bert_tokens)])
     attention_mask = torch.ones_like(input_ids)
 
+    # Add device
+    device = next(model.parameters()).device
+    input_ids = input_ids.to(device)
+    attention_mask = attention_mask.to(device)
+
     with torch.no_grad():
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
 
-        # outputs.attentions -> tuple of num_layers tensors
-        # each: (batch=1, num_heads, seq_len, seq_len)
+        # Safety check
+        if getattr(outputs, "attentions", None) is None:
+            raise RuntimeError(
+                "Model did not return attentions. "
+                "Ensure model.config.output_attentions=True."
+            )
+
+        # outputs.attentions: tuple of (num_layers tensors)
         attentions = torch.stack(outputs.attentions, dim=0).squeeze(1)
         # shape: (num_layers, num_heads, seq_len, seq_len)
 
     num_layers, num_heads, seq_len, _ = attentions.shape
 
     # ---------------------------------------------------------
-    # Compute layer sums (sum over heads, sum over FROM tokens)
+    # Compute layer sums
     # ---------------------------------------------------------
     layer_sums = []
     for L in range(num_layers):
@@ -99,7 +110,7 @@ def compute_attention(model, tokenizer, bert_tokens):
         layer_sums.append(layer_sum)
 
     # ---------------------------------------------------------
-    # Compute head-wise sums (sum over FROM tokens)
+    # Compute head-wise sums
     # ---------------------------------------------------------
     head_sums = []
     for L in range(num_layers):
