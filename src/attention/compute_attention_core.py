@@ -24,6 +24,8 @@ Output format returned by compute_attention():
 
 import torch
 from transformers import BertConfig, BertModel
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 
 # ---------------------------------------------------------

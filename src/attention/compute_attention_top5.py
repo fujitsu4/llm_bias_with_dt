@@ -54,6 +54,9 @@ import torch
 from tqdm import tqdm
 from transformers import BertTokenizerFast
 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 from src.attention.compute_attention_core import (
     load_model,
     compute_attention,
