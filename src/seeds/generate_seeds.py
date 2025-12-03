@@ -15,7 +15,7 @@ Output example (outputs/attention/seeds_list.txt):
     SEEDS = [1837291, 52821, 934820, ...]
 
 Usage example :
-    !python src.seeds.generate_seeds --count 30 --low 1 -- high 10000 \
+    !python -m src.seeds.generate_seeds --count 30 --low 1 -- high 10000 \
         --output outputs/attention/seeds_list.txt
 """
 
