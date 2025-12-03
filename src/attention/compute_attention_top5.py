@@ -162,9 +162,7 @@ def main():
                 raise RuntimeError(f"Layer {li+1}: attention sum is None")
 
             if tens.shape[0] != seq_len:
-            raise RuntimeError(
-            f"Shape mismatch at layer {li+1}: tensor length={tens.shape[0]} vs tokens={seq_len}"
-        )
+                raise RuntimeError(f"Shape mismatch at layer {li+1}: tensor length={tens.shape[0]} vs tokens={seq_len}")
 
         # ------------------------
         # For each layer :
