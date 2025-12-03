@@ -12,7 +12,7 @@
 # !bash run_seeds.sh /content/llm_bias_with_dt/outputs/attention/seeds_list.txt --max-runs 3
 
 
-set -euo pipefail
+set -uo pipefail
 
 SEEDS_FILE="${1:-seeds_list.txt}"
 MAX_RUNS=5
