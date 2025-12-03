@@ -4,7 +4,8 @@ Author: Zakaria JOUILIL
 
 Description:
     Compute per-layer attention sums and top-5 flags for ALL tokens of ALL sentences.
-    Uses ONLY compute_attention() (NO retokenization), and processes the entire dataset.
+    Uses ONLY compute_attention() (tested and validated before), and processes
+    the entire dataset.
 
 Inputs and paramters : 
     --model : choose pretrained or untrained configuration
