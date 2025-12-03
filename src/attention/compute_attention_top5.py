@@ -150,6 +150,22 @@ def main():
         layer_sums = att["layer_sums"]   # list of 12 tensors (seq_len,)
         seq_len = len(token_list)
 
+        # ---- SANITY CHECKS ----
+        if not isinstance(layer_sums, (list, tuple)):
+            raise RuntimeError(f"Invalid type for layer_sums: {type(layer_sums)}")
+
+        if len(layer_sums) != n_layers:
+            raise RuntimeError(f"Expected {n_layers} layers but got {len(layer_sums)}")
+
+        for li, tens in enumerate(layer_sums):
+            if tens is None:
+                raise RuntimeError(f"Layer {li+1}: attention sum is None")
+
+            if tens.shape[0] != seq_len:
+            raise RuntimeError(
+            f"Shape mismatch at layer {li+1}: tensor length={tens.shape[0]} vs tokens={seq_len}"
+        )
+
         # ------------------------
         # For each layer :
         #   1) save attention sum
@@ -160,14 +176,12 @@ def main():
             col_sum = f"sum_l{li+1}"
             col_top = f"top5_l{li+1}"
 
-            # Set sums for each token
-            for j, idx in enumerate(df_indices):
-                df.at[idx, col_sum] = float(layer_sum_np[j])
+            # Vectorized: assign all sums at once
+            df.loc[df_indices, col_sum] = layer_sum_np
 
-            # Compute top-k flags within this sentence
+            # Vectorized: assign top-k flags at once
             flags = topk_boolean_flags(layer_sum_np, k=args.top_k)
-            for j, idx in enumerate(df_indices):
-                df.at[idx, col_top] = int(flags[j])
+            df.loc[df_indices, col_top] = flags
 
     # -----------------------------------------------------
     # Enforce types
