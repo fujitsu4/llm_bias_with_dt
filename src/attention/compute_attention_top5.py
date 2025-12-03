@@ -37,9 +37,8 @@ import pandas as pd
 import numpy as np
 import torch
 from tqdm import tqdm
-from transformers import BertTokenizer
+from transformers import BertTokenizerFast
 
-# import your core module (NO file I/O inside)
 from src.attention.compute_attention_core import (
     load_model,
     compute_attention,
@@ -93,7 +92,7 @@ def main():
         fix_seed(args.seed)
 
     model = load_model(pretrained_flag, seed=args.seed)
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased", do_lower_case=False)
+    tokenizer = BertTokenizerFast.from_pretrained("bert-base-cased")
     model.to(device)
     model.eval()
 

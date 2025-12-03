@@ -43,7 +43,7 @@ from src.attention.compute_attention_core import (
     load_model,
     compute_attention
 )
-from transformers import BertTokenizer
+from transformers import BertTokenizerFast
 import pandas as pd
 
 # -------------------------------------------------------------------
@@ -156,7 +156,7 @@ def main():
     # --------------------------------------------------------------
     # Load tokenizer
     # --------------------------------------------------------------
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizerFast.from_pretrained("bert-base-cased")
 
     # --------------------------------------------------------------
     # Prepare sentence set

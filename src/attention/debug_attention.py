@@ -49,7 +49,7 @@ from src.attention.compute_attention_core import (
     load_model,
     compute_attention
 )
-from transformers import BertTokenizer
+from transformers import BertTokenizerFast
 
 # -------------------------
 # Test functions (internal)
@@ -146,7 +146,7 @@ def main():
 
     # Load model + tokenizer
     model = load_model(args.model == "pretrained", seed=args.seed)
-    tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
+    tokenizer = BertTokenizerFast.from_pretrained("bert-base-cased")
 
     # Prepare debug folder (dynamic)
     if args.model == "pretrained":
