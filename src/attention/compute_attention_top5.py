@@ -30,6 +30,21 @@ Usage :
         --input_csv outputs/bert/bert_final_features.csv
 
 """
+"""
+UPDATE 2025-12-03:
+Due to very large output file sizes (≈105 MB) we reduced the exported CSV by removing:
+- the full attention SUM columns for all 12 layers,
+
+These fields are now DISABLED BY DEFAULT to keep results under 50 MB
+and compatible with GitHub storage limits.
+
+To reproduce the full original output (archival version), simply
+re-enable the commented block in lines 144, 189, 193 and 203 where SUM columns
+are computed and added to the dataframe before saving.
+
+This change does NOT affect the top-5 attention labels or any analysis
+used in the thesis.
+"""
 
 import argparse
 import os
@@ -126,7 +141,7 @@ def main():
     # -----------------------------------------------------
     n_layers = 12  # BERT-base
     for L in range(1, n_layers + 1):
-        df[f"sum_l{L}"] = np.nan
+        #df[f"sum_l{L}"] = np.nan # Disabled Code (too large .csv to upload to GitHub)
         df[f"top5_l{L}"] = 0
 
     # -----------------------------------------------------
@@ -171,11 +186,11 @@ def main():
         # ------------------------
         for li in range(n_layers):
             layer_sum_np = layer_sums[li].detach().cpu().numpy()  # (seq_len,)
-            col_sum = f"sum_l{li+1}"
+            #col_sum = f"sum_l{li+1}" # Disabled Code (too large .csv to upload to GitHub)
             col_top = f"top5_l{li+1}"
 
             # Vectorized: assign all sums at once
-            df.loc[df_indices, col_sum] = layer_sum_np
+            #df.loc[df_indices, col_sum] = layer_sum_np # Disabled Code (too large .csv to upload to GitHub)
 
             # Vectorized: assign top-k flags at once
             flags = topk_boolean_flags(layer_sum_np, k=args.top_k)
@@ -185,7 +200,7 @@ def main():
     # Enforce types
     # -----------------------------------------------------
     for L in range(1, n_layers + 1):
-        df[f"sum_l{L}"] = df[f"sum_l{L}"].astype(float)
+    #    df[f"sum_l{L}"] = df[f"sum_l{L}"].astype(float) ## Disabled Code (too large .csv to upload to GitHub)
         df[f"top5_l{L}"] = df[f"top5_l{L}"].astype(int)
 
     # -----------------------------------------------------
