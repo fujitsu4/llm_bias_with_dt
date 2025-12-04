@@ -1,6 +1,0 @@
-sentence_id: 2714
-num_tokens: 16
-original_tokens: [CLS] None of the original buildings in En ##ga ##ku ##ji are still remaining . [SEP]
-model_tokens: [CLS] None of the original buildings in En ##ga ##ku ##ji are still remaining . [SEP]
-
-Note: All attention matrices are stored with both original and model-token headers.

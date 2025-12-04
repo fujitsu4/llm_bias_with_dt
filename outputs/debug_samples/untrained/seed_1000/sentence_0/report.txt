@@ -1,6 +1,0 @@
-sentence_id: 0
-num_tokens: 14
-original_tokens: [CLS] A person on a horse jumps over a broken down airplane . [SEP]
-model_tokens: [CLS] A person on a horse jumps over a broken down airplane . [SEP]
-
-Note: All attention matrices are stored with both original and model-token headers.

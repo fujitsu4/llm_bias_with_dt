@@ -110,15 +110,12 @@ To reproduce the full pipeline, simply follow all the commands listed at the beg
 
 ## 📁 Debug Samples
 
-The folder `outputs/debug_samples/` contains **miniature attention-extraction examples** for both pretrained and untrained BERT models.  
-These examples are intentionally lightweight (≤350 KB) and serve as:
-
-- qualitative demonstrations,  
-- sanity checks,  
-- proof of pipeline behavior,  
-- reproducibility guidance.  
-
-These files are **not downsampled** and remain exactly as produced by the code.
+The folder `outputs/debug_samples/` contains a minimal and lightweight subset of
+debugging outputs used to illustrate the internal structure of the pipeline.
+Only one complete example is kept for each setting (pretrained / untrained), for
+documentation purposes. The full debug output originally generated during the
+runs has been intentionally omitted to keep the repository clean and compact,
+as it is not required for reproducibility or analysis.
 
 ---
 
