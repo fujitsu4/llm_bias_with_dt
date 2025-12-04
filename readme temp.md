@@ -91,13 +91,13 @@ Each sample keeps **only the first 5 rows**, allowing readers to understand:
 - the preprocessing workflow,  
 - and how each component interacts in the pipeline,  
 
-without including full, heavy datasets.
+without including full, heavy intermediate outputs.
 
 ---
 
 ## 📦 Full Reproducibility
 
-The **complete datasets**, including all intermediate and large output files, are archived externally (Google Drive) to ensure:
+The **complete intermediate results**, including all intermediate and large output files, are archived externally (Google Drive) to ensure:
 
 - long-term preservation,  
 - stable access,  
@@ -121,8 +121,10 @@ as it is not required for reproducibility or analysis.
 
 ## 📝 Notes
 
-- All sample files follow the naming pattern `*_SAMPLE.csv` to clearly distinguish them from full data files.  
+- All sample files follow the naming pattern `*_sample.csv` to clearly distinguish them from full data files.  
 - The repository is intentionally structured to remain **fast to clone**, **easy to inspect**, and **fully reproducible** once external datasets are provided.
+-The `data/cleaned` and `logs/` folders are kept in full and were not cleaned or reduced.
+They contain the processed datasets and the complete processing logs required to ensure full reproducibility and transparency of the experiments.
 
 ---
 
