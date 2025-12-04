@@ -59,5 +59,75 @@ python src/features/compute_spacy_features.py
 4. Verify integrity
 python src/features/verify_spacy_features.py
 
+## 📁 Data Availability and Repository Structure
+
+To keep this repository lightweight, readable, and compliant with GitHub’s recommended size constraints, **only lightweight sample files of the intermediate outputs are included here**.  
+These sample files (5 lines each) are provided exclusively for **illustration, documentation, and structural transparency**.
+
+---
+
+### 🔹 Why only sample files?
+
+Some intermediate CSV files generated during the experiments (e.g., BERT token features, attention matrices, statistical descriptors) originally exceed **30–100 MB per file**, and the complete pipeline produces **hundreds of such files**.  
+Including them directly in the repository would:
+
+- inflate the repository size unnecessarily,  
+- violate large file best practices,  
+- slow down cloning and CI workflows,  
+- reduce overall readability for users and reviewers.
+
+Therefore, this repository includes files such as:
+
+bert_final_features_SAMPLE.csv
+bert_basic_features_SAMPLE.csv
+spacy_features_SAMPLE.csv
+attention_top5_pretrained_SAMPLE.csv
+
+
+Each sample keeps **only the first 5 rows**, allowing readers to understand:
+
+- the file schema,  
+- the column definitions,  
+- the preprocessing workflow,  
+- and how each component interacts in the pipeline,  
+
+without including full, heavy datasets.
+
+---
+
+## 📦 Full Reproducibility
+
+The **complete datasets**, including all intermediate and large output files, are archived externally (Google Drive) to ensure:
+
+- long-term preservation,  
+- stable access,  
+- citable references,  
+- compliance with FAIR principles.  
+
+To reproduce the full pipeline, simply follow all the commands listed at the beginning of this readme. The code will place them automatically into the correct directories (without any truncation of the results).
+
+---
+
+## 📁 Debug Samples
+
+The folder `outputs/debug_samples/` contains **miniature attention-extraction examples** for both pretrained and untrained BERT models.  
+These examples are intentionally lightweight (≤350 KB) and serve as:
+
+- qualitative demonstrations,  
+- sanity checks,  
+- proof of pipeline behavior,  
+- reproducibility guidance.  
+
+These files are **not downsampled** and remain exactly as produced by the code.
+
+---
+
+## 📝 Notes
+
+- All sample files follow the naming pattern `*_SAMPLE.csv` to clearly distinguish them from full data files.  
+- The repository is intentionally structured to remain **fast to clone**, **easy to inspect**, and **fully reproducible** once external datasets are provided.
+
+---
+
 ## License
 This project is licensed under the MIT License – see the LICENSE file for details.
