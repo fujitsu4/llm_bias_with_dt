@@ -45,6 +45,13 @@ are computed and added to the dataframe before saving.
 This change does NOT affect the top-5 attention labels or any analysis
 used in the thesis.
 """
+"""
+UPDATE 2025-12-04:
+Finally, all intermediate results will no longer be sent to GitHub to reduce the
+size of the repository. Only the datasets (intermediate and final) and the logs will
+be kept in their entirety. For the other files, samples with 5 lines will be shared
+(read the readme file if needed).
+"""
 
 import argparse
 import os
