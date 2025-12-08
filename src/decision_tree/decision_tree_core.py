@@ -25,15 +25,19 @@ Input and parameters :
                     label top 5 (per sentence and per layer)
     --layer: layer number
     --tree_seed: Seed for Decision Tree (determinism)
-    --save_rules_to : Optional path to save the rules text (if omitted, nothing is written).")
-    
+    --save_rules_full_to : Optional path to save the full rules text (if omitted, nothing is written)
+    --save_rules_pos_only_to : Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written)
+                        
 Outputs:
-    rules.txt : a text file containing the output decision tree (with only rules leading to top5 = 1)
+    rules_full.txt : a text file containing the complte output decision tree
+    rules_only_pos.txt : a text file containing the output decision tree (with only rules leading to top5 = 1)
 Usage:
     python -m src.decision_tree.decision_tree_core \
-        --input_csv "/content/drive/MyDrive/results/attention_score/attention_top5_pretrained.csv" \
+        --input_csv /content/drive/MyDrive/results/attention_score/attention_top5_pretrained.csv \
+        --tree_seed 42 \
         --layer 1 \
-        --save_rules_to "/content/llm_bias_with_dt/outputs/decision_tree/rules.txt"
+        --save_rules_full_to /content/llm_bias_with_dt/outputs/decision_tree/rules_full.txt \
+        --save_rules_pos_only_to /content/llm_bias_with_dt/outputs/decision_tree/rules_pos_only.txt
 """
 
 from typing import List, Optional, Tuple, Dict, Any
@@ -42,6 +46,7 @@ import textwrap
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier, export_text
+from datetime import datetime, UTC
 
 # ---------------------------
 # Default feature column order (21 numeric features)
@@ -290,7 +295,8 @@ def train_and_extract_rules_from_df(
     max_depth: int = 4,
     min_samples_leaf: int = 20,
     dt_seed: int = 42,
-    save_rules_to: Optional[str] = None,
+    save_rules_full_to: Optional[str] = None,
+    save_rules_pos_only_to: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Train a DT on label 'top5_l{layer}' using the features and return information.
@@ -326,26 +332,27 @@ def train_and_extract_rules_from_df(
         raise RuntimeError(f"Label {label_col} is constant (only values {unique_vals}). Cannot train DT.")
 
     clf = train_decision_tree(X, y, max_depth=max_depth, min_samples_leaf=min_samples_leaf, random_state=dt_seed)
-    rules_text = format_rules_with_stats(clf, list(X.columns), X, y)
+    rules_full = format_rules_with_stats(clf, list(X.columns), X, y)
     rules_pos_only = filter_rules_for_class1(extract_rules_text(clf, list(X.columns)))
     leaf_stats = compute_leaf_stats(clf, X, y)
 
     result = {
         "clf": clf,
-        "rules_text": rules_pos_only,
+        "rules_full": rules_full,
+        "rules_pos_only": rules_pos_only,
         "leaf_stats": leaf_stats,
         "n_samples": int(X.shape[0]),
         "n_pos": int(y.sum()),
     }
 
-    # If requested, write rules_text only (not full stats table)
-    if save_rules_to is not None:
-        os.makedirs(os.path.dirname(save_rules_to) or ".", exist_ok=True)
-        # write only the rules part (sklearn export_text) to be compact
-        # We'll extract the export_text separately to keep rules minimal.
-        rules_only = extract_rules_text(clf, list(X.columns))
-        with open(save_rules_to, "w", encoding="utf8") as fout:
-            fout.write(rules_only)
+    # If requested, write full rules (not full stats table)
+    if save_rules_full_to is not None:
+        with open(save_rules_full_to, "w", encoding="utf8") as fout:
+            fout.write(rules_full)
+
+    if save_rules_pos_only_to is not None:
+        with open(save_rules_pos_only_to, "w", encoding="utf8") as fout:
+            fout.write(rules_pos_only)
 
     return result
 
@@ -391,8 +398,10 @@ if __name__ == "__main__":
     parser.add_argument("--input_csv", required=True, help="CSV containing bert tokens + features + top5_l* columns")
     parser.add_argument("--layer", required=True, help="Layer number (e.g. 4) — accepts string or int")
     parser.add_argument("--tree_seed", type=int, default=42, help="Seed for Decision Tree (determinism)")
-    parser.add_argument("--save_rules_to", type=str, default=None,
-                        help="Optional path to save the rules text (if omitted, nothing is written).")
+    parser.add_argument("--save_rules_full_to", type=str, default=None,
+                        help="Optional path to save the full rules text (if omitted, nothing is written).")
+    parser.add_argument("--save_rules_pos_only_to", type=str, default=None,
+                        help="Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written).")
     args = parser.parse_args()
 
     # parse layer argument (allow "4" or 4)
@@ -419,7 +428,7 @@ if __name__ == "__main__":
         raise RuntimeError(f"Input CSV missing label column: {label_name}")
 
     # Run training
-    start = datetime.utcnow().isoformat()
+    start = datetime.now(UTC).isoformat()
     print(f"[{start}] Training DT for layer {layer_int} ...")
     out = train_and_extract_rules_from_df(
         df,
@@ -428,13 +437,14 @@ if __name__ == "__main__":
         max_depth=4,
         min_samples_leaf=20,
         dt_seed=args.tree_seed,
-        save_rules_to=args.save_rules_to,
+        save_rules_full_to=args.save_rules_full_to,
+        save_rules_pos_only_to=args.save_rules_pos_only_to,
     )
 
     # Print compact summary
     print(f"n_samples: {out['n_samples']}, n_pos: {out['n_pos']}")
-    print("\n--- sample of rules (first 400 chars) ---\n")
-    print(out["rules_text"][:400])
+    print("\n--- sample of pos_only rules (first 400 chars) ---\n")
+    print(out["rules_pos_only"][:400])
     print("\n--- leaf stats (top 5 by pos_rate) ---")
     # pretty print first 5 leaves sorted by pos_rate
     leaf_rows = []
