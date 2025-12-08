@@ -25,19 +25,19 @@ Input and parameters :
                     label top 5 (per sentence and per layer)
     --layer: layer number
     --tree_seed: Seed for Decision Tree (determinism)
-    --save_rules_full_to : Optional path to save the full rules text (if omitted, nothing is written)
-    --save_rules_pos_only_to : Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written)
+    --save_full : Optional path to save the full rules text (if omitted, nothing is written)
+    --save_pos : Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written)
                         
 Outputs:
     rules_full.txt : a text file containing the complte output decision tree
-    rules_only_pos.txt : a text file containing the output decision tree (with only rules leading to top5 = 1)
+    rules_pos.txt : a text file containing the output decision tree (with only rules leading to top5 = 1)
 Usage:
     python -m src.decision_tree.decision_tree_core \
         --input_csv /content/drive/MyDrive/results/attention_score/attention_top5_pretrained.csv \
         --tree_seed 42 \
         --layer 1 \
-        --save_rules_full_to /content/llm_bias_with_dt/outputs/decision_tree/rules_full.txt \
-        --save_rules_pos_only_to /content/llm_bias_with_dt/outputs/decision_tree/rules_pos_only.txt
+        --save_full /content/llm_bias_with_dt/outputs/decision_tree/rules_full_pretrained_layer_1.txt \
+        --save_pos /content/llm_bias_with_dt/outputs/decision_tree/rules_pos_pretrained_layer_1.txt
 """
 
 from typing import List, Optional, Tuple, Dict, Any
@@ -212,7 +212,8 @@ def format_rules_with_stats(
     for leaf_id, s in stats.items():
         rows.append((leaf_id, s["n_samples"], s["n_pos"], s["pos_rate"]))
 
-    rows_sorted = sorted(rows, key=lambda t: (-t[3], -t[1]))
+    rows_sorted = sorted(rows, key=lambda t: (t[3], t[1]), reverse=True)
+    #rows_sorted = sorted(rows, key=lambda t: (-t[3], -t[1]))
 
     stats_lines = ["LeafID | n_samples | n_pos | pos_rate"]
     for leaf_id, n_s, n_pos, pos_rate in rows_sorted:
@@ -271,10 +272,11 @@ def load_features_and_label_from_df(
         raise ValueError(f"Label column not found: {label_col}")
 
     # Keep only numeric columns — attempt safe casting
-    X = df[feature_cols].copy()
+#    X = df[feature_cols].copy()
+    X = df[feature_cols].apply(pd.to_numeric, errors="raise")
     for c in X.columns:
         X[c] = pd.to_numeric(X[c], errors="raise")
-
+        
     y = pd.to_numeric(df[label_col], errors="raise").astype(int)
     unique_vals = np.unique(y)
     if not set(unique_vals).issubset({0, 1}):
@@ -320,9 +322,6 @@ def train_and_extract_rules_from_df(
     if not isinstance(layer, int):
         raise ValueError("layer argument must be an integer (1..12)")
 
-    if layer < 1 or layer > 1000:
-        raise ValueError("layer value out of expected range")
-
     label_col = f"top5_l{layer}"
     X, y = load_features_and_label_from_df(df, label_col, feature_cols=feature_cols)
 
@@ -358,49 +357,59 @@ def train_and_extract_rules_from_df(
 
 def filter_rules_for_class1(rules_text: str) -> str:
     """
-    Keep only the branches (paths) that end with 'class: 1'.
-    This works on the text output from sklearn.export_text.
-
-    Returns:
-        A string containing only the rules leading to class 1.
+    Reconstruct full decision paths ending in 'class: 1'.
+    Uses indentation depth to track the current branch.
     """
+
     lines = rules_text.splitlines()
-    kept_blocks = []
-    current_block = []
+    kept_paths = []
+
+    # Stack indexed by depth: stack[depth] = content of that node
+    stack = {}
 
     for line in lines:
-        # add line to current block
-        current_block.append(line)
+        stripped = line.strip()
 
-        # check if line is a leaf
-        if "class:" in line:
-            if "class: 1" in line:
-                # keep the whole block (copy it)
-                kept_blocks.append("\n".join(current_block))
-            # reset for next block
-            current_block = []
+        # ignore non-rule lines
+        if not stripped.startswith("|"):
+            continue
 
-    # join all kept positive-rule blocks
-    if not kept_blocks:
-        return "No positive (class:1) rules in this tree.\n"
+        # depth = number of "|   " blocks
+        depth = stripped.count("|")
 
-    return "\n\n".join(kept_blocks) + "\n"
+        # update stack at this depth
+        stack[depth] = line
 
+        # prune deeper levels no longer valid
+        depths_to_delete = [d for d in stack.keys() if d > depth]
+        for d in depths_to_delete:
+            del stack[d]
+
+        # CASE: leaf with class = 1
+        if "class: 1" in stripped:
+            # full path = all levels in sorted order
+            path = [stack[d] for d in sorted(stack.keys())]
+
+            # remove any line containing class: 0
+            path = [p for p in path if "class: 0" not in p]
+
+            kept_paths.append("\n".join(path))
+
+    return "\n\n".join(kept_paths)
 
 # ---------------------------
 # Minimal CLI for debugging the core
 # ---------------------------
 if __name__ == "__main__":
     import argparse
-    from datetime import datetime
 
     parser = argparse.ArgumentParser(description="Train a DT on a single layer top5 label (core debug).")
     parser.add_argument("--input_csv", required=True, help="CSV containing bert tokens + features + top5_l* columns")
     parser.add_argument("--layer", required=True, help="Layer number (e.g. 4) — accepts string or int")
     parser.add_argument("--tree_seed", type=int, default=42, help="Seed for Decision Tree (determinism)")
-    parser.add_argument("--save_rules_full_to", type=str, default=None,
+    parser.add_argument("--save_full", type=str, default=None,
                         help="Optional path to save the full rules text (if omitted, nothing is written).")
-    parser.add_argument("--save_rules_pos_only_to", type=str, default=None,
+    parser.add_argument("--save_pos", type=str, default=None,
                         help="Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written).")
     args = parser.parse_args()
 
@@ -437,8 +446,8 @@ if __name__ == "__main__":
         max_depth=4,
         min_samples_leaf=20,
         dt_seed=args.tree_seed,
-        save_rules_full_to=args.save_rules_full_to,
-        save_rules_pos_only_to=args.save_rules_pos_only_to,
+        save_rules_full_to=args.save_full,
+        save_rules_pos_only_to=args.save_pos,
     )
 
     # Print compact summary
