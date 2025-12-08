@@ -27,6 +27,7 @@ Input and parameters :
     --tree_seed: Seed for Decision Tree (determinism)
     --save_full : Optional path to save the full rules text (if omitted, nothing is written)
     --save_pos : Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written)
+    --save_simp_pos : Optional path to save simplified rules leading to top5 = 1 using absorption of redundant splits (if omitted, nothing is written)
                         
 Outputs:
     rules_full.txt : a text file containing the complte output decision tree
@@ -37,7 +38,8 @@ Usage:
         --tree_seed 42 \
         --layer 1 \
         --save_full /content/llm_bias_with_dt/outputs/decision_tree/rules_full_pretrained_layer_1.txt \
-        --save_pos /content/llm_bias_with_dt/outputs/decision_tree/rules_pos_pretrained_layer_1.txt
+        --save_pos /content/llm_bias_with_dt/outputs/decision_tree/rules_pos_pretrained_layer_1.txt \
+        --save_simp_pos /content/llm_bias_with_dt/outputs/decision_tree/rules_simp_pos_pretrained_layer_1.txt
 """
 
 from typing import List, Optional, Tuple, Dict, Any
@@ -322,6 +324,83 @@ def filter_rules_for_class1(rules_text: str) -> str:
 
     return "\n\n".join(kept_paths)
 
+def simplify_rules(rules_pos_text: str) -> str:
+    """
+    Simplify positive-class rules by iteratively merging complementary final splits.
+    The process is repeated until no more merges are possible.
+    """
+
+    def parse_condition(line: str):
+        try:
+            part = line.split("---", 1)[1].strip()
+            tokens = part.split()
+            if len(tokens) >= 3:
+                feature = tokens[0]
+                op = tokens[1]
+                try:
+                    thresh = float(tokens[2])
+                except:
+                    thresh = None
+                return feature, op, thresh
+        except:
+            return None, None, None
+        return None, None, None
+
+    def merge_once(blocks):
+        """Perform a single merge pass. Returns (new_blocks, did_merge)."""
+        parsed_blocks = [b.split("\n") for b in blocks]
+        n = len(parsed_blocks)
+        used = set()
+        merged_blocks = []
+        did_merge = False
+
+        for i in range(n):
+            if i in used:
+                continue
+
+            block_i = parsed_blocks[i]
+            prefix_i = block_i[:-1]
+            leaf_i = block_i[-1]
+
+            merged_block = block_i  # default
+
+            for j in range(i + 1, n):
+                if j in used:
+                    continue
+
+                block_j = parsed_blocks[j]
+                prefix_j = block_j[:-1]
+                leaf_j = block_j[-1]
+
+                if len(prefix_i) >= 1 and len(prefix_i) == len(prefix_j) \
+                   and prefix_i[:-1] == prefix_j[:-1]:
+
+                    f1, op1, t1 = parse_condition(prefix_i[-1])
+                    f2, op2, t2 = parse_condition(prefix_j[-1])
+                    if f1 and f2 and f1 == f2 and t1 is not None and t2 is not None and abs(t1 - t2) < 1e-9:
+                        left_ops = {"<", "<="}
+                        right_ops = {">", ">="}
+                        if (op1 in left_ops and op2 in right_ops) or (op2 in left_ops and op1 in right_ops):
+                            # FUSION !!!
+                            merged_block = prefix_i[:-1] + [leaf_i]
+                            used.add(j)
+                            did_merge = True
+
+            merged_blocks.append("\n".join(merged_block))
+
+        return merged_blocks, did_merge
+
+    # Initial split
+    blocks = [b for b in rules_pos_text.strip().split("\n\n") if b.strip()]
+
+    # Repeat merging until stable
+    while True:
+        blocks, merged = merge_once(blocks)
+        if not merged:
+            break
+
+    return "\n\n".join(blocks)
+
 # ---------------------------
 # Top-level function used by compute_dt.py
 # ---------------------------
@@ -334,6 +413,7 @@ def train_and_extract_rules_from_df(
     dt_seed: int = 42,
     save_rules_full_to: Optional[str] = None,
     save_rules_pos_only_to: Optional[str] = None,
+    save_rules_pos_simplified_to: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Train a DT on label 'top5_l{layer}' using the features and return information.
@@ -367,6 +447,7 @@ def train_and_extract_rules_from_df(
     clf = train_decision_tree(X, y, max_depth=max_depth, min_samples_leaf=min_samples_leaf, random_state=dt_seed)
     rules_full = format_rules_with_stats(clf, list(X.columns), X, y)
     rules_pos_only = filter_rules_for_class1(extract_rules_text(clf, list(X.columns)))
+    rules_pos_simplified = simplify_rules(rules_pos_only)
     leaf_stats = compute_leaf_stats(clf, X, y)
 
     result = {
@@ -387,6 +468,10 @@ def train_and_extract_rules_from_df(
         with open(save_rules_pos_only_to, "w", encoding="utf8") as fout:
             fout.write(rules_pos_only)
 
+    if save_rules_pos_simplified_to is not None:
+        with open(save_rules_pos_simplified_to, "w", encoding="utf8") as fout:
+            fout.write(rules_pos_simplified)
+
     return result
 
 # ---------------------------
@@ -403,6 +488,8 @@ if __name__ == "__main__":
                         help="Optional path to save the full rules text (if omitted, nothing is written).")
     parser.add_argument("--save_pos", type=str, default=None,
                         help="Optional path to save only the rules leading to top5 = 1 (if omitted, nothing is written).")
+    parser.add_argument("--save_simp_pos", type=str, default=None,
+                        help="Optional path to save simplified rules leading to top5 = 1 (if omitted, nothing is written).")
     args = parser.parse_args()
 
     # parse layer argument (allow "4" or 4)
@@ -440,6 +527,7 @@ if __name__ == "__main__":
         dt_seed=args.tree_seed,
         save_rules_full_to=args.save_full,
         save_rules_pos_only_to=args.save_pos,
+        save_rules_pos_simplified_to=args.save_simp_pos,
     )
 
     # Print compact summary
