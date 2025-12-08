@@ -212,8 +212,7 @@ def format_rules_with_stats(
     for leaf_id, s in stats.items():
         rows.append((leaf_id, s["n_samples"], s["n_pos"], s["pos_rate"]))
 
-    rows_sorted = sorted(rows, key=lambda t: (t[3], t[1]), reverse=True)
-    #rows_sorted = sorted(rows, key=lambda t: (-t[3], -t[1]))
+    rows_sorted = sorted(rows, key=lambda t: (-t[3], -t[1]))
 
     stats_lines = ["LeafID | n_samples | n_pos | pos_rate"]
     for leaf_id, n_s, n_pos, pos_rate in rows_sorted:
@@ -272,12 +271,8 @@ def load_features_and_label_from_df(
         raise ValueError(f"Label column not found: {label_col}")
 
     # Keep only numeric columns — attempt safe casting
-#    X = df[feature_cols].copy()
-    X = df[feature_cols].apply(pd.to_numeric, errors="raise")
-    for c in X.columns:
-        X[c] = pd.to_numeric(X[c], errors="raise")
-        
-    y = pd.to_numeric(df[label_col], errors="raise").astype(int)
+    X = df[feature_cols].astype(float)        
+    y = df[label_col].astype(int)
     unique_vals = np.unique(y)
     if not set(unique_vals).issubset({0, 1}):
         # transform: anything !=0 -> 1
@@ -285,6 +280,47 @@ def load_features_and_label_from_df(
 
     return X, y
 
+def filter_rules_for_class1(rules_text: str) -> str:
+    """
+    Reconstruct full decision paths ending in 'class: 1'.
+    Uses indentation depth to track the current branch.
+    """
+
+    lines = rules_text.splitlines()
+    kept_paths = []
+
+    # Stack indexed by depth: stack[depth] = content of that node
+    stack = {}
+
+    for line in lines:
+        stripped = line.strip()
+
+        # ignore non-rule lines
+        if not stripped.startswith("|"):
+            continue
+
+        # depth = number of "|   " blocks
+        depth = stripped.count("|")
+
+        # update stack at this depth
+        stack[depth] = line
+
+        # prune deeper levels no longer valid
+        depths_to_delete = [d for d in stack.keys() if d > depth]
+        for d in depths_to_delete:
+            del stack[d]
+
+        # CASE: leaf with class = 1
+        if "class: 1" in stripped:
+            # full path = all levels in sorted order
+            path = [stack[d] for d in sorted(stack.keys())]
+
+            # remove any line containing class: 0
+            path = [p for p in path if "class: 0" not in p]
+
+            kept_paths.append("\n".join(path))
+
+    return "\n\n".join(kept_paths)
 
 # ---------------------------
 # Top-level function used by compute_dt.py
@@ -292,7 +328,6 @@ def load_features_and_label_from_df(
 def train_and_extract_rules_from_df(
     df: pd.DataFrame,
     layer: int,
-    out_dir: Optional[str] = None,
     feature_cols: Optional[List[str]] = None,
     max_depth: int = 4,
     min_samples_leaf: int = 20,
@@ -306,7 +341,6 @@ def train_and_extract_rules_from_df(
     Args:
         df: full dataframe (all tokens)
         layer: int layer number (1..12)
-        out_dir: optional directory to save outputs
         feature_cols: feature names (if None uses DEFAULT_FEATURE_COLS)
         max_depth, min_samples_leaf, dt_seed: hyperparams
         save_rules_to: optional filepath to write the rules text
@@ -354,48 +388,6 @@ def train_and_extract_rules_from_df(
             fout.write(rules_pos_only)
 
     return result
-
-def filter_rules_for_class1(rules_text: str) -> str:
-    """
-    Reconstruct full decision paths ending in 'class: 1'.
-    Uses indentation depth to track the current branch.
-    """
-
-    lines = rules_text.splitlines()
-    kept_paths = []
-
-    # Stack indexed by depth: stack[depth] = content of that node
-    stack = {}
-
-    for line in lines:
-        stripped = line.strip()
-
-        # ignore non-rule lines
-        if not stripped.startswith("|"):
-            continue
-
-        # depth = number of "|   " blocks
-        depth = stripped.count("|")
-
-        # update stack at this depth
-        stack[depth] = line
-
-        # prune deeper levels no longer valid
-        depths_to_delete = [d for d in stack.keys() if d > depth]
-        for d in depths_to_delete:
-            del stack[d]
-
-        # CASE: leaf with class = 1
-        if "class: 1" in stripped:
-            # full path = all levels in sorted order
-            path = [stack[d] for d in sorted(stack.keys())]
-
-            # remove any line containing class: 0
-            path = [p for p in path if "class: 0" not in p]
-
-            kept_paths.append("\n".join(path))
-
-    return "\n\n".join(kept_paths)
 
 # ---------------------------
 # Minimal CLI for debugging the core
