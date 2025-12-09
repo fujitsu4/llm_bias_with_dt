@@ -1,4 +1,5 @@
-[2025-12-09T16:04:55.393102+00:00] Verifying Decision Tree rules reproductibility.
+[2025-12-09T16:26:00.562435+00:00] Verifying Decision Tree rules reproductibility.
+Using seed = 168652
 
 ===== Running Test 1 - Same seed → identical tree =====
 [OK] Rules and stats are identical with same seed.

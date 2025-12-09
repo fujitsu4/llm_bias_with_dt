@@ -13,10 +13,11 @@ Description :
 
 Input :
     --input_csv : the real .csv file containg features and attention scores (compulsory for test 5)
-
+    --seed : seed for the decision tree
 Usage:
     python -m src.decision_tree.verify_dt_reproductibility \
-    --input_csv /content/drive/MyDrive/results/attention_score/attention_top5_pretrained.csv
+    --input_csv /content/drive/MyDrive/results/attention_score/attention_top5_pretrained.csv \
+    --seed 168652
 """
 
 import numpy as np
@@ -27,6 +28,7 @@ from src.decision_tree.decision_tree_core import (
     extract_rules_text,
     compute_leaf_stats,
     train_and_extract_rules_from_df,
+    simplify_rules
 )
 
 
@@ -73,6 +75,12 @@ def test_same_seed_same_tree():
 
     assert rules1 == rules2, "Rules differ with identical seed."
     assert stats1 == stats2, "Leaf stats differ with identical seed."
+    assert np.array_equal(clf1.tree_.feature, clf2.tree_.feature)
+    assert np.allclose(clf1.tree_.threshold, clf2.tree_.threshold)
+    
+    simp1 = simplify_rules(rules1)
+    simp2 = simplify_rules(rules2)
+    assert simp1 == simp2
 
     print_ok("Rules and stats are identical with same seed.")
 
@@ -185,15 +193,21 @@ def extract_with_seed(df, seed):
 # -------------------------------------------------------------------------
 
 def main():
-    import argparse
+    import argparse, random
     from datetime import datetime, UTC
 
     parser = argparse.ArgumentParser(description="Train a DT on a single layer top5 label (core debug).")
     parser.add_argument("--input_csv", required=True, help="CSV containing bert tokens + features + top5_l* columns")
+    parser.add_argument("--seed", type=int, default=42,
+                    help="Random seed to ensure reproducibility (default=42)")
     args = parser.parse_args()
+
+    np.random.seed(args.seed)
+    random.seed(args.seed)
 
     start = datetime.now(UTC).isoformat()
     print(f"[{start}] Verifying Decision Tree rules reproductibility.")
+    print(f"Using seed = {args.seed}")
 
     safe_run("Test 1 - Same seed → identical tree", test_same_seed_same_tree)
     safe_run("Test 2 - Different seed → different tree", test_different_seeds_different_tree)
