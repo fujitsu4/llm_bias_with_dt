@@ -249,15 +249,15 @@ def generate_test6(n=10):
     tests = []
     for _ in range(n):
         t = rand_threshold()
-        r1 = path_to_rule([
-            {"feature": "A", "op": "<=", "threshold": t},
-            {"feature": "B", "op": "<=", "threshold": t}
-        ], 1)
-        r2 = path_to_rule([
-            {"feature": "A", "op": "<=", "threshold": t},
-            {"feature": "B", "op": ">", "threshold": t}
-        ], 1)
-        tests.append([r1, r2])
+
+        # Bad indentation versions
+        text = f"""
+|--- A <= {t}
+|    |--- B <= {t}
+|--- A <= {t}
+|     |--- B > {t}
+"""
+        tests.append(text.strip())
     return tests
 
 # ---------------------------------------------------------------------
@@ -266,9 +266,7 @@ def generate_test6(n=10):
 def run_test_case(name: str, generator, expected_logic):
     print(f"\n===== Running {name} =====")
     test_sets = generator()
-    #print("Example input:", test_sets[0])
-    print("Example input (text form):\n", dict_rules_to_text(test_sets[0]), "\n")
-
+    print("Example input (text form):\n" + dict_rules_to_text(test_sets[0]) + "\n")
 
     for i, rules in enumerate(test_sets):
         # Convert to text
@@ -287,6 +285,26 @@ def run_test_case(name: str, generator, expected_logic):
             print("Simplified text:\n", simplified_text)
             print("Original blocks:", orig_blocks)
             print("Simplified blocks:", simp_blocks)
+            return
+
+    print(f"[OK] {name}")
+
+#For Test 6
+def run_test_case_textual(name, generator, expected_logic):
+    print(f"\n===== Running {name} =====")
+    test_sets = generator()
+    print("Example input (raw textual):\n" + test_sets[0] + "\n")
+
+    for i, text in enumerate(test_sets):
+        simp = simplify_rules(text)
+        orig_blocks = text_to_blocks(text)
+        simp_blocks = text_to_blocks(simp)
+
+        if not expected_logic(orig_blocks, simp_blocks):
+            print(f"[FAIL] {name} – Case {i}")
+            print("Original:\n", text)
+            print("Simplified:\n", simp)
+            print("Blocks:", orig_blocks, simp_blocks)
             return
 
     print(f"[OK] {name}")
@@ -332,7 +350,7 @@ def main():
     run_test_case("Test 3 - Deep complementarity", generate_test3, expect_simple_merge)
     run_test_case("Test 4 - Multi-level complementarity", generate_test4, expect_two_pass_merge)
     run_test_case("Test 5 - Floating precision", generate_test5, expect_floating_behavior)
-    run_test_case("Test 6 - Indentation-insensitive", generate_test6, expect_indentation_merge)
+    run_test_case_textual("Test 6 - Indentation-insensitive", generate_test6, expect_indentation_merge)
 
 
 if __name__ == "__main__":
