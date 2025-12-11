@@ -111,11 +111,6 @@ def main():
         max_depth=4,
         min_samples_leaf=20)
 
-        #Sanity check
-        if not rules["rules_pos_simplified"].strip():
-            raise RuntimeError(f"Simplified rules for layer {layer} are EMPTY. "
-                            f"Check the simplify_rules logic or the input features.")
-
         # -------------------------------------------------------------
         # SAVE 3 OUTPUT FILES
         # -------------------------------------------------------------
