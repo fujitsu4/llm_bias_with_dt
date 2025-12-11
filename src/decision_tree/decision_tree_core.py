@@ -454,6 +454,7 @@ def train_and_extract_rules_from_df(
         "clf": clf,
         "rules_full": rules_full,
         "rules_pos_only": rules_pos_only,
+        "rules_pos_simplified": rules_pos_simplified,
         "leaf_stats": leaf_stats,
         "n_samples": int(X.shape[0]),
         "n_pos": int(y.sum()),
@@ -496,7 +497,7 @@ if __name__ == "__main__":
     layer_arg = args.layer
     if isinstance(layer_arg, str):
         if layer_arg.lower() == "all":
-            raise ValueError("Core function trains ONE layer at a time. Use compute_dt.py to iterate over layers.")
+            raise ValueError("Core function trains ONE layer at a time. Use compute_decision_trees.py to iterate over layers.")
         try:
             layer_int = int(layer_arg)
         except ValueError:
