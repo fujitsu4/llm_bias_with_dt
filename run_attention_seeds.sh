@@ -1,4 +1,4 @@
-# run_seeds.sh
+# run_attention_seeds.sh
 # Author : Zakaria JOUILIL
 # Description  : The script:
 #  - ignores the first line (timestamp)
@@ -8,8 +8,8 @@
 #  - stops after --max-runs jobs in this invocation (default 5)
 # Usage (Colab):
 # !apt-get install dos2unix -y
-# !dos2unix run_seeds.sh
-# !bash run_seeds.sh /content/llm_bias_with_dt/outputs/attention/seeds_list.txt --max-runs 3
+# !dos2unix run_attention_seeds.sh
+# !bash run_attention_seeds.sh /content/llm_bias_with_dt/outputs/attention/seeds_list.txt --max-runs 3
 
 
 set -uo pipefail
