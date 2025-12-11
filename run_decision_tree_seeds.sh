@@ -53,7 +53,7 @@ for raw in "${RAW[@]}"; do
   out_dir="${OUT_DIR}/seed_${seed}"
 
   if [[ -d "$out_dir" ]]; then
-    echo "[SKIP] seed ${seed} -> directory ${out_file} already exists"
+    echo "[SKIP] seed ${seed} -> directory ${out_dir} already exists"
     continue
   fi
 
