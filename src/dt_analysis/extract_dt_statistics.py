@@ -1,4 +1,3 @@
-CHNGER LES DEPTH !!!!!! (2 à 5)
 """
 extract_dt_statistics.py
 Author: Zakaria JOUILIL
@@ -127,8 +126,8 @@ def process_one_model(input_dir, model, seed, output_dir):
     f_feat = output_dir / f"dt_features_depth_{suffix}.csv"
     f_pat = output_dir / f"dt_patterns_{suffix}.csv"
 
-    df_features.to_csv(f_feat, index=False)
-    df_patterns.to_csv(f_pat, index=False)
+    df_features.to_csv(f_feat, sep =";", index=False)
+    df_patterns.to_csv(f_pat, sep =";", index=False)
 
     print(f"[OK] Saved {f_feat}")
     print(f"[OK] Saved {f_pat}")
