@@ -1,3 +1,4 @@
+CHNGER LES DEPTH !!!!!! (2 à 5)
 """
 extract_dt_statistics.py
 Author: Zakaria JOUILIL
@@ -53,7 +54,7 @@ def parse_rules_file(path, layer, model, seed=None):
         features_in_path = []
 
         for line in lines:
-            depth = line.count("|") + 1  # 1-based depth
+            depth = line.count("|")
 
             m = re.search(r"---\s*([a-zA-Z0-9_]+)\s*[<>]=?", line)
             if m:
