@@ -97,7 +97,7 @@ def process_pretrained(input_dir, output_csv):
 # UNTRAINED
 # ---------------------------------------------------------
 def process_untrained(input_dir, output_csv):
-    stats = defaultdict(lambda: {"count": 0, "seeds": set()})
+    stats = defaultdict(lambda: {"occurrences": 0, "seeds": set()})
 
     for seed_dir in sorted(input_dir.iterdir()):
         if not seed_dir.is_dir() or not seed_dir.name.startswith("seed_"):
@@ -115,18 +115,18 @@ def process_untrained(input_dir, output_csv):
             patterns = parse_rules_file(fpath)
 
             for p in patterns:
-                stats[p]["count"] += 1
+                stats[p]["occurrences"] += 1
                 stats[p]["seeds"].add(seed)
 
     rows = []
     for pattern, data in stats.items():
         rows.append({
             "pattern": pattern,
-            "count": data["count"],
-            "seeds": sorted(data["seeds"])
+            "occurrences": data["occurrences"],
+            "seed_count": len(data["seeds"])
         })
 
-    df = pd.DataFrame(rows).sort_values("count", ascending=False)
+    df = pd.DataFrame(rows).sort_values(["seed_count", "occurrences"],ascending=False)
     df.to_csv(output_csv, sep=";", index=False)
     print(f"[OK] Saved untrained patterns → {output_csv}")
 
