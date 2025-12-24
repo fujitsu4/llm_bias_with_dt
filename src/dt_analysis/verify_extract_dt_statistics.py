@@ -7,9 +7,7 @@ Description:
     This script performs consistency checks and logs potential issues
 
 Inputs:
-    -- dt_analysis_dir: Directory containing dt_*.csv files (pretrained or untrained seeds)
-
-Outputs:
+    --dt_analysis_dir: Directory containing dt_*.csv files (pretrained or untrained seeds)
 
 Usage:
     python -m src.dt_analysis.verify_extract_dt_statistics \
