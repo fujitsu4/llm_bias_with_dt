@@ -12,6 +12,11 @@ Description:
     - validity of "missing features" claims
     - absence of silent logical errors (ghost features, naming mismatch)
 
+Inputs:
+    --attention_csv: the attention csv file containing all features
+    --pretrained_csv: the aggregated csv (grouped by depth) for pretrained model
+    --untrained_csv: the aggregated csv (grouped by depth) for untrained model
+
 Usage:
     python -m src.dt_analysis.verify_compute_missing_features \
         --attention_csv outputs/attention/attention_top5_pretrained_sample.csv \
