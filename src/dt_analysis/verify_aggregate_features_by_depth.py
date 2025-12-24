@@ -43,17 +43,31 @@ import ast
 # PRETRAINED VERIFICATION
 # ---------------------------------------------------------
 def verify_pretrained(agg_csv, source_csv):
-    print("[INFO] Verifying pretrained aggregation")
+    print("=" * 80)
+    print("[INFO] Verifying PRETRAINED aggregation")
+    print("[INFO] Aggregated CSV :", agg_csv)
+    print("[INFO] Source CSV     :", source_csv)
 
     agg = pd.read_csv(agg_csv, sep=";")
     src = pd.read_csv(source_csv, sep=";")
 
-    expected_cols = {"Depth", "Feature", "Occurrence", "Layers"}
-    assert expected_cols.issubset(set(agg.columns)), \
-        f"[ERROR] Missing columns in aggregated CSV: {expected_cols - set(agg.columns)}"
+    print(f"[INFO] Aggregated rows loaded : {len(agg)}")
+    print(f"[INFO] Source rows loaded     : {len(src)}")
 
-    # Check layer counts
-    for _, row in agg.iterrows():
+    expected_cols = {"Depth", "Feature", "Occurrence", "Layers"}
+    missing = expected_cols - set(agg.columns)
+    if missing:
+        raise ValueError(f"[ERROR] Missing columns in aggregated CSV: {missing}")
+
+    print("[INFO] Aggregated schema validated")
+
+    print(f"[INFO] Unique depths   : {sorted(agg['Depth'].unique())}")
+    print(f"[INFO] Unique features : {agg['Feature'].nunique()}")
+    print(f"[INFO] Unique layers   : {sorted(src['layer'].unique())}")
+
+    errors = 0
+
+    for idx, row in agg.iterrows():
         depth = row["Depth"]
         feature = row["Feature"]
         occ = row["Occurrence"]
@@ -67,29 +81,54 @@ def verify_pretrained(agg_csv, source_csv):
 
         if occ != len(true_layers):
             print(
-                f"[ERROR] Mismatch for (depth={depth}, feature={feature}): "
-                f"Occurrence={occ}, true={len(true_layers)}"
+                f"[ERROR] Occurrence mismatch (depth={depth}, feature={feature}) : "
+                f"reported={occ}, true={len(true_layers)}"
             )
+            errors += 1
 
         if sorted(layers) != sorted(true_layers):
             print(
-                f"[ERROR] Layer list mismatch for (depth={depth}, feature={feature})"
+                f"[ERROR] Layer list mismatch (depth={depth}, feature={feature}) : "
+                f"reported={layers}, true={sorted(true_layers)}"
             )
+            errors += 1
 
-    print("[OK] Pretrained aggregation verified successfully")
+        if idx == 0:
+            print("[INFO] Example verification:")
+            print(f"       Depth        : {depth}")
+            print(f"       Feature      : {feature}")
+            print(f"       Occurrence   : {occ}")
+            print(f"       True layers  : {sorted(true_layers)}")
+
+    print("-" * 80)
+    print("[SUMMARY] PRETRAINED verification completed")
+    print(f"          Depths verified   : {agg['Depth'].nunique()}")
+    print(f"          Features verified : {agg['Feature'].nunique()}")
+    print(f"          Total checks      : {len(agg)}")
+    print(f"          Errors detected   : {errors}")
+
+    if errors == 0:
+        print("[OK] Pretrained aggregation verified successfully")
+    else:
+        print("[FAIL] Pretrained aggregation verification failed")
 
 
 # ---------------------------------------------------------
 # UNTRAINED VERIFICATION
 # ---------------------------------------------------------
 def verify_untrained(agg_csv, source_dir):
-    print("[INFO] Verifying untrained aggregation")
+    print("=" * 80)
+    print("[INFO] Verifying UNTRAINED aggregation")
+    print("[INFO] Aggregated CSV :", agg_csv)
+    print("[INFO] Source dir     :", source_dir)
 
     agg = pd.read_csv(agg_csv, sep=";")
+    print(f"[INFO] Aggregated rows loaded : {len(agg)}")
 
     expected_cols = {"Depth", "Feature", "Seeds_Count"}
-    assert expected_cols.issubset(set(agg.columns)), \
-        f"[ERROR] Missing columns in aggregated CSV: {expected_cols - set(agg.columns)}"
+    missing = expected_cols - set(agg.columns)
+    if missing:
+        raise ValueError(f"[ERROR] Missing columns in aggregated CSV: {missing}")
 
     csv_files = glob.glob(
         os.path.join(source_dir, "dt_features_depth_untrained_seed_*.csv")
@@ -98,15 +137,27 @@ def verify_untrained(agg_csv, source_dir):
     if not csv_files:
         raise ValueError("[ERROR] No source seed CSVs found")
 
+    print(f"[INFO] Found {len(csv_files)} seed CSV files")
+
     all_dfs = []
+    seeds = []
+
     for path in csv_files:
         df = pd.read_csv(path, sep=";")
         all_dfs.append(df)
+        seeds.extend(df["seed"].unique().tolist())
 
     src = pd.concat(all_dfs, ignore_index=True)
+    unique_seeds = sorted(set(seeds))
 
-    # Check seed counts
-    for _, row in agg.iterrows():
+    print(f"[INFO] Unique seeds detected : {len(unique_seeds)}")
+    print(f"[INFO] Seeds IDs (first 10)  : {unique_seeds[:10]}{' ...' if len(unique_seeds) > 10 else ''}")
+    print(f"[INFO] Unique depths        : {sorted(agg['Depth'].unique())}")
+    print(f"[INFO] Unique features      : {agg['Feature'].nunique()}")
+
+    errors = 0
+
+    for idx, row in agg.iterrows():
         depth = row["Depth"]
         feature = row["Feature"]
         seeds_count = row["Seeds_Count"]
@@ -119,11 +170,30 @@ def verify_untrained(agg_csv, source_dir):
 
         if seeds_count != len(true_seeds):
             print(
-                f"[ERROR] Seed count mismatch for (depth={depth}, feature={feature}): "
-                f"Seeds_Count={seeds_count}, true={len(true_seeds)}"
+                f"[ERROR] Seed count mismatch (depth={depth}, feature={feature}) : "
+                f"reported={seeds_count}, true={len(true_seeds)}"
             )
+            errors += 1
 
-    print("[OK] Untrained aggregation verified successfully")
+        if idx == 0:
+            print("[INFO] Example verification:")
+            print(f"       Depth               : {depth}")
+            print(f"       Feature             : {feature}")
+            print(f"       Seeds_Count         : {seeds_count}")
+            print(f"       True distinct seeds : {len(true_seeds)}")
+
+    print("-" * 80)
+    print("[SUMMARY] UNTRAINED verification completed")
+    print(f"          Seeds verified    : {len(unique_seeds)}")
+    print(f"          Depths verified   : {agg['Depth'].nunique()}")
+    print(f"          Features verified : {agg['Feature'].nunique()}")
+    print(f"          Total checks      : {len(agg)}")
+    print(f"          Errors detected   : {errors}")
+
+    if errors == 0:
+        print("[OK] Untrained aggregation verified successfully")
+    else:
+        print("[FAIL] Untrained aggregation verification failed")
 
 
 # ---------------------------------------------------------
@@ -133,11 +203,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", required=True, choices=["pretrained", "untrained"])
     parser.add_argument("--input_csv", required=True,
-        help="Aggregated CSV to verify")
+                        help="Aggregated CSV to verify")
     parser.add_argument("--source_csv",
-        help="Original dt_features_depth_pretrained.csv")
+                        help="Original dt_features_depth_pretrained.csv")
     parser.add_argument("--source_dir",
-        help="Directory with dt_features_depth_untrained_seed_*.csv")
+                        help="Directory with dt_features_depth_untrained_seed_*.csv")
 
     args = parser.parse_args()
 
