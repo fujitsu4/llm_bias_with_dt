@@ -1,5 +1,5 @@
 """
-compare_missing_features.py
+compute_missing_features.py
 Author: Zakaria JOUILIL
 
 Description:
@@ -20,7 +20,7 @@ NOTE:
     duplicate features (both string and ID) used for debug.
 
 Usage:
-    python -m src.dt_analysis.compare_missing_features \
+    python -m src.dt_analysis.compute_missing_features \
         --attention_csv outputs/attention/attention_top5_pretrained_sample.csv \
         --pretrained_csv outputs/dt_analysis/features_by_depth_pretrained.csv \
         --untrained_csv outputs/dt_analysis/features_by_depth_untrained.csv \
