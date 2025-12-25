@@ -1,6 +1,0 @@
-sentence_id: 1
-num_tokens: 12
-original_tokens: [CLS] A person is training his horse for a competition . [SEP]
-model_tokens: [CLS] A person is training his horse for a competition . [SEP]
-
-Note: All attention matrices are stored with both original and model-token headers.
