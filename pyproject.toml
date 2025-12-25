@@ -1,7 +1,7 @@
 [project]
 name = "llm_bias_with_dt"
 version = "0.1.0"
-description = "Exploring biases in BERT through attention scores: a Decision Tree approach"
+description = "Exploring Biases in BERT through Attention Scores: A Decision Tree Approach"
 authors = [
     { name="Zakaria JOUILIL", email="zakaria.jouilil@gmail.com" }
 ]
@@ -9,10 +9,16 @@ readme = "README.md"
 requires-python = ">=3.10"
 
 dependencies = [
-    "datasets",
-    "spacy",
-    "pandas",
-    "tqdm"
+"auto_mix_prep",
+"datasets",
+"graphviz",
+"numpy",
+"pandas",
+"scikit_learn",
+"termcolor",
+"torch",
+"tqdm",
+"transformers"
 ]
 
 [project.urls]

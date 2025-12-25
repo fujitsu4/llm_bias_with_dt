@@ -1,4 +1,0 @@
-datasets
-spacy
-pandas
-tqdm

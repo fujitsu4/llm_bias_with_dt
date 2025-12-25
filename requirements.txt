@@ -1,0 +1,10 @@
+auto_mix_prep==0.2.0
+datasets==4.0.0
+graphviz==0.21
+numpy==2.4.0
+pandas==2.3.3
+scikit_learn==1.8.0
+termcolor==3.2.0
+torch==2.9.0+cu126
+tqdm==4.67.1
+transformers==4.57.3
