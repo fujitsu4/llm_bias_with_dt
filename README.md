@@ -52,7 +52,7 @@ LLM_BIAS_WITH_DT/
 ├── LICENSE
 ```
 
-## B.Installation
+## C.Installation
 
 This project was developed and tested with Python ≥ 3.10.
 
@@ -92,7 +92,7 @@ Some resources are downloaded automatically at runtime:
 These resources are cached locally (typically under ~/.cache/) and are downloaded only once.
 No manual download is required for these components.
 
-## C.Reproducibility Pipeline
+## D.Reproducibility Pipeline
 
 This section describes the complete experimental pipeline used to reproduce the results reported in the paper. All commands are executed from the project root directory.
 
@@ -266,7 +266,7 @@ Some stages (attention extraction and decision tree training) are computationall
 Running the complete pipeline locally may require several hours depending on hardware.
 Sample outputs are provided to allow inspection without executing the full pipeline.
 
-## D.Data Availability and Repository Structure
+## E.Data Availability and Repository Structure
 
 To keep this repository lightweight, readable, and compliant with GitHub’s recommended size constraints, **only lightweight sample files of the intermediate outputs are included here**.  
 These sample files (5 lines each) are provided exclusively for **illustration, documentation, and structural transparency**.
@@ -305,11 +305,11 @@ without including full, heavy intermediate outputs.
 - The repository is intentionally structured to remain **fast to clone**, **easy to inspect**, and **fully reproducible** once external datasets are provided.
 - The `data/cleaned` and `logs/` folders are kept in full and were not cleaned or reduced. They contain the processed datasets and the complete processing logs required to ensure full reproducibility and transparency of the experiments.
 
-## E. Citation and Contact
+## F. Citation and Contact
 
 - If you use this code or build upon this work, please cite the associated paper (to appear).
-- For questions or clarifications, please contact me via the GitHub issue tracker or via email: zakaria.jouilil@gmail.com.
-
+- For questions or clarifications, please use the GitHub issue tracker.
+- For specific or private inquiries, you may also contact the author at: zakaria.jouilil@gmail.com.
 
 ## License
 This project is licensed under the MIT License – see the LICENSE file for details.
