@@ -19,6 +19,7 @@ All major processing steps are accompanied by dedicated verification scripts to 
 The framework supports both **pretrained** BERT and **untrained** BERT models, enabling a systematic comparison between emergent structures induced by training and architectural biases.
 
 ## B.Project structure
+```
 LLM_BIAS_WITH_DT/
 ├── data/
 │   └── cleaned/                 # Filtered and merged datasets (AGNews, ArXiv, MNLI, SNLI)
@@ -49,32 +50,47 @@ LLM_BIAS_WITH_DT/
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
+```
 
 ## B.Installation
 
-```bash
-git clone https://github.com/USER/llm_bias_with_dt
+This project was developed and tested with Python ≥ 3.10.
+
+**1. Clone the repository**
+```
+git clone https://github.com/fujitsu4/llm_bias_with_dt.git
 cd llm_bias_with_dt
+```
 
-python3 -m venv venv
-source venv/bin/activate
+**2. Create a virtual environment (recommended)**
+```
+python -m venv venv
+source venv/bin/activate  # Linux / macOS
+# venv\Scripts\activate   # Windows
+```
 
+**3. Install Python dependencies**
+```
 pip install -r requirements.txt
 ```
 
-## C.How to Run
-1. Prepare datasets
-python src/prepare/prepare_dataset_snli.py
-python src/prepare/prepare_dataset_mnli.py
+**4. Download required SpaCy language model**
+```
+python -m spacy download en_core_web_sm
+```
 
-2. Merge
-python src/merge/merge_datasets.py
+**GPU support**
 
-3. Compute linguistic features
-python src/features/compute_spacy_features.py
+To use GPU, ensure that the installed PyTorch version is compatible with your CUDA version.
 
-4. Verify integrity
-python src/features/verify_spacy_features.py
+**External Resources and Caching**
+
+Some resources are downloaded automatically at runtime:
+* HuggingFace models and tokenizers (e.g., BERT)
+* HuggingFace datasets
+
+These resources are cached locally (typically under ~/.cache/) and are downloaded only once.
+No manual download is required for these components.
 
 ## 📁 Data Availability and Repository Structure
 
