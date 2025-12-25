@@ -1,37 +1,54 @@
 # llm_bias_with_dt
 
-This project contains scripts used in the article **"Exploring biases in BERT through attention scores: a Decision Tree"***.
+## A.Project overview
+This project contains scripts used in the article **"Exploring Biases in BERT through Attention Scores: A Decision Tree Approach"***.
+This is a research-oriented framework designed to analyze and characterize bias-related decision patterns in BERT models using interpretable decision trees.
 
-## A.Project structure
-llm_bias_with_dt/
-│
-├── src/ # All Python scripts (with submodules)
-│ ├── prepare/
-│ │ ├── prepare_snli.py
-│ │ ├── prepare_mnli.py
-│ │ └── merge_datasets.py
-│ │
-│ ├── spacy/
-│ │ ├── compute_spacy_features.py
-│ │ └── verify_spacy_features.py
-│ │
-│ └── utils/ # Small functions Auxiliaries if needed
-│
+The project follows a structured pipeline that:
+
+1. Clean and prepare datasets,
+2. Extracts attention scores from pretrained and untrained BERT models,
+3. Derives linguistic and statistical token-level features,
+4. Trains decision trees at each transformer layer,
+5. Analyzes stable feature usage and compositional decision patterns across layers and random seeds.
+
+Particular emphasis is placed on **interpretability**, **reproducibility**, and **robustness across random initializations**.
+
+All major processing steps are accompanied by dedicated verification scripts to ensure the correctness of intermediate and final results.
+
+The framework supports both **pretrained** BERT and **untrained** BERT models, enabling a systematic comparison between emergent structures induced by training and architectural biases.
+
+## B.Project structure
+LLM_BIAS_WITH_DT/
 ├── data/
-│ ├── raw/ # possibly to store the original datasets
-│ ├── cleaned/ # snli_filtered_sentences.csv, mnli_filtered_sentences.csv, merged_sentences.csv
-│ └── features/ # merged_spacy_features.csv, spacy_label_maps.json
+│   └── cleaned/                 # Filtered and merged datasets (AGNews, ArXiv, MNLI, SNLI)
 │
-├── logs/
-│ ├── snli_rejected.txt
-│ ├── mnli_rejected.txt
-│ └── ... (optional)
+├── src/
+│   ├── attention/               # Attention extraction and verification
+│   ├── bert/                    # BERT-based linguistic and statistical features
+│   ├── spacy/                   # SpaCy feature extraction
+│   ├── decision_tree/           # Decision tree training and validation
+│   ├── dt_analysis/             # Decision tree analysis and aggregation
+│   ├── prepare/                 # Dataset preparation scripts
+│   ├── seeds/                   # Seed generation utilities
+│   ├── utils/                   # Shared utilities
 │
-├── README.md # Project documentation
-├── requirements.txt # Dependencies
-├── LICENSE # MIT if you want
-└── main.py # OPTIONAL: Orchestrator pipeline (optional)
-├── pyproject.toml #(OPTIONAL, to declare a real Python package)
+├── outputs/
+│   ├── attention/               # Attention scores (samples + seeds list)
+│   ├── bert/                    # Extracted BERT features (samples)
+│   ├── decision_tree/           # Decision tree rules (pretrained / untrained)
+│   ├── dt_analysis/             # Final aggregated results (CSV + ZIP)
+│   └── spacy/                   # SpaCy feature outputs
+│
+├── logs/                        # Execution and verification logs
+│
+├── run_attention_seeds.sh       # Batch execution for attention extraction
+├── run_decision_tree_seeds.sh   # Batch execution for decision tree training
+│
+├── pyproject.toml
+├── requirements.txt
+├── README.md
+├── LICENSE
 
 ## B.Installation
 
