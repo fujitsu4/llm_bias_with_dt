@@ -92,6 +92,173 @@ Some resources are downloaded automatically at runtime:
 These resources are cached locally (typically under ~/.cache/) and are downloaded only once.
 No manual download is required for these components.
 
+## C.Reproducibility Pipeline
+
+This section describes the complete experimental pipeline used to reproduce the results reported in the paper. All commands are executed from the project root directory.
+
+The pipeline is divided into **four main stages**, followed by **two execution branches** corresponding to **pretrained and untrained BERT** models. Unless stated otherwise, each processing step is executed once and shared by both branches.
+
+**1. Dataset Preparation**
+
+Four datasets (SNLI, MNLI, ArXiv, AGNews) are filtered and subsampled to ensure balanced and controlled inputs. Each dataset is processed independently, then merged into a single dataset used throughout the pipeline.
+```
+python -m src.prepare.prepare_dataset_snli --output data/cleaned/snli_filtered.csv --target 2500
+python -m src.prepare.prepare_dataset_mnli --output data/cleaned/mnli_filtered.csv --target 2500
+python -m src.prepare.prepare_dataset_arxiv --output data/cleaned/arxiv_filtered.csv --target 2500
+python -m src.prepare.prepare_dataset_agnews --output data/cleaned/agnews_filtered.csv --target 2500
+
+python -m src.prepare.merge_datasets \
+    --inputs data/cleaned/snli_filtered.csv \
+             data/cleaned/mnli_filtered.csv \
+             data/cleaned/arxiv_filtered.csv \
+             data/cleaned/agnews_filtered.csv \
+    --output data/cleaned/merged_datasets.csv
+```
+
+**2. Linguistic Feature Extraction (SpaCy)**
+
+Linguistic features are extracted using SpaCy and verified for consistency against the original sentences.
+```
+python -m src.spacy.compute_spacy_features \
+    --input data/cleaned/merged_datasets.csv \
+    --output outputs/spacy/spacy_features.csv
+
+python -m src.spacy.verify_spacy_features \
+    --sentences_csv data/cleaned/merged_datasets.csv \
+    --features_csv outputs/spacy/spacy_features.csv \
+    --log_file logs/spacy_logs.txt
+```
+**3. BERT Tokenization and Feature Construction**
+
+Tokens are aligned between SpaCy and BERT, followed by the extraction of basic, statistical, and neighborhood-based features. Each step includes an explicit verification script.
+```
+python -m src.bert.tokenize_with_bert \
+    --sentences_csv data/cleaned/merged_datasets.csv \
+    --spacy_csv outputs/spacy/spacy_features.csv \
+    --output outputs/bert/bert_tokens.csv
+
+python -m src.bert.verify_bert_tokenization \
+    --bert_tokens_csv outputs/bert/bert_tokens.csv \
+    --spacy_csv outputs/spacy/spacy_features.csv \
+    --log_file logs/bert_tokenization_logs.txt
+
+python -m src.bert.compute_bert_basic_features \
+    --bert_csv outputs/bert/bert_tokens.csv \
+    --output outputs/bert/bert_basic_features.csv
+
+python -m src.bert.verify_bert_basic_features \
+    --features_csv outputs/bert/bert_basic_features.csv \
+    --log_file logs/bert_basic_features_logs.txt
+
+python -m src.bert.compute_bert_statistical_features \
+    --bert_features outputs/bert/bert_basic_features.csv \
+    --output outputs/bert/bert_statistical_features.csv
+
+python -m src.bert.verify_bert_statistical_features \
+    --features_csv outputs/bert/bert_statistical_features.csv \
+    --log_file logs/bert_statistical_features_logs.txt
+
+python -m src.bert.merge_spacy_and_bert \
+    --spacy_csv outputs/spacy/spacy_features.csv \
+    --bert_csv outputs/bert/bert_statistical_features.csv \
+    --output outputs/bert/spacy_bert_merged.csv
+
+python -m src.bert.compute_neighbor_pos_features \
+    --input outputs/bert/spacy_bert_merged.csv \
+    --output outputs/bert/bert_final_features.csv
+
+python -m src.bert.verify_final_features \
+    --input outputs/bert/bert_final_features.csv \
+    --log logs/bert_final_logs.txt
+```
+**4. Attention Extraction (Pretrained vs Untrained)**
+
+*4.1 Pretrained BERT*
+
+Attention scores are computed once using the pretrained BERT model.
+```
+python -m src.attention.compute_attention_top5 \
+    --model pretrained \
+    --input_csv outputs/bert/bert_final_features.csv
+```
+*4.2 Untrained BERT (Multiple Seeds)*
+
+A fixed list of random seeds is generated once, then used to compute attention scores independently for each untrained model initialization.
+```
+python -m src.seeds.generate_seeds \
+    --count 30 --low 1 --high 10000 \
+    --output outputs/attention/seeds_list.txt
+```
+
+Attention extraction is then executed per seed (typically via a shell script for automation):
+
+```
+bash run_attention_seeds.sh outputs/attention/seeds_list.txt
+```
+
+**5. Decision Tree Training and Verification**
+
+*5.1 Pretrained BERT*
+
+Decision trees are trained independently for each layer (12 layers) using the extracted attention scores. This step is performed separately for pretrained and untrained models.
+```
+python -m src.decision_tree.compute_decision_trees \
+    --model pretrained \
+    --input_csv outputs/attention/attention_top5_pretrained.csv
+```
+
+*5.2 Untrained BERT (Multiple Seeds)*
+
+Decision tree are computed per seed (typically via a shell script for automation):
+
+```
+bash run_decision_tree_seeds.sh /content/llm_bias_with_dt/outputs/attention/seeds_list.txt --max-runs 3
+```
+
+Verification scripts ensure tree reproducibility and consistency across seeds and layers.
+
+**6. Decision Tree Analysis**
+
+Extracted decision trees are transformed into interpretable statistics and patterns.
+
+*6.1 Feature Usage Analysis*
+
+```
+python -m src.dt_analysis.extract_dt_statistics \
+    --input_dir outputs/decision_tree/pretrained
+
+python -m src.dt_analysis.aggregate_features_by_depth \
+    --mode pretrained \
+    --pretrained_csv outputs/dt_analysis/dt_features_depth_pretrained.csv \
+    --output_csv outputs/dt_analysis/features_by_depth_pretrained.csv
+```
+
+Equivalent commands are applied to the untrained directory.
+
+*6.2 Missing Feature Analysis*
+
+```
+python -m src.dt_analysis.compute_missing_features \
+    --attention_csv outputs/attention/attention_top5_pretrained_sample.csv \
+    --pretrained_csv outputs/dt_analysis/features_by_depth_pretrained.csv \
+    --untrained_csv outputs/dt_analysis/features_by_depth_untrained.csv \
+    --log_file logs/missing_features_comparison.txt
+```
+
+*6.3 Pattern Aggregation*
+
+```
+python -m src.dt_analysis.aggregate_features_patterns \
+    --input_dir outputs/decision_tree/pretrained \
+    --output_csv outputs/dt_analysis/features_patterns_pretrained.csv
+```
+
+And equivalently for untrained models.
+
+**Optional: Debug and Visualization**
+
+Several debug and visualization scripts are provided to inspect attention maps and individual decision trees. These scripts are not required for reproduction, but are included for transparency and qualitative inspection.
+
 ## 📁 Data Availability and Repository Structure
 
 To keep this repository lightweight, readable, and compliant with GitHub’s recommended size constraints, **only lightweight sample files of the intermediate outputs are included here**.  
