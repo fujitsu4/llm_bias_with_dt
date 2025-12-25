@@ -86,8 +86,8 @@ To use GPU, ensure that the installed PyTorch version is compatible with your CU
 **External Resources and Caching**
 
 Some resources are downloaded automatically at runtime:
-* HuggingFace models and tokenizers (e.g., BERT)
-* HuggingFace datasets
+- HuggingFace models and tokenizers (e.g., BERT)
+- HuggingFace datasets
 
 These resources are cached locally (typically under ~/.cache/) and are downloaded only once.
 No manual download is required for these components.
@@ -255,18 +255,23 @@ python -m src.dt_analysis.aggregate_features_patterns \
 
 And equivalently for untrained models.
 
-**Optional: Debug and Visualization**
+**Note: Debug and Visualization**
 
 Several debug and visualization scripts are provided to inspect attention maps and individual decision trees. These scripts are not required for reproduction, but are included for transparency and qualitative inspection.
 
-## 📁 Data Availability and Repository Structure
+**Computational Notes**
+
+The full pipeline was executed on Google Colab using GPU acceleration.
+Some stages (attention extraction and decision tree training) are computationally intensive.
+Running the complete pipeline locally may require several hours depending on hardware.
+Sample outputs are provided to allow inspection without executing the full pipeline.
+
+## D.Data Availability and Repository Structure
 
 To keep this repository lightweight, readable, and compliant with GitHub’s recommended size constraints, **only lightweight sample files of the intermediate outputs are included here**.  
 These sample files (5 lines each) are provided exclusively for **illustration, documentation, and structural transparency**.
 
----
-
-### 🔹 Why only sample files?
+**1. Why only sample files?**
 
 Some intermediate CSV files generated during the experiments (e.g., BERT token features, attention matrices, statistical descriptors) originally exceed **30–100 MB per file**, and the complete pipeline produces **hundreds of such files**.  
 Including them directly in the repository would:
@@ -278,10 +283,10 @@ Including them directly in the repository would:
 
 Therefore, this repository includes files such as:
 
-bert_final_features_SAMPLE.csv
-bert_basic_features_SAMPLE.csv
-spacy_features_SAMPLE.csv
-attention_top5_pretrained_SAMPLE.csv
+- bert_final_features_SAMPLE.csv
+- bert_basic_features_SAMPLE.csv
+- spacy_features_SAMPLE.csv
+- attention_top5_pretrained_SAMPLE.csv
 
 
 Each sample keeps **only the first 5 rows**, allowing readers to understand:
@@ -293,40 +298,18 @@ Each sample keeps **only the first 5 rows**, allowing readers to understand:
 
 without including full, heavy intermediate outputs.
 
----
+**2. Notes**
 
-## 📦 Full Reproducibility
-
-The **complete intermediate results**, including all intermediate and large output files, are archived externally (Google Drive) to ensure:
-
-- long-term preservation,  
-- stable access,  
-- citable references,  
-- compliance with FAIR principles.  
-
-To reproduce the full pipeline, simply follow all the commands listed at the beginning of this readme. The code will place them automatically into the correct directories (without any truncation of the results).
-
----
-
-## 📁 Debug Samples
-
-The folder `outputs/debug_samples/` contains a minimal and lightweight subset of
-debugging outputs used to illustrate the internal structure of the pipeline.
-Only one complete example is kept for each setting (pretrained / untrained), for
-documentation purposes. The full debug output originally generated during the
-runs has been intentionally omitted to keep the repository clean and compact,
-as it is not required for reproducibility or analysis.
-
----
-
-## 📝 Notes
-
+- The folder `outputs/debug_samples/` contains a minimal and lightweight subset of debugging outputs used to illustrate the internal structure of the pipeline. Only one complete example is kept for each setting (pretrained / untrained), for documentation purposes. The full debug output originally generated during the runs has been intentionally omitted to keep the repository clean and compact, as it is not required for reproducibility or analysis.
 - All sample files follow the naming pattern `*_sample.csv` to clearly distinguish them from full data files.  
 - The repository is intentionally structured to remain **fast to clone**, **easy to inspect**, and **fully reproducible** once external datasets are provided.
--The `data/cleaned` and `logs/` folders are kept in full and were not cleaned or reduced.
-They contain the processed datasets and the complete processing logs required to ensure full reproducibility and transparency of the experiments.
+- The `data/cleaned` and `logs/` folders are kept in full and were not cleaned or reduced. They contain the processed datasets and the complete processing logs required to ensure full reproducibility and transparency of the experiments.
 
----
+## E. Citation and Contact
+
+- If you use this code or build upon this work, please cite the associated paper (to appear).
+- For questions or clarifications, please contact me via the GitHub issue tracker or via email: zakaria.jouilil@gmail.com.
+
 
 ## License
 This project is licensed under the MIT License – see the LICENSE file for details.
